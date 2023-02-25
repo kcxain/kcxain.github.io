@@ -1,14 +1,12 @@
 ---
 permalink: /
-title:
+title: "About me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-
-## About me
 
 I am currently a **Junior** at School of Computer Science and Technology, Harbin Institute of Technology. 
 
