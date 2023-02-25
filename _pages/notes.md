@@ -1,9 +1,9 @@
 ---
-permalink: /notes/
+permalink: /note/
 title: "Notes"
 author_profile: true
 redirect_from: 
-  - /notes.html
+  - /note.html
 ---
 
 When I was studying  undergraduate courses of computer science at Harbin Institute of Technology, as well as self-study foreign excellent courses, such as CMU 15-213 and MIT 6.S081, I made some notes. 
