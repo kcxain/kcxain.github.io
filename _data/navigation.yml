@@ -7,7 +7,7 @@ main:
   #   url: /year-archive/
 
   - title: "Notes"
-    url: /zhihu
+    url: /notes
   
   # - title: "Talks"
   #   url: /talks/    
