@@ -9,14 +9,24 @@ main:
   - title: "Publications"
     url: "/#-publications"
 
-  - title: "Honors and Awards"
-    url: "/#-honors-and-awards"
+  - title: "Competitions"
+    url: "/#-competitions"
 
-  - title: "Educations"
-    url: "/#-educations"
+  - title: "Patents"
+    url: "/#-patents"
 
-  - title: "Invited Talks"
-    url: "/#-invited-talks"
+  - title: "Services"
+    url: "/#-services"
 
-  - title: "Internships"
-    url: "/#-internships"
+
+  # - title: "Honors and Awards"
+  #   url: "/#-honors-and-awards"
+
+  # - title: "Educations"
+  #   url: "/#-educations"
+
+  # - title: "Invited Talks"
+  #   url: "/#-invited-talks"
+
+  # - title: "Internships"
+  #   url: "/#-internships"
