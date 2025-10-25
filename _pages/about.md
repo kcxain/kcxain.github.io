@@ -8,12 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+
 <style>
 
 
@@ -151,14 +146,14 @@ redirect_from:
   font-weight: 650;           /* 比 normal 粗一点，但不至于太重 */
   line-height: 1.4;
   display: inline-block;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.15em;
 }
 </style>
 <style>
 .paper-authors {
   font-size: 1.0rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.4;
   margin-right: 0.5em;
   display: inline;
   color: #444;
@@ -195,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 🤗 Hello! I'm a Master's student at the <a href='http://www.ict.cas.cn'>Institute of Computing Technology</a>, Chinese Academy of Sciences, majoring in Computer Science, at <a href='http://ict.cas.cn/jssgk/zzjg/kyxt/znclq/js/'>Intelligent Processor Research Center (IPRC)</a>. I'm fortunately supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.
 
-My research interests include <strong>AI for Chip Design</strong> and <strong>AI for Domain-Specific Code Generation</strong><a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+My research interests include <strong>AI for Chip Design</strong> and <strong>AI for Domain-Specific Code Generation</strong><a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
 
 Previously, as an undergraduate student at Harbin Institute of Technology (HIT), I completed a research internship at <a href="https://ir.hit.edu.cn">Research Center for Social Computing and Interactive Robotics (SCIR)</a>, focusing on <strong>Dialogue System</strong> research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a> and <a href='https://xzy.kmust.edu.cn/info/1129/3556.htm'>Prof. Longxuan Ma</a>.
