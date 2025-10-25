@@ -175,7 +175,7 @@ Previously, as an undergraduate student at <a href='https://www.hit.edu.cn'>Harb
     <a href="https://arxiv.org/abs/2506.02929" target="_blank" class="pub-link paper">Paper</a>
   </span>
 - <span class="paper-title">Sycophancy in Vision-Language Models: A Systematic Analysis and an Inference-Time Mitigation Framework</span> <span class="conference-tag" data-conf="Neurocomputing">Neurocomputing'25</span>
-  - <span class="paper-authors">Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen</span>
+  - <span class="paper-authors">Yunpu Zhao, Rui Zhang, Junbin Xiao, Changxin Ke, Ruibo Hou, Yifan Hao, Ling Li</span>
   <span class="pub-links">
     <a href="https://arxiv.org/abs/2408.11261" target="_blank" class="pub-link paper">Paper</a>
   </span>
