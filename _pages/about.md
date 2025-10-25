@@ -151,7 +151,7 @@ redirect_from:
   font-weight: 650;           /* 比 normal 粗一点，但不至于太重 */
   line-height: 1.4;
   display: inline-block;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.2em;
 }
 </style>
 <style>
