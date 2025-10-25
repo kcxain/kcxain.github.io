@@ -153,12 +153,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class='anchor' id='about-me'></span>
 
-🤗 Hello! I'm a Master's student at <a href='http://www.ict.cas.cn'>Institute of Computing Technology</a>, Chinese Academy of Sciences, majoring in Computer Science, at <a href='http://ict.cas.cn/jssgk/zzjg/kyxt/znclq/js/'>Intelligent Processor Research Center (IPRC)</a>. I'm fortunately supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.
-
-My research interests include <strong>AI for Chip Design</strong> and <strong>AI for Domain-Specific Code Generation</strong> <a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
-
+🤗 Hello! I'm a second-year Master's student at <a href='http://www.ict.cas.cn'>Institute of Computing Technology</a>, Chinese Academy of Sciences, majoring in Computer Science, at <a href='http://ict.cas.cn/jssgk/zzjg/kyxt/znclq/js/'>Intelligent Processor Research Center (IPRC)</a>. I'm fortunately supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.
 
 Previously, as an undergraduate student at <a href='https://www.hit.edu.cn'>Harbin Institute of Technology</a>, I completed a research internship at <a href="https://ir.hit.edu.cn">Research Center for Social Computing and Interactive Robotics (SCIR)</a>, focusing on <strong>Dialogue System</strong> research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a> and <a href='https://xzy.kmust.edu.cn/info/1129/3556.htm'>Prof. Longxuan Ma</a>.
+
+Currently, my research interests include <strong>AI for Chip Design</strong> and <strong>AI for Domain-Specific Code Generation</strong> <a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
 <span style="color:red;">If you are seeking any form of collaboration, communication or internship opportunity, please feel free to email me 📮<a href="mailto:kcxain@gmail.com" style="color:red">kcxain@gmail.com</a>.</span>
 
@@ -199,18 +198,18 @@ Previously, as an undergraduate student at <a href='https://www.hit.edu.cn'>Harb
     <a href="https://github.com/malongxuan/msd" target="_blank" class="pub-link code">Code</a>
   </span>
 
+# 📖 Educations
+- *2024.08 - Now*, Master's student, Institute of Computing Technology, Beijing.
+- *2020.09 - 2024.06*, Undergraduate, Harbin Institute of Technology, Harbin.
 
 # ✊ Competitions
 - <strong>🏅1st</strong> place in one subtask and <strong>🥉3rd</strong> place overall at the 11th <a href='https://dstc11.dstc.community'>Dialog System Technology Challenge</a>, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.
 
 # 📄 Patents
-
 - 一种自验证式的探索预训练语言模型中明喻知识的方法及其系统
   - 张伟男,马龙轩,柯昌鑫,刘挺
 
-
 # 🏢 Services
-
 - Reviewer: EMNLP'23
 
 
