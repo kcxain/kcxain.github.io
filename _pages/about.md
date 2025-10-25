@@ -181,9 +181,7 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 - <span class="paper-title">A Self-verified Method for Exploring Simile Knowledge from Pre-trained Language Models</span> <span class="conference-tag" data-conf="COLING">COLING'24</span>
   - <span class="paper-authors">Longxuan Ma, Changxin Ke, Shuhan Zhou, Churui Sun, Weinan Zhang, Ting Liu</span>
   <span class="pub-links">
-    <a href="https://aclanthology.org/2024.lrec-main.138/" target="_blank" class="pub-link paper">Paper</a>
-    <span class="sep">|</span>
-    <a href="https://github.com/kcxain/mlsr" target="_blank" class="pub-link code">Code</a>
+    <a href="https://aclanthology.org/2024.lrec-main.138/" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/kcxain/mlsr" target="_blank" class="pub-link code">Code</a>
   </span>
 - <span class="paper-title">A Difference-aware Ensemble Method for Task-oriented Dialogue with Subjective Knowledge</span> <span class="conference-tag" data-conf="ACL">DSTC11</span>
   - <span class="paper-authors">Changxin Ke, Churui Sun, Longxuan Ma, Weinan Zhang, Ting Liu</span>
@@ -193,9 +191,7 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 - <span class="paper-title">I run as fast as a rabbit, can you? A Multilingual Simile Dialogue Dataset</span> <span class="conference-tag" data-conf="ACL">ACL'23</span>
   - <span class="paper-authors">Longxuan Ma, Weinan Zhang, Shuhan Zhou, Churui Sun, Changxin Ke, Ting Liu</span>
   <span class="pub-links">
-    <a href="https://arxiv.org/abs/2306.05672" target="_blank" class="pub-link paper">Paper</a>
-    <span class="sep">|</span>
-    <a href="https://github.com/malongxuan/msd" target="_blank" class="pub-link code">Code</a>
+    <a href="https://arxiv.org/abs/2306.05672" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/malongxuan/msd" target="_blank" class="pub-link code">Code</a>
   </span>
 
 # 📖 Educations
