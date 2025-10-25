@@ -104,7 +104,6 @@ redirect_from:
 .conference-tag[data-conf="Preprint"] {
   color: #666;
   background-color: rgba(0,0,0,0.05);
-  font-weight: 500;
 }
 
 /* === Hover 效果（轻微）=== */
@@ -116,7 +115,7 @@ redirect_from:
   font-size: 1.05rem;          /* 比正文稍大，清晰突出 */
   font-weight: 650;           /* 比 normal 粗一点，但不至于太重 */
   line-height: 1.4;
-  display: inline-block;
+  display: inline;
   margin-bottom: 0.15em;
 }
 </style>
@@ -161,8 +160,7 @@ My research interests include <strong>AI for Chip Design</strong> and <strong>AI
 
 Previously, as an undergraduate student at <a href='https://www.hit.edu.cn'>Harbin Institute of Technology</a>, I completed a research internship at <a href="https://ir.hit.edu.cn">Research Center for Social Computing and Interactive Robotics (SCIR)</a>, focusing on <strong>Dialogue System</strong> research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a> and <a href='https://xzy.kmust.edu.cn/info/1129/3556.htm'>Prof. Longxuan Ma</a>.
 
-<span style="color:red;">If you are seeking any form of collaboration, communication or internship opportunity, please feel free to reach out to me at 
-<a href="mailto:kcxain@gmail.com">kcxain@gmail.com</a></span>
+<span style="color:red;">If you are seeking any form of collaboration, communication or internship opportunity, please feel free to reach out to me at 📮<a href="mailto:kcxain@gmail.com" style="color:red">kcxain@gmail.com</a>.</span>
 
 # 🔥 News
 - *2025.09*: &nbsp;🎉 <a href='arxiv.org/abs/2506.11153'>QiMeng-MuPa</a> has been accepted to <strong>NeurIPS 2025</strong>.
