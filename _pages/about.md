@@ -65,15 +65,6 @@ redirect_from:
   color: #0d47a1;
   text-decoration: underline;
 }
-
-/* 深色模式自适应 */
-@media (prefers-color-scheme: dark) {
-  .pub-link.paper { color: #81c784; }
-  .pub-link.paper:hover { color: #a5d6a7; }
-  .pub-link.code { color: #64b5f6; }
-  .pub-link.code:hover { color: #90caf9; }
-  .sep { color: #777; }
-}
 </style>
 
 
@@ -121,26 +112,6 @@ redirect_from:
   background-color: rgba(0,0,0,0.08);
 }
 
-/* === 深色模式 === */
-@media (prefers-color-scheme: dark) {
-  .conference-tag[data-conf="NeurIPS"] { color: #ffb74d; background-color: rgba(255,183,77,0.1); }
-  .conference-tag[data-conf="ICML"]   { color: #81c784; background-color: rgba(129,199,132,0.1); }
-  .conference-tag[data-conf="ICLR"]   { color: #ba68c8; background-color: rgba(186,104,200,0.1); }
-
-  .conference-tag[data-conf="AAAI"]   { color: #64b5f6; background-color: rgba(100,181,246,0.1); }
-  .conference-tag[data-conf="IJCAI"]  { color: #4db6ac; background-color: rgba(77,182,172,0.1); }
-  .conference-tag[data-conf="ACL"]    { color: #ef9a9a; background-color: rgba(239,154,154,0.1); }
-  .conference-tag[data-conf="EMNLP"]  { color: #a1887f; background-color: rgba(161,136,127,0.1); }
-
-  .conference-tag[data-conf="COLING"] { color: #9fa8da; background-color: rgba(159,168,218,0.1); }
-  .conference-tag[data-conf="Neurocomputing"] { color: #64b5f6; background-color: rgba(100,181,246,0.1); }
-
-  .conference-tag[data-conf="Preprint"] {
-    color: #aaa;
-    background-color: rgba(255,255,255,0.05);
-  }
-}
-
 .paper-title {
   font-size: 1.05rem;          /* 比正文稍大，清晰突出 */
   font-weight: 650;           /* 比 normal 粗一点，但不至于太重 */
@@ -166,11 +137,6 @@ redirect_from:
   color: #2c3e50;
   text-decoration: underline;
   text-underline-offset: 3px;
-}
-@media (prefers-color-scheme: dark) {
-  .paper-authors .me {
-    color: #d0d3d4;
-  }
 }
 </style>
 
