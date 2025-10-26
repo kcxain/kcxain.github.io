@@ -150,6 +150,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<style>
+  .map-container {
+    width: 50%;
+    margin: 2rem auto;           /* 居中并增加上下间距 */
+    background: #fff;            /* 白色背景 */
+    border: 1px solid #e0e0e0;   /* 淡灰色边框 */
+    border-radius: 12px;         /* 圆角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+    padding: 1rem;               /* 内边距 */
+    transition: all 0.3s ease;   /* 平滑动画 */
+  }
+
+  /* 鼠标悬停效果 */
+  .map-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 移动端自动全宽 */
+  @media (max-width: 768px) {
+    .map-container {
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: 0; /* 手机上去掉圆角以贴合屏幕边缘 */
+    }
+  }
+</style>
 
 <span class='anchor' id='about-me'></span>
 
@@ -205,12 +232,15 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 - 一种自验证式的探索预训练语言模型中明喻知识的方法及其系统
   - 张伟男,马龙轩,柯昌鑫,刘挺
 
-# 🏢 Services
+# 😄 Services
 - Reviewer: EMNLP'23
 
-
-<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=665e5e&w=300&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631'></script>
-
+# 🌍 Visitors
+<div class="map-container">
+  <script type="text/javascript" id="mapmyvisitors"
+    src="https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631">
+  </script>
+</div>
 <!-- # 🎖 Honors and Awards
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
