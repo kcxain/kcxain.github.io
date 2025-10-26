@@ -189,7 +189,7 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 <span style="color:red;">If you are seeking any form of collaboration, communication or internship opportunity, please feel free to email me 📮<a href="mailto:kcxain@gmail.com" style="color:red">kcxain@gmail.com</a>.</span>
 
 # 🔥 News
-- *2025.09*: &nbsp;🎉 <a href='arxiv.org/abs/2506.11153'>QiMeng-MuPa</a> has been accepted to <strong>NeurIPS 2025</strong>.
+- *2025.09*: &nbsp;🎉 <a href='https://nips.cc/virtual/2025/poster/117157'>QiMeng-MuPa</a> has been accepted to <strong>NeurIPS 2025</strong>.
 
 # 📝 Publications 
 
