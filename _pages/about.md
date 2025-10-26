@@ -236,11 +236,11 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 - Reviewer: EMNLP'23
 
 
-<div class="map-container">
+<!-- <div class="map-container">
   <script type="text/javascript" id="mapmyvisitors"
     src="https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631">
   </script>
-</div>
+</div> -->
 <!-- # 🎖 Honors and Awards
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
