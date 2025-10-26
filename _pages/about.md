@@ -153,9 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <span class='anchor' id='about-me'></span>
 
-🤗 Hello! I'm a second-year Master's student at <a href='http://www.ict.cas.cn'>Institute of Computing Technology</a>, Chinese Academy of Sciences, majoring in Computer Science, at Intelligent Processor Research Center (IPRC). I'm fortunately supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.
+🤗 Hello! I'm a second-year Master's student at Institute of Computing Technology (ICT), Chinese Academy of Sciences (CAS), majoring in Computer Science, at Intelligent Processor Research Center (IPRC). I'm fortunately supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.
 
-Previously, as an undergraduate student at <a href='https://www.hit.edu.cn'>Harbin Institute of Technology</a>, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on <strong>Dialogue System</strong> research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a> and <a href='https://xzy.kmust.edu.cn/info/1129/3556.htm'>Prof. Longxuan Ma</a>.
+Previously, as an undergraduate student at Harbin Institute of Technology (HIT), I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on <strong>Dialogue System</strong> research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a> and <a href='https://xzy.kmust.edu.cn/info/1129/3556.htm'>Prof. Longxuan Ma</a>.
 
 Currently, my research interests include <strong>AI for Chip Design</strong> and <strong>AI for Domain-Specific Code Generation</strong> <a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
 
