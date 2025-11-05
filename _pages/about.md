@@ -189,12 +189,12 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 <span style="color:red;">If you are seeking any form of collaboration, communication or internship opportunity, please feel free to email me 📮<a href="mailto:kcxain@gmail.com" style="color:red">kcxain@gmail.com</a>.</span>
 
 # 🔥 News
-- *2025.09*: &nbsp;🎉 <a href='https://nips.cc/virtual/2025/poster/117157'>QiMeng-MuPa</a> has been accepted to <strong>NeurIPS 2025</strong>.
+- *2025.09*: &nbsp;🎉 <a href='https://openreview.net/forum?id=bjUDrU4wPv'>QiMeng-MuPa</a> has been accepted to <strong>NeurIPS 2025</strong>.
 
 # 📝 Publications 
 
 - <span class="paper-title">QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation</span> <span class="conference-tag" data-conf="NeurIPS">NeurIPS'25</span>
-  - <span class="paper-authors">Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen</span><span class="pub-links"><a href="https://arxiv.org/abs/2506.11153" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/kcxain/mupa" target="_blank" class="pub-link code">Code</a>
+  - <span class="paper-authors">Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen</span><span class="pub-links"><a href="https://openreview.net/forum?id=bjUDrU4wPv" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/kcxain/mupa" target="_blank" class="pub-link code">Code</a>
 - <span class="paper-title">Large processor chip model</span> <span class="conference-tag" data-conf="Preprint">Preprint</span>
   - <span class="paper-authors">Kaiyan Chang, Mingzhi Chen, Yunji Chen, Zhirong Chen, Dongrui Fan, Junfeng Gong, Nan Guo, Yinhe Han, Qinfen Hao, Shuo Hou, Xuan Huang, Pengwei Jin, Changxin Ke, Cangyuan Li, Guangli Li, Huawei Li, Kuan Li, Naipeng Li, Shengwen Liang, Cheng Liu, Hongwei Liu, Jiahua Liu, Junliang Lv, Jianan Mu, Jin Qin, Bin Sun, Chenxi Wang, Duo Wang, Mingjun Wang, Ying Wang, Chenggang Wu, Peiyang Wu, Teng Wu, Xiao Xiao, Mengyao Xie, Chenwei Xiong, Ruiyuan Xu, Mingyu Yan, Xiaochun Ye, Kuai Yu, Rui Zhang, Shuoming Zhang, Jiacheng Zhao</span>
   <span class="pub-links">
