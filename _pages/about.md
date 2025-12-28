@@ -193,29 +193,29 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 
 # 📝 Publications 
 
-- <span class="paper-title">QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation</span> <span class="conference-tag" data-conf="NeurIPS">NeurIPS'25</span>
+- <span class="conference-tag" data-conf="NeurIPS">NeurIPS'25</span><span class="paper-title">QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation</span>
   - <span class="paper-authors">Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen</span><span class="pub-links"><a href="https://openreview.net/forum?id=bjUDrU4wPv" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/kcxain/mupa" target="_blank" class="pub-link code">Code</a>
-- <span class="paper-title">Large processor chip model</span> <span class="conference-tag" data-conf="Preprint">Preprint</span>
+- <span class="conference-tag" data-conf="Preprint">Preprint</span><span class="paper-title">Large processor chip model</span>
   - <span class="paper-authors">Kaiyan Chang, Mingzhi Chen, Yunji Chen, Zhirong Chen, Dongrui Fan, Junfeng Gong, Nan Guo, Yinhe Han, Qinfen Hao, Shuo Hou, Xuan Huang, Pengwei Jin, Changxin Ke, Cangyuan Li, Guangli Li, Huawei Li, Kuan Li, Naipeng Li, Shengwen Liang, Cheng Liu, Hongwei Liu, Jiahua Liu, Junliang Lv, Jianan Mu, Jin Qin, Bin Sun, Chenxi Wang, Duo Wang, Mingjun Wang, Ying Wang, Chenggang Wu, Peiyang Wu, Teng Wu, Xiao Xiao, Mengyao Xie, Chenwei Xiong, Ruiyuan Xu, Mingyu Yan, Xiaochun Ye, Kuai Yu, Rui Zhang, Shuoming Zhang, Jiacheng Zhao</span>
   <span class="pub-links">
     <a href="https://arxiv.org/abs/2506.02929" target="_blank" class="pub-link paper">Paper</a>
   </span>
-- <span class="paper-title">Sycophancy in Vision-Language Models: A Systematic Analysis and an Inference-Time Mitigation Framework</span> <span class="conference-tag" data-conf="Neurocomputing">Neurocomputing'25</span>
+- <span class="conference-tag" data-conf="Neurocomputing">Neurocomputing'25</span><span class="paper-title">Sycophancy in Vision-Language Models: A Systematic Analysis and an Inference-Time Mitigation Framework</span>
   - <span class="paper-authors">Yunpu Zhao, Rui Zhang, Junbin Xiao, Changxin Ke, Ruibo Hou, Yifan Hao, Ling Li</span>
   <span class="pub-links">
     <a href="https://arxiv.org/abs/2408.11261" target="_blank" class="pub-link paper">Paper</a>
   </span>
-- <span class="paper-title">A Self-verified Method for Exploring Simile Knowledge from Pre-trained Language Models</span> <span class="conference-tag" data-conf="COLING">COLING'24</span>
+- <span class="conference-tag" data-conf="COLING">COLING'24</span><span class="paper-title">A Self-verified Method for Exploring Simile Knowledge from Pre-trained Language Models</span>
   - <span class="paper-authors">Longxuan Ma, Changxin Ke, Shuhan Zhou, Churui Sun, Weinan Zhang, Ting Liu</span>
   <span class="pub-links">
     <a href="https://aclanthology.org/2024.lrec-main.138/" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/kcxain/mlsr" target="_blank" class="pub-link code">Code</a>
   </span>
-- <span class="paper-title">A Difference-aware Ensemble Method for Task-oriented Dialogue with Subjective Knowledge</span> <span class="conference-tag" data-conf="ACL">DSTC11</span>
+- <span class="conference-tag" data-conf="ACL">DSTC11</span><span class="paper-title">A Difference-aware Ensemble Method for Task-oriented Dialogue with Subjective Knowledge</span>
   - <span class="paper-authors">Changxin Ke, Churui Sun, Longxuan Ma, Weinan Zhang, Ting Liu</span>
   <span class="pub-links">
     <a href="https://aclanthology.org/2023.dstc-1.24/" target="_blank" class="pub-link paper">Paper</a>
   </span>
-- <span class="paper-title">I run as fast as a rabbit, can you? A Multilingual Simile Dialogue Dataset</span> <span class="conference-tag" data-conf="ACL">ACL'23</span>
+- <span class="conference-tag" data-conf="ACL">ACL'23</span><span class="paper-title">I run as fast as a rabbit, can you? A Multilingual Simile Dialogue Dataset</span>
   - <span class="paper-authors">Longxuan Ma, Weinan Zhang, Shuhan Zhou, Churui Sun, Changxin Ke, Ting Liu</span>
   <span class="pub-links">
     <a href="https://arxiv.org/abs/2306.05672" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/malongxuan/msd" target="_blank" class="pub-link code">Code</a>
@@ -235,12 +235,12 @@ Currently, my research interests include <strong>AI for Chip Design</strong> and
 # 😄 Services
 - Reviewer: EMNLP'23
 
-
-<!-- <div class="map-container">
+# Visitors
+<div class="map-container">
   <script type="text/javascript" id="mapmyvisitors"
     src="https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631">
   </script>
-</div> -->
+</div>
 <!-- # 🎖 Honors and Awards
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
