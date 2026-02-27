@@ -33,6 +33,14 @@ redirect_from:
   line-height: 1.65;
 }
 
+.about-wrap a,
+.about-wrap a:hover,
+.about-wrap a:focus,
+.about-wrap a:active,
+.about-wrap a:visited {
+  text-decoration: none !important;
+}
+
 .about-hero {
   background:
     linear-gradient(130deg, rgba(15, 107, 127, 0.05), rgba(184, 59, 94, 0.05)),
@@ -174,7 +182,7 @@ redirect_from:
 }
 
 .pub-title a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .pub-meta {
@@ -182,12 +190,11 @@ redirect_from:
   margin: 0.06rem 0 0;
   color: #4e5968;
   font-size: 0.95rem !important;
-  font-weight: 500;
+  font-weight: 550;
   line-height: 1.45;
 }
 
 .pub-venue {
-  font-style: italic;
   color: rgba(15, 107, 127, 0.88);
 }
 
@@ -278,7 +285,7 @@ redirect_from:
 }
 
 .pub-links a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .pub-links .paper {
@@ -505,9 +512,15 @@ document.addEventListener("DOMContentLoaded", function () {
     <ul class="about-list plain-list news-list">
       {% for item in site.data.news %}
       <li>
-        <span class="news-date">[{{ item.date }}]</span>
-        <a href="{{ item.link_url }}">{{ item.title }}</a>
-        {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
+        {% if item.content_html %}
+          {{ item.content_html }}
+        {% elsif item.content %}
+          {{ item.content | markdownify | remove: '<p>' | remove: '</p>' }}
+        {% else %}
+          <span class="news-date">[{{ item.date }}]</span>
+          <a href="{{ item.link_url }}">{{ item.title }}</a>
+          {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
+        {% endif %}
       </li>
       {% endfor %}
     </ul>

@@ -1,9 +1,5 @@
 [
   {
-    "date": "2025.09",
-    "title": "QiMeng-MuPa",
-    "link_url": "https://openreview.net/forum?id=bjUDrU4wPv",
-    "text_after_link": "has been accepted to",
-    "venue": "NeurIPS 2025"
+    "content_html": "<span class=\"news-date\">[2025.09]</span> <a href=\"https://openreview.net/forum?id=bjUDrU4wPv\">QiMeng-MuPa</a> has been accepted to <strong>NeurIPS 2025</strong>."
   }
 ]
