@@ -1,0 +1,107 @@
+[
+  {
+    "conf": "NeurIPS",
+    "year": "2025",
+    "conf_full": "The Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025)",
+    "label": "NeurIPS'25",
+    "title": "QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation",
+    "authors": "Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://openreview.net/forum?id=bjUDrU4wPv",
+        "type": "paper"
+      },
+      {
+        "name": "Code",
+        "url": "https://github.com/kcxain/mupa",
+        "type": "code"
+      }
+    ]
+  },
+  {
+    "conf": "Preprint",
+    "year": "2025",
+    "conf_full": "arXiv preprint",
+    "label": "Preprint",
+    "title": "Large processor chip model",
+    "authors": "Kaiyan Chang, Mingzhi Chen, Yunji Chen, Zhirong Chen, Dongrui Fan, Junfeng Gong, Nan Guo, Yinhe Han, Qinfen Hao, Shuo Hou, Xuan Huang, Pengwei Jin, Changxin Ke, Cangyuan Li, Guangli Li, Huawei Li, Kuan Li, Naipeng Li, Shengwen Liang, Cheng Liu, Hongwei Liu, Jiahua Liu, Junliang Lv, Jianan Mu, Jin Qin, Bin Sun, Chenxi Wang, Duo Wang, Mingjun Wang, Ying Wang, Chenggang Wu, Peiyang Wu, Teng Wu, Xiao Xiao, Mengyao Xie, Chenwei Xiong, Ruiyuan Xu, Mingyu Yan, Xiaochun Ye, Kuai Yu, Rui Zhang, Shuoming Zhang, Jiacheng Zhao",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://arxiv.org/abs/2506.02929",
+        "type": "paper"
+      }
+    ]
+  },
+  {
+    "conf": "Neurocomputing",
+    "year": "2025",
+    "conf_full": "Neurocomputing",
+    "label": "Neurocomputing'25",
+    "title": "Sycophancy in Vision-Language Models: A Systematic Analysis and an Inference-Time Mitigation Framework",
+    "authors": "Yunpu Zhao, Rui Zhang, Junbin Xiao, Changxin Ke, Ruibo Hou, Yifan Hao, Ling Li",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://arxiv.org/abs/2408.11261",
+        "type": "paper"
+      }
+    ]
+  },
+  {
+    "conf": "COLING",
+    "year": "2024",
+    "conf_full": "The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    "label": "COLING'24",
+    "title": "A Self-verified Method for Exploring Simile Knowledge from Pre-trained Language Models",
+    "authors": "Longxuan Ma, Changxin Ke, Shuhan Zhou, Churui Sun, Weinan Zhang, Ting Liu",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://aclanthology.org/2024.lrec-main.138/",
+        "type": "paper"
+      },
+      {
+        "name": "Code",
+        "url": "https://github.com/kcxain/mlsr",
+        "type": "code"
+      }
+    ]
+  },
+  {
+    "conf": "DSTC",
+    "year": "2023",
+    "conf_full": "The Eleventh Dialog System Technology Challenge (DSTC11)",
+    "label": "DSTC11",
+    "title": "A Difference-aware Ensemble Method for Task-oriented Dialogue with Subjective Knowledge",
+    "authors": "Changxin Ke, Churui Sun, Longxuan Ma, Weinan Zhang, Ting Liu",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://aclanthology.org/2023.dstc-1.24/",
+        "type": "paper"
+      }
+    ]
+  },
+  {
+    "conf": "ACL",
+    "year": "2023",
+    "conf_full": "The 61st Annual Meeting of the Association for Computational Linguistics (ACL 2023)",
+    "label": "ACL'23",
+    "title": "I run as fast as a rabbit, can you? A Multilingual Simile Dialogue Dataset",
+    "authors": "Longxuan Ma, Weinan Zhang, Shuhan Zhou, Churui Sun, Changxin Ke, Ting Liu",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://arxiv.org/abs/2306.05672",
+        "type": "paper"
+      },
+      {
+        "name": "Code",
+        "url": "https://github.com/malongxuan/msd",
+        "type": "code"
+      }
+    ]
+  }
+]

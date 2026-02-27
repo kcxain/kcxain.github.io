@@ -3,255 +3,631 @@ permalink: /
 title: ""
 excerpt: ""
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-
 <style>
-
-
-<style>
-/* 会议标签：保持你之前的学术方框风格 */
-.conference-tag {
-  display: inline-block;
-  border: 1.6px solid #3f51b5;
-  color: #3f51b5;
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.2em 0.55em;
-  border-radius: 6px;
-  margin-right: 0.4em;
-  background-color: rgba(63,81,181,0.05);
-  transition: all 0.2s ease;
+.masthead {
+  display: none !important;
 }
 
-
-/* 链接部分整体容器 */
-.pub-links {
-  margin-left: 0.3em;
-  font-size: 1.00rem;
+:root {
+  --ink: #20252d;
+  --muted: #5f6977;
+  --line: rgba(18, 24, 32, 0.14);
+  --surface: rgba(255, 255, 255, 0.7);
+  --accent-a: #0f6b7f;
+  --accent-a-bg: rgba(15, 107, 127, 0.09);
+  --accent-b: #b83b5e;
+  --accent-b-bg: rgba(184, 59, 94, 0.1);
+  --accent-c: #8d6e00;
+  --accent-c-bg: rgba(141, 110, 0, 0.1);
 }
 
-/* 分隔符 */
-.sep {
-  color: #bbb;
-  margin: 0 0.25em;
+.about-wrap {
+  color: var(--ink);
+  font-family: Arial, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
 }
 
-/* ---- 链接样式（无边框，仅颜色） ---- */
-.pub-link {
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.15s ease;
+.about-hero {
+  background:
+    linear-gradient(130deg, rgba(15, 107, 127, 0.05), rgba(184, 59, 94, 0.05)),
+    var(--surface);
+  padding: 1.2rem 1.1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 0;
+}
+
+.about-hero p {
+  margin: 0.35rem 0;
+  line-height: 1.75;
+}
+
+.about-contact {
+  background: rgba(184, 59, 94, 0.08);
+  padding: 0.6rem 0.75rem;
+  border-radius: 0;
+}
+
+.about-section {
+  margin-top: 1.85rem;
+}
+
+.about-section h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 640;
+  color: #4b5563;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  padding-bottom: 0 !important;
+}
+
+.about-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-list li {
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 0.65rem;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 0;
+}
+
+.plain-list li {
   position: relative;
+  padding: 0 0 0.28rem 1rem;
+  margin-bottom: 0.62rem;
+  background: transparent;
 }
 
-/* Paper - 学术绿色 */
-.pub-link.paper {
-  color: #2e7d32;
-}
-.pub-link.paper:hover {
-  color: #1b5e20;
-  text-decoration: underline;
+.plain-list {
+  list-style: none;
+  padding-left: 0;
 }
 
-/* Code - 工程蓝 */
-.pub-link.code {
-  color: #1565c0;
+.plain-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.56em;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: rgba(15, 107, 127, 0.62);
 }
-.pub-link.code:hover {
-  color: #0d47a1;
-  text-decoration: underline;
-}
-</style>
 
-
-<style>
-.conference-tag {
-  display: inline-block;
+.news-date {
+  color: #4b5563;
   font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.15em 0.45em;
-  border-radius: 4px;
-  margin-right: 0.4em;
-  transition: background-color 0.2s ease, color 0.2s ease;
-
-  /* 关键部分 ↓↓↓ */
-  font-family: "Menlo", "Consolas", "Courier New", monospace !important;
-  font-variant-ligatures: none;
-  font-feature-settings: "liga" 0, "calt" 0, "clig" 0;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* === 顶会（鲜艳醒目）=== */
-.conference-tag[data-conf="NeurIPS"] { color: #ef6c00; background-color: rgba(239,108,0,0.07); }   /* 橙色 */
-.conference-tag[data-conf="ICML"]   { color: #2e7d32; background-color: rgba(46,125,50,0.07); }   /* 绿色 */
-.conference-tag[data-conf="ICLR"]   { color: #8e24aa; background-color: rgba(142,36,170,0.07); }  /* 紫色 */
-
-/* === 其他AI顶会（次一级，区分但不喧宾夺主）=== */
-.conference-tag[data-conf="AAAI"]   { color: #1565c0; background-color: rgba(21,101,192,0.07); }  /* 蓝色偏冷 */
-.conference-tag[data-conf="IJCAI"]  { color: #00897b; background-color: rgba(0,137,123,0.07); }   /* 青绿 */
-.conference-tag[data-conf="ACL"]    { color:rgb(202, 91, 91); background-color: rgba(198,40,40,0.07); }   /* 红色 */
-.conference-tag[data-conf="EMNLP"]  { color: #6d4c41; background-color: rgba(109,76,65,0.07); }   /* 棕色 */
-
-/* === 其他会议 / 期刊 === */
-.conference-tag[data-conf="COLING"] { color: #3f51b5; background-color: rgba(63,81,181,0.07); }
-.conference-tag[data-conf="Neurocomputing"] { color: #1565c0; background-color: rgba(21,101,192,0.07); }
-
-/* === Preprint 灰色标签 === */
-.conference-tag[data-conf="Preprint"] {
-  color: #666;
-  background-color: rgba(0,0,0,0.05);
+.interest-list {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
 }
 
-/* === Hover 效果（轻微）=== */
-.conference-tag:hover {
-  background-color: rgba(0,0,0,0.08);
+.interest-list li {
+  position: relative;
+  padding-left: 1rem;
+  margin: 0.2rem 0;
 }
 
-.paper-title {
-  font-size: 1.05rem;          /* 比正文稍大，清晰突出 */
-  font-weight: 650;           /* 比 normal 粗一点，但不至于太重 */
-  line-height: 1.4;
-  display: inline;
-  margin-bottom: 0.15em;
-}
-</style>
-<style>
-.paper-authors {
-  font-size: 1.0rem;
-  font-weight: 400;
-  line-height: 1.4;
-  margin-right: 0.5em;
-  display: inline;
-  color: #444;
-  margin-bottom: 0.75em;
+.interest-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.38rem;
+  height: 0.38rem;
+  border: 1.5px solid rgba(15, 107, 127, 0.8);
+  border-radius: 50%;
 }
 
-/* 自动高亮后的样式 */
-.paper-authors .me {
-  font-weight: 650;
-  color: #2c3e50;
+.pub-list li {
+  position: relative;
+  padding: 0.12rem 0 0.35rem 1rem;
+  margin-bottom: 0.72rem;
+  background: transparent;
+  transition: none;
+  overflow: visible;
+}
+
+.pub-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.56rem;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: rgba(15, 107, 127, 0.45);
+}
+
+.pub-list li:hover {
+  transform: none;
+}
+
+.about-list li p {
+  margin: 0.2rem 0 0;
+}
+
+.pub-title {
+  display: block;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.12rem;
+  line-height: 1.34;
+}
+
+.pub-title a {
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.pub-title a:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
+}
+
+.pub-meta {
+  font-family: inherit;
+  margin: 0.06rem 0 0;
+  color: #4e5968;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.pub-venue {
+  font-style: italic;
+  color: rgba(15, 107, 127, 0.88);
+}
+
+.pub-venue-abbr {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px dotted rgba(75, 85, 99, 0.45);
+  outline: none;
+}
+
+.pub-venue-abbr::after {
+  content: attr(data-full);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translate(-50%, 4px);
+  min-width: 180px;
+  max-width: 320px;
+  padding: 0.34rem 0.5rem;
+  background: rgba(255, 255, 255, 0.97);
+  color: #1f2937;
+  border: 1px solid rgba(15, 107, 127, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(18, 24, 32, 0.12);
+  text-align: center;
+  white-space: normal;
+  line-height: 1.45;
+  font-size: 0.86rem;
+  font-style: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  z-index: 12;
+}
+
+.pub-venue-abbr::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 4px);
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.97);
+  border-right: 1px solid rgba(15, 107, 127, 0.2);
+  border-bottom: 1px solid rgba(15, 107, 127, 0.2);
+  transform: translateX(-50%) rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+  z-index: 12;
+}
+
+.pub-venue-abbr:hover::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.pub-venue-abbr:hover::before {
+  opacity: 1;
+}
+
+.pub-venue-abbr.is-open::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.pub-venue-abbr.is-open::before {
+  opacity: 1;
+}
+
+.pub-authors {
+  font-family: inherit;
+  color: #4e5968;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0.02rem 0 0;
+}
+
+.pub-authors .me {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.pub-links a {
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+.pub-links .paper {
+  color: rgba(21, 101, 192, 0.9);
+}
+
+.pub-links .code {
+  color: rgba(184, 59, 94, 0.86);
+}
+
+.pub-links .sep {
+  color: #9aa3af;
+  margin: 0 0.3rem;
+}
+
+.meta-grid {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.meta-grid div {
+  padding: 0.55rem 0.7rem;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: 0.95rem;
+}
+
+.meta-grid strong {
+  color: var(--ink);
+}
+
+.map-container {
+  width: 50%;
+  margin: 2rem auto;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.map-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.edu-grid {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.edu-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.88rem 1rem;
+  min-height: 106px;
+  border-radius: 10px;
+}
+
+.edu-card:first-child {
+  background: linear-gradient(130deg, rgba(15, 107, 127, 0.08), rgba(15, 107, 127, 0.03));
+}
+
+.edu-card:last-child {
+  background: linear-gradient(130deg, rgba(184, 59, 94, 0.08), rgba(184, 59, 94, 0.03));
+}
+
+.edu-card.intern-card {
+  background: rgba(128, 128, 128, 0.08);
+}
+
+.edu-main {
+  min-width: 0;
+  display: grid;
+  row-gap: 0.1rem;
+}
+
+.edu-school {
+  color: var(--ink);
+  font-weight: 760;
+  font-size: 1.18rem;
+  line-height: 1.32;
+  margin-bottom: 0.02rem;
+}
+
+.edu-time {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.edu-degree {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.edu-icon {
+  flex: 0 0 140px;
+  width: 140px;
+  opacity: 0.96;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.edu-icon img {
+  height: 72px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+.edu-icon img.ict-logo {
+  height: 72px;
+  max-width: 260px;
+}
+
+.edu-icon img.cambricon-logo {
+  height: 48px;
+  max-width: 240px;
+}
+
+@media (max-width: 860px) {
+  .meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 12px;
+  }
+
+  .edu-card {
+    min-height: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .edu-icon {
+    flex: none;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
 }
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".paper-authors").forEach(el => {
-    el.innerHTML = el.innerHTML.replace(
-      /\bChangxin Ke\b/g,
-      '<span class="me">Changxin Ke</span>'
-    );
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".pub-authors").forEach(function (el) {
+    el.innerHTML = el.innerHTML.replace(/\bChangxin Ke\b/g, '<span class="me">Changxin Ke</span>');
+  });
+
+  const venueNodes = document.querySelectorAll(".pub-venue-abbr");
+  venueNodes.forEach(function (node) {
+    node.setAttribute("tabindex", "0");
+    node.setAttribute("role", "button");
+    node.setAttribute("aria-expanded", "false");
+
+    node.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const willOpen = !node.classList.contains("is-open");
+      venueNodes.forEach(function (n) {
+        n.classList.remove("is-open");
+        n.setAttribute("aria-expanded", "false");
+      });
+      if (willOpen) {
+        node.classList.add("is-open");
+        node.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    node.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        node.click();
+      }
+    });
+  });
+
+  document.addEventListener("click", function () {
+    venueNodes.forEach(function (n) {
+      n.classList.remove("is-open");
+      n.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      venueNodes.forEach(function (n) {
+        n.classList.remove("is-open");
+        n.setAttribute("aria-expanded", "false");
+      });
+    }
   });
 });
 </script>
 
-<style>
-  .map-container {
-    width: 50%;
-    margin: 2rem auto;           /* 居中并增加上下间距 */
-    background: #fff;            /* 白色背景 */
-    border: 1px solid #e0e0e0;   /* 淡灰色边框 */
-    border-radius: 12px;         /* 圆角 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影 */
-    padding: 1rem;               /* 内边距 */
-    transition: all 0.3s ease;   /* 平滑动画 */
-  }
+<span class="anchor" id="about-me"></span>
 
-  /* 鼠标悬停效果 */
-  .map-container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
+<div class="about-wrap">
+  <section class="about-hero">
+    <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
+    <p>Previously, as an undergraduate student at Harbin Institute of Technology (HIT), I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
+    <p>Currently, my research interests include: <a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="citations"></a></p>
+    <ul class="interest-list">
+      <li>AI for Chip Design</li>
+      <li>AI for Domain-Specific Code Generation</li>
+    </ul>
+    <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, please feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red">kcxain@gmail.com</a>.</span></p>
+  </section>
 
-  /* 移动端自动全宽 */
-  @media (max-width: 768px) {
-    .map-container {
-      width: 100%;
-      margin: 1rem 0;
-      border-radius: 0; /* 手机上去掉圆角以贴合屏幕边缘 */
-    }
-  }
-</style>
+  <section class="about-section">
+    <h2>News</h2>
+    <ul class="about-list plain-list news-list">
+      {% for item in site.data.news %}
+      <li>
+        <span class="news-date">[{{ item.date }}]</span>
+        <a href="{{ item.link_url }}">{{ item.title }}</a>
+        {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
 
-<span class='anchor' id='about-me'></span>
+  <section class="about-section">
+    <h2>Publications</h2>
+    <ul class="about-list pub-list">
+      {% for pub in site.data.publications %}
+      <li>
+        {% assign paper_link = nil %}
+        {% for link in pub.links %}
+          {% if link.type == "paper" and paper_link == nil %}
+            {% assign paper_link = link.url %}
+          {% endif %}
+        {% endfor %}
+        <span class="pub-title">
+          {% if paper_link %}
+            <a href="{{ paper_link }}">{{ pub.title }}</a>
+          {% else %}
+            {{ pub.title }}
+          {% endif %}
+        </span>
+        <p class="pub-authors">{{ pub.authors }}</p>
+        <p class="pub-meta">
+          <span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ pub.conf }}, {{ pub.year }}</span>
+          {% if pub.links and pub.links.size > 0 %}
+            <span class="pub-links">
+              <span class="sep">|</span>
+              {% for link in pub.links %}
+                {% unless forloop.first %}<span class="sep">|</span>{% endunless %}
+                <a class="{{ link.type }}" href="{{ link.url }}">[{{ link.name }}]</a>
+              {% endfor %}
+            </span>
+          {% endif %}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
 
-🤗 Hello! I'm a second-year Master's student at Institute of Computing Technology (ICT), Chinese Academy of Sciences (CAS), majoring in Computer Science, at Intelligent Processor Research Center (IPRC). I'm fortunately supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.
+  <section class="about-section">
+    <h2>Patents</h2>
+    <ul class="about-list plain-list">
+      <li>一种自验证式的探索预训练语言模型中明喻知识的方法及其系统
+        <p>张伟男，马龙轩，柯昌鑫，刘挺</p>
+      </li>
+    </ul>
+  </section>
 
-Previously, as an undergraduate student at Harbin Institute of Technology (HIT), I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on <strong>Dialogue System</strong> research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a> and <a href='https://xzy.kmust.edu.cn/info/1129/3556.htm'>Prof. Longxuan Ma</a>.
+  <section class="about-section">
+    <h2>Educations</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-main">
+          <div class="edu-school">Institute of Computing Technology</div>
+          <div class="edu-time">2024.08 - Present</div>
+          <div class="edu-degree">Master</div>
+        </div>
+        <div class="edu-icon">
+          <img class="ict-logo" src="/images/logos/ict_logo.png" alt="ICT logo">
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-main">
+          <div class="edu-school">Harbin Institute of Technology</div>
+          <div class="edu-time">2020.09 - 2024.06</div>
+          <div class="edu-degree">Undergraduate</div>
+        </div>
+        <div class="edu-icon">
+          <img src="/images/logos/hit_logo.png" alt="HIT logo">
+        </div>
+      </div>
+    </div>
+  </section>
 
-Currently, my research interests include <strong>AI for Chip Design</strong> and <strong>AI for Domain-Specific Code Generation</strong> <a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+  <section class="about-section">
+    <h2>Internships</h2>
+    <div class="edu-grid">
+      <div class="edu-card intern-card">
+        <div class="edu-main">
+          <div class="edu-school">Cambricon</div>
+          <div class="edu-time">2026.01 - Present</div>
+          <div class="edu-degree">AI Research Intern</div>
+        </div>
+        <div class="edu-icon">
+          <img class="cambricon-logo" src="/images/logos/cambricon_logo.png" alt="Cambricon logo">
+        </div>
+      </div>
+    </div>
+  </section>
 
-<span style="color:red;">If you are seeking any form of collaboration, communication or internship opportunity, please feel free to email me 📮<a href="mailto:kcxain@gmail.com" style="color:red">kcxain@gmail.com</a>.</span>
+  <section class="about-section">
+    <h2>Competitions</h2>
+    <ul class="about-list plain-list">
+      <li>
+        <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge (DSTC11)</a>
+        <p><strong>1st</strong> place in one subtask and <strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
+      </li>
+    </ul>
+  </section>
 
-# 🔥 News
-- *2025.09*: &nbsp;🎉 <a href='https://openreview.net/forum?id=bjUDrU4wPv'>QiMeng-MuPa</a> has been accepted to <strong>NeurIPS 2025</strong>.
+  <section class="about-section">
+    <h2>Honors</h2>
+    <ul class="about-list plain-list">
+      <li><span class="news-date">[2025.11]</span> Excellent Prize of the President Scholarship, ICT, CAS</li>
+    </ul>
+  </section>
 
-# 📝 Publications 
+  <section class="about-section">
+    <h2>Services</h2>
+    <ul class="about-list plain-list">
+      <li>Reviewer: EMNLP'23</li>
+    </ul>
+  </section>
 
-- <span class="conference-tag" data-conf="NeurIPS">NeurIPS'25</span><span class="paper-title">QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation</span>
-  - <span class="paper-authors">Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen</span><span class="pub-links"><a href="https://openreview.net/forum?id=bjUDrU4wPv" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/kcxain/mupa" target="_blank" class="pub-link code">Code</a>
-- <span class="conference-tag" data-conf="Preprint">Preprint</span><span class="paper-title">Large processor chip model</span>
-  - <span class="paper-authors">Kaiyan Chang, Mingzhi Chen, Yunji Chen, Zhirong Chen, Dongrui Fan, Junfeng Gong, Nan Guo, Yinhe Han, Qinfen Hao, Shuo Hou, Xuan Huang, Pengwei Jin, Changxin Ke, Cangyuan Li, Guangli Li, Huawei Li, Kuan Li, Naipeng Li, Shengwen Liang, Cheng Liu, Hongwei Liu, Jiahua Liu, Junliang Lv, Jianan Mu, Jin Qin, Bin Sun, Chenxi Wang, Duo Wang, Mingjun Wang, Ying Wang, Chenggang Wu, Peiyang Wu, Teng Wu, Xiao Xiao, Mengyao Xie, Chenwei Xiong, Ruiyuan Xu, Mingyu Yan, Xiaochun Ye, Kuai Yu, Rui Zhang, Shuoming Zhang, Jiacheng Zhao</span>
-  <span class="pub-links">
-    <a href="https://arxiv.org/abs/2506.02929" target="_blank" class="pub-link paper">Paper</a>
-  </span>
-- <span class="conference-tag" data-conf="Neurocomputing">Neurocomputing'25</span><span class="paper-title">Sycophancy in Vision-Language Models: A Systematic Analysis and an Inference-Time Mitigation Framework</span>
-  - <span class="paper-authors">Yunpu Zhao, Rui Zhang, Junbin Xiao, Changxin Ke, Ruibo Hou, Yifan Hao, Ling Li</span>
-  <span class="pub-links">
-    <a href="https://arxiv.org/abs/2408.11261" target="_blank" class="pub-link paper">Paper</a>
-  </span>
-- <span class="conference-tag" data-conf="COLING">COLING'24</span><span class="paper-title">A Self-verified Method for Exploring Simile Knowledge from Pre-trained Language Models</span>
-  - <span class="paper-authors">Longxuan Ma, Changxin Ke, Shuhan Zhou, Churui Sun, Weinan Zhang, Ting Liu</span>
-  <span class="pub-links">
-    <a href="https://aclanthology.org/2024.lrec-main.138/" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/kcxain/mlsr" target="_blank" class="pub-link code">Code</a>
-  </span>
-- <span class="conference-tag" data-conf="ACL">DSTC11</span><span class="paper-title">A Difference-aware Ensemble Method for Task-oriented Dialogue with Subjective Knowledge</span>
-  - <span class="paper-authors">Changxin Ke, Churui Sun, Longxuan Ma, Weinan Zhang, Ting Liu</span>
-  <span class="pub-links">
-    <a href="https://aclanthology.org/2023.dstc-1.24/" target="_blank" class="pub-link paper">Paper</a>
-  </span>
-- <span class="conference-tag" data-conf="ACL">ACL'23</span><span class="paper-title">I run as fast as a rabbit, can you? A Multilingual Simile Dialogue Dataset</span>
-  - <span class="paper-authors">Longxuan Ma, Weinan Zhang, Shuhan Zhou, Churui Sun, Changxin Ke, Ting Liu</span>
-  <span class="pub-links">
-    <a href="https://arxiv.org/abs/2306.05672" target="_blank" class="pub-link paper">Paper</a><span class="sep">|</span><a href="https://github.com/malongxuan/msd" target="_blank" class="pub-link code">Code</a>
-  </span>
-
-# 📖 Educations
-- *2024.08 - Now*, Master's student, Institute of Computing Technology, Beijing.
-- *2020.09 - 2024.06*, Undergraduate, Harbin Institute of Technology, Harbin.
-
-# ✊ Competitions
-- <strong>🏅1st</strong> place in one subtask and <strong>🥉3rd</strong> place overall at the 11th <a href='https://dstc11.dstc.community'>Dialog System Technology Challenge</a>, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.
-
-# 📄 Patents
-- 一种自验证式的探索预训练语言模型中明喻知识的方法及其系统
-  - 张伟男,马龙轩,柯昌鑫,刘挺
-
-# 😄 Services
-- Reviewer: EMNLP'23
-
-# Visitors
-<div class="map-container">
-  <script type="text/javascript" id="mapmyvisitors"
-    src="https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631">
-  </script>
+  <section class="about-section">
+    <h2>Visitors</h2>
+    <div class="map-container">
+      <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631"></script>
+    </div>
+  </section>
 </div>
-<!-- # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
-
-<!-- # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
-
-<!-- # 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
-
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
