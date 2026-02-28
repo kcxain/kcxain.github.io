@@ -59,6 +59,7 @@ redirect_from:
   background: rgba(184, 59, 94, 0.08);
   padding: 0.6rem 0.75rem;
   border-radius: 0;
+  text-align: center;
 }
 
 .about-section {
@@ -198,6 +199,10 @@ redirect_from:
   color: rgba(15, 107, 127, 0.88);
 }
 
+.pub-venue-slot {
+  display: inline;
+}
+
 .pub-venue-abbr {
   position: relative;
   cursor: pointer;
@@ -282,6 +287,12 @@ redirect_from:
 .pub-links a {
   font-weight: 400;
   text-decoration: none;
+}
+
+.pub-link-icon {
+  margin-right: 0.18rem;
+  font-size: 0.92em;
+  vertical-align: -0.02em;
 }
 
 .pub-links a:hover {
@@ -439,6 +450,25 @@ redirect_from:
     justify-content: flex-start;
   }
 
+  .pub-venue-abbr::after {
+    left: 0;
+    right: auto;
+    transform: translate(0, 4px);
+    min-width: 0;
+    max-width: min(420px, calc(100vw - 2rem));
+    text-align: left;
+  }
+
+  .pub-venue-abbr::before {
+    left: 0.9rem;
+    transform: rotate(45deg);
+  }
+
+  .pub-venue-abbr:hover::after,
+  .pub-venue-abbr.is-open::after {
+    transform: translate(0, 0);
+  }
+
 }
 </style>
 
@@ -498,13 +528,13 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="about-wrap">
   <section class="about-hero">
     <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
-    <p>Previously, as an undergraduate student at Harbin Institute of Technology (HIT), I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
+    <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
     <p>Currently, my research interests include: <a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="citations"></a></p>
     <ul class="interest-list">
       <li>AI for Chip Design</li>
       <li>AI for Domain-Specific Code Generation</li>
     </ul>
-    <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, please feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red">kcxain@gmail.com</a>.</span></p>
+    <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity<br>feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
   </section>
 
   <section class="about-section">
@@ -546,13 +576,27 @@ document.addEventListener("DOMContentLoaded", function () {
         </span>
         <p class="pub-authors">{{ pub.authors }}</p>
         <p class="pub-meta">
-          <span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ pub.conf }}, {{ pub.year }}</span>
+          <span class="pub-venue-slot"><span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ pub.conf }}, {{ pub.year }}</span></span>
           {% if pub.links and pub.links.size > 0 %}
+            <span class="sep">&nbsp;&nbsp;</span>
             <span class="pub-links">
-              <span class="sep">|</span>
               {% for link in pub.links %}
                 {% unless forloop.first %}<span class="sep">|</span>{% endunless %}
-                <a class="{{ link.type }}" href="{{ link.url }}">[{{ link.name }}]</a>
+                {% assign icon_class = "" %}
+                {% if link.type == "code" %}
+                  {% assign icon_class = "fab fa-github" %}
+                {% elsif link.type == "blog" %}
+                  {% if link.url contains "zhihu.com" %}
+                    {% assign icon_class = "fab fa-zhihu" %}
+                  {% elsif link.url contains "weixin.qq.com" %}
+                    {% assign icon_class = "fab fa-weixin" %}
+                  {% else %}
+                    {% assign icon_class = "far fa-newspaper" %}
+                  {% endif %}
+                {% elsif link.type == "paper" %}
+                  {% assign icon_class = "fas fa-file-alt" %}
+                {% endif %}
+                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
               {% endfor %}
             </span>
           {% endif %}
