@@ -388,13 +388,13 @@ redirect_from:
 .edu-time {
   color: var(--muted);
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   line-height: 1.35;
 }
 
 .edu-degree {
-  color: var(--muted);
-  font-weight: 500;
+  color: #3f4958;
+  font-weight: 560;
   font-size: 1.1rem;
   line-height: 1.35;
 }
@@ -621,8 +621,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="edu-card">
         <div class="edu-main">
           <div class="edu-school">Institute of Computing Technology</div>
-          <div class="edu-time">2024.08 - Present</div>
           <div class="edu-degree">Master</div>
+          <div class="edu-time">2024.08 - Present</div>
         </div>
         <div class="edu-icon">
           <img class="ict-logo" src="/images/logos/ict_logo.png" alt="ICT logo">
@@ -631,8 +631,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="edu-card">
         <div class="edu-main">
           <div class="edu-school">Harbin Institute of Technology</div>
-          <div class="edu-time">2020.09 - 2024.06</div>
           <div class="edu-degree">Undergraduate</div>
+          <div class="edu-time">2020.09 - 2024.06</div>
         </div>
         <div class="edu-icon">
           <img src="/images/logos/hit_logo.png" alt="HIT logo">
@@ -642,13 +642,13 @@ document.addEventListener("DOMContentLoaded", function () {
   </section>
 
   <section class="about-section">
-    <h2>Internships</h2>
+    <h2>Experience</h2>
     <div class="edu-grid">
       <div class="edu-card intern-card">
         <div class="edu-main">
           <div class="edu-school">Cambricon</div>
-          <div class="edu-time">2026.01 - Present</div>
           <div class="edu-degree">AI Research Intern</div>
+          <div class="edu-time">2026.01 - Present</div>
         </div>
         <div class="edu-icon">
           <img class="cambricon-logo" src="/images/logos/cambricon_logo.png" alt="Cambricon logo">
