@@ -2,7 +2,7 @@
   {
     "conf": "NeurIPS",
     "year": "2025",
-    "conf_full": "The Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025)",
+    "conf_full": "The Thirty-Ninth Annual Conference on Neural Information Processing Systems",
     "label": "NeurIPS'25",
     "title": "QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation",
     "authors": "Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen",
@@ -57,7 +57,7 @@
   {
     "conf": "COLING",
     "year": "2024",
-    "conf_full": "The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+    "conf_full": "The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation",
     "label": "COLING'24",
     "title": "A Self-verified Method for Exploring Simile Knowledge from Pre-trained Language Models",
     "authors": "Longxuan Ma, Changxin Ke, Shuhan Zhou, Churui Sun, Weinan Zhang, Ting Liu",
@@ -77,7 +77,7 @@
   {
     "conf": "DSTC",
     "year": "2023",
-    "conf_full": "The Eleventh Dialog System Technology Challenge (DSTC11)",
+    "conf_full": "The Eleventh Dialog System Technology Challenge",
     "label": "DSTC11",
     "title": "A Difference-aware Ensemble Method for Task-oriented Dialogue with Subjective Knowledge",
     "authors": "Changxin Ke, Churui Sun, Longxuan Ma, Weinan Zhang, Ting Liu",
@@ -97,7 +97,7 @@
   {
     "conf": "ACL Findings",
     "year": "2023",
-    "conf_full": "The 61st Annual Meeting of the Association for Computational Linguistics (ACL 2023)",
+    "conf_full": "The 61st Annual Meeting of the Association for Computational Linguistics",
     "label": "ACL'23",
     "title": "I run as fast as a rabbit, can you? A Multilingual Simile Dialogue Dataset",
     "authors": "Longxuan Ma, Weinan Zhang, Shuhan Zhou, Churui Sun, Changxin Ke, Ting Liu",

@@ -359,11 +359,6 @@ redirect_from:
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.vis-placeholder {
-  color: #6b7280;
-  font-size: 0.95rem;
-}
-
 .edu-grid {
   display: grid;
   gap: 0.72rem;
@@ -495,6 +490,23 @@ redirect_from:
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  const scholarBadge = document.querySelector(".scholar-badge");
+  if (scholarBadge) {
+    const fallback = scholarBadge.parentNode.querySelector(".scholar-fallback");
+    const scholarTimer = setTimeout(function () {
+      if (scholarBadge.complete) return;
+      scholarBadge.src = "";
+      scholarBadge.style.display = "none";
+      if (fallback) fallback.style.display = "inline";
+    }, 2500);
+    scholarBadge.addEventListener("load", function () {
+      clearTimeout(scholarTimer);
+    });
+    scholarBadge.addEventListener("error", function () {
+      clearTimeout(scholarTimer);
+    });
+  }
+
   const venueNodes = document.querySelectorAll(".pub-venue-abbr");
   venueNodes.forEach(function (node) {
     node.setAttribute("tabindex", "0");
@@ -540,28 +552,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const visitorsBox = document.getElementById("visitors-box");
   if (visitorsBox) {
+    const visitorsSection = visitorsBox.closest(".about-section");
     const mapUrl = "https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631";
-    const s = document.createElement("script");
-    s.id = "mapmyvisitors";
-    s.async = true;
-    s.src = mapUrl;
 
-    const failTimer = setTimeout(function () {
-      if (!document.getElementById("mapmyvisitors")) return;
-      visitorsBox.innerHTML = "<p class='vis-placeholder'>Visitor map is unavailable under current network conditions.</p>";
-    }, 6000);
-
-    s.onload = function () {
-      clearTimeout(failTimer);
-    };
-    s.onerror = function () {
-      clearTimeout(failTimer);
-      visitorsBox.innerHTML = "<p class='vis-placeholder'>Visitor map failed to load. Please retry later.</p>";
+    const hideVisitors = function () {
+      if (visitorsSection) {
+        visitorsSection.style.display = "none";
+      }
     };
 
-    visitorsBox.innerHTML = "";
-    visitorsBox.appendChild(s);
+    const loadMap = function () {
+      const s = document.createElement("script");
+      s.id = "mapmyvisitors";
+      s.async = true;
+      s.src = mapUrl;
+
+      const timer = setTimeout(function () {
+        if (s.parentNode) s.parentNode.removeChild(s);
+        hideVisitors();
+      }, 6000);
+
+      s.onload = function () {
+        clearTimeout(timer);
+      };
+      s.onerror = function () {
+        clearTimeout(timer);
+        hideVisitors();
+      };
+
+      visitorsBox.innerHTML = "";
+      visitorsBox.appendChild(s);
+    };
+
+    const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const probeTimer = setTimeout(function () {
+      if (controller) controller.abort();
+      hideVisitors();
+    }, 2500);
+
+    fetch(mapUrl, {
+      method: "GET",
+      mode: "no-cors",
+      cache: "no-store",
+      signal: controller ? controller.signal : undefined
+    })
+      .then(function () {
+        clearTimeout(probeTimer);
+        loadMap();
+      })
+      .catch(function () {
+        clearTimeout(probeTimer);
+        hideVisitors();
+      });
   }
+
 });
 </script>
 
@@ -716,7 +760,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2>Competitions</h2>
     <ul class="about-list plain-list">
       <li>
-        <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge (DSTC11)</a>
+        <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
         <p><strong>1st</strong> place in one subtask and <strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
       </li>
     </ul>
@@ -738,8 +782,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <section class="about-section">
     <h2>Visitors</h2>
-    <div class="map-container" id="visitors-box">
-      <p class="vis-placeholder">Loading visitor map when this section is in view...</p>
-    </div>
+    <div class="map-container" id="visitors-box"></div>
   </section>
+
 </div>
