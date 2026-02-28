@@ -62,6 +62,21 @@ redirect_from:
   text-align: center;
 }
 
+.scholar-link {
+  display: inline-block;
+  color: #4e5968;
+  font-weight: 600;
+}
+
+.scholar-badge {
+  vertical-align: middle;
+}
+
+.scholar-fallback {
+  display: none;
+  margin-left: 0.25rem;
+}
+
 .about-section {
   margin-top: 1.85rem;
 }
@@ -344,6 +359,11 @@ redirect_from:
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+.vis-placeholder {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
 .edu-grid {
   display: grid;
   gap: 0.72rem;
@@ -454,8 +474,9 @@ redirect_from:
     left: 0;
     right: auto;
     transform: translate(0, 4px);
-    min-width: 0;
-    max-width: min(420px, calc(100vw - 2rem));
+    min-width: min(14rem, 50vw) !important;
+    width: fit-content !important;
+    max-width: 50vw !important;
     text-align: left;
   }
 
@@ -474,10 +495,6 @@ redirect_from:
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".pub-authors").forEach(function (el) {
-    el.innerHTML = el.innerHTML.replace(/\bChangxin Ke\b/g, '<span class="me">Changxin Ke</span>');
-  });
-
   const venueNodes = document.querySelectorAll(".pub-venue-abbr");
   venueNodes.forEach(function (node) {
     node.setAttribute("tabindex", "0");
@@ -520,6 +537,31 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+
+  const visitorsBox = document.getElementById("visitors-box");
+  if (visitorsBox) {
+    const mapUrl = "https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631";
+    const s = document.createElement("script");
+    s.id = "mapmyvisitors";
+    s.async = true;
+    s.src = mapUrl;
+
+    const failTimer = setTimeout(function () {
+      if (!document.getElementById("mapmyvisitors")) return;
+      visitorsBox.innerHTML = "<p class='vis-placeholder'>Visitor map is unavailable under current network conditions.</p>";
+    }, 6000);
+
+    s.onload = function () {
+      clearTimeout(failTimer);
+    };
+    s.onerror = function () {
+      clearTimeout(failTimer);
+      visitorsBox.innerHTML = "<p class='vis-placeholder'>Visitor map failed to load. Please retry later.</p>";
+    };
+
+    visitorsBox.innerHTML = "";
+    visitorsBox.appendChild(s);
+  }
 });
 </script>
 
@@ -529,7 +571,20 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-hero">
     <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
     <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
-    <p>Currently, my research interests include: <a href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="citations"></a></p>
+    <p>Currently, my research interests include:
+      <a class="scholar-link" href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'>
+        <img
+          class="scholar-badge"
+          src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"
+          alt="Google Scholar citations"
+          loading="lazy"
+          decoding="async"
+          referrerpolicy="no-referrer"
+          onerror="this.style.display='none'; var f=this.parentNode.querySelector('.scholar-fallback'); if(f){f.style.display='inline';}"
+        >
+        <span class="scholar-fallback">Google Scholar Profile</span>
+      </a>
+    </p>
     <ul class="interest-list">
       <li>AI for Chip Design</li>
       <li>AI for Domain-Specific Code Generation</li>
@@ -574,7 +629,7 @@ document.addEventListener("DOMContentLoaded", function () {
             {{ pub.title }}
           {% endif %}
         </span>
-        <p class="pub-authors">{{ pub.authors }}</p>
+        <p class="pub-authors">{{ pub.authors | replace: "Changxin Ke", "<span class='me'>Changxin Ke</span>" }}</p>
         <p class="pub-meta">
           <span class="pub-venue-slot"><span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ pub.conf }}, {{ pub.year }}</span></span>
           {% if pub.links and pub.links.size > 0 %}
@@ -683,8 +738,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <section class="about-section">
     <h2>Visitors</h2>
-    <div class="map-container">
-      <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631"></script>
+    <div class="map-container" id="visitors-box">
+      <p class="vis-placeholder">Loading visitor map when this section is in view...</p>
     </div>
   </section>
 </div>
