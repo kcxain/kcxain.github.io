@@ -740,7 +740,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </section>
 
-  <section class="about-section">
+  <!-- <section class="about-section">
     <h2>Experience</h2>
     <div class="edu-grid">
       <div class="edu-card intern-card">
@@ -754,7 +754,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="about-section">
     <h2>Competitions</h2>
