@@ -759,7 +759,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2>Competitions</h2>
     <ul class="about-list plain-list">
       <li>
-        <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
+        <span class="news-date">[2023.03]</span> <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
         <p>🏅<strong>1st</strong> place in one subtask and 🥉<strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
       </li>
     </ul>
