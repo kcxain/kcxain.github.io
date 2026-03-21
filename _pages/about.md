@@ -59,7 +59,6 @@ redirect_from:
   background: rgba(184, 59, 94, 0.08);
   padding: 0.6rem 0.75rem;
   border-radius: 0;
-  text-align: center;
 }
 
 .scholar-link {
@@ -633,7 +632,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <li>AI for Chip Design</li>
       <li>AI for Domain-Specific Code Generation</li>
     </ul>
-    <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity<br>feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
+    <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
   </section>
 
   <section class="about-section">
@@ -740,7 +739,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </section>
 
-  <!-- <section class="about-section">
+  <section class="about-section">
     <h2>Experience</h2>
     <div class="edu-grid">
       <div class="edu-card intern-card">
@@ -754,14 +753,14 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <section class="about-section">
     <h2>Competitions</h2>
     <ul class="about-list plain-list">
       <li>
         <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
-        <p><strong>1st</strong> place in one subtask and <strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
+        <p>🏅<strong>1st</strong> place in one subtask and 🥉<strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
       </li>
     </ul>
   </section>
