@@ -717,7 +717,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% elsif link.type == "paper" %}
                   {% assign icon_class = "fas fa-file-alt" %}
                 {% endif %}
-                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" aria-hidden="true">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
+                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" alt="HF" aria-hidden="true">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
               {% endfor %}
             </span>
           {% endif %}
