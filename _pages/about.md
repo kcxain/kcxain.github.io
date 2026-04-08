@@ -105,8 +105,8 @@ redirect_from:
 
 .plain-list li {
   position: relative;
-  padding: 0 0 0.28rem 1rem;
-  margin-bottom: 0.62rem;
+  padding: 0 0 0.06rem 1rem;
+  margin-bottom: 0.15rem;
   background: transparent;
 }
 
@@ -124,6 +124,10 @@ redirect_from:
   height: 0.32rem;
   border-radius: 50%;
   background: rgba(15, 107, 127, 0.62);
+}
+
+.news-list {
+  font-size: 1rem;
 }
 
 .news-date {
@@ -319,6 +323,23 @@ redirect_from:
 
 .pub-links .code {
   color: rgba(184, 59, 94, 0.86);
+}
+
+.pub-links .models {
+  color: rgba(255, 152, 0, 0.9);
+}
+
+img.hf-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.12em;
+  margin-right: 0.18rem;
+  display: inline-block;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  opacity: 1 !important;
 }
 
 .pub-links .sep {
@@ -683,6 +704,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% assign icon_class = "" %}
                 {% if link.type == "code" %}
                   {% assign icon_class = "fab fa-github" %}
+                {% elsif link.type == "models" %}
+                  {% assign icon_class = "hf-icon" %}
                 {% elsif link.type == "blog" %}
                   {% if link.url contains "zhihu.com" %}
                     {% assign icon_class = "fab fa-zhihu" %}
@@ -694,7 +717,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% elsif link.type == "paper" %}
                   {% assign icon_class = "fas fa-file-alt" %}
                 {% endif %}
-                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
+                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" aria-hidden="true">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
               {% endfor %}
             </span>
           {% endif %}

@@ -1,5 +1,30 @@
 [
   {
+    "conf": "ACL",
+    "year": "2026",
+    "conf_full": "The 64th Annual Meeting of the Association for Computational Linguistics",
+    "label": "ACL'26",
+    "title": "QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization",
+    "authors": "Changxin Ke, Rui Zhang, Jiaming Guo, Yuanbo Wen, Li Ding, Shuo Wang, Xuyuan Zhu, Xiong Peng, Di Huang, Zidong Du, Xing Hu, Qi Guo, Yunji Chen",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://arxiv.org/pdf/2604.05963",
+        "type": "paper"
+      },
+      {
+        "name": "Code",
+        "url": "https://github.com/kcxain/QiMeng-PRepair",
+        "type": "code"
+      },
+      {
+        "name": "Models",
+        "url": "https://huggingface.co/collections/kcxain/qimeng-prepair",
+        "type": "models"
+      }
+    ]
+  },
+  {
     "conf": "NeurIPS",
     "year": "2025",
     "conf_full": "The Thirty-Ninth Annual Conference on Neural Information Processing Systems",
@@ -16,6 +41,11 @@
         "name": "Code",
         "url": "https://github.com/kcxain/mupa",
         "type": "code"
+      },
+      {
+        "name": "Models",
+        "url": "https://huggingface.co/collections/kcxain/qimeng-mupa",
+        "type": "models"
       },
       {
         "name": "Blog",
