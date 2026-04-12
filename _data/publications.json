@@ -21,6 +21,11 @@
         "name": "Models",
         "url": "https://huggingface.co/collections/kcxain/qimeng-prepair",
         "type": "models"
+      },
+      {
+        "name": "Blog",
+        "url": "https://mp.weixin.qq.com/s/XzCUIOiZH88GscbgiJcG-g",
+        "type": "blog"
       }
     ]
   },
