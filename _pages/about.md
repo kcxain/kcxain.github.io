@@ -4,6 +4,7 @@ title: ""
 excerpt: ""
 author_profile: true
 body_class: home
+analytics: false
 redirect_from:
   - /about/
   - /about.html
