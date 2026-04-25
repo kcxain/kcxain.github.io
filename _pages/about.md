@@ -791,7 +791,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-section">
     <h2>Honors</h2>
     <ul class="about-list plain-list">
-      <li><span class="news-date">[2025.11]</span> Excellent Prize of the President Scholarship, ICT, CAS</li>
+      <li><span class="news-date">[2025.11]</span> Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</li>
     </ul>
   </section>
 
