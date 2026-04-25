@@ -64,9 +64,9 @@
   vertical-align: middle;
 }
 
-.scholar-fallback {
-  display: none;
-  margin-left: 0.25rem;
+.scholar-line {
+  margin-top: 0.5rem !important;
+  text-align: center;
 }
 
 .about-section {
@@ -129,7 +129,8 @@
   grid-template-columns: 4.35rem minmax(0, 1fr);
   column-gap: 0.35rem;
   align-items: baseline;
-  padding: 0.08rem 0 0.08rem 0;
+  padding: 0.08rem 0 0.08rem 0 !important;
+  margin-left: 0;
 }
 
 .plain-list li:has(> .time-tag)::before,
@@ -171,6 +172,8 @@
   position: relative;
   padding-left: 1rem;
   margin: 0.2rem 0;
+  color: rgba(15, 107, 127, 0.92);
+  font-weight: 600;
 }
 
 .interest-list li::before {
@@ -178,10 +181,10 @@
   position: absolute;
   left: 0;
   top: 0.55em;
-  width: 0.38rem;
-  height: 0.38rem;
-  border: 1.5px solid rgba(15, 107, 127, 0.8);
+  width: 0.32rem;
+  height: 0.32rem;
   border-radius: 50%;
+  background: rgba(15, 107, 127, 0.45);
 }
 
 .pub-list li {
@@ -241,6 +244,7 @@
 
 .pub-venue {
   color: rgba(15, 107, 127, 0.88);
+  font-weight: 700;
 }
 
 .pub-venue-slot {
@@ -453,17 +457,17 @@ img.hf-icon {
   justify-content: space-between;
   min-width: 0;
   gap: 1rem;
-  padding: 0.68rem 0.9rem;
-  min-height: 86px;
+  padding: 0.52rem 0.82rem;
+  min-height: 74px;
   border-radius: 10px;
 }
 
 .edu-card:first-child {
-  background: linear-gradient(130deg, rgba(15, 107, 127, 0.08), rgba(15, 107, 127, 0.03));
+  background: rgba(128, 128, 128, 0.08);
 }
 
 .edu-card:last-child {
-  background: linear-gradient(130deg, rgba(184, 59, 94, 0.08), rgba(184, 59, 94, 0.03));
+  background: rgba(128, 128, 128, 0.08);
 }
 
 .edu-card.intern-card {
@@ -494,7 +498,7 @@ img.hf-icon {
 }
 
 .edu-degree {
-  color: rgba(15, 107, 127, 0.92);
+  color: #526071;
   font-weight: 680;
   font-size: 1rem;
   line-height: 1.28;
@@ -662,6 +666,7 @@ img.hf-icon {
   }
 
   .edu-icon {
+    flex: none;
     width: 100%;
     justify-content: flex-start;
   }

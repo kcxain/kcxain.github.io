@@ -12,23 +12,6 @@ redirect_from:
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const scholarBadge = document.querySelector(".scholar-badge");
-  if (scholarBadge) {
-    const fallback = scholarBadge.parentNode.querySelector(".scholar-fallback");
-    const scholarTimer = setTimeout(function () {
-      if (scholarBadge.complete) return;
-      scholarBadge.src = "";
-      scholarBadge.style.display = "none";
-      if (fallback) fallback.style.display = "inline";
-    }, 2500);
-    scholarBadge.addEventListener("load", function () {
-      clearTimeout(scholarTimer);
-    });
-    scholarBadge.addEventListener("error", function () {
-      clearTimeout(scholarTimer);
-    });
-  }
-
   const venueNodes = document.querySelectorAll(".pub-venue-abbr");
   venueNodes.forEach(function (node) {
     node.setAttribute("tabindex", "0");
@@ -137,7 +120,12 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-hero">
     <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
     <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
-    <p>Currently, my research interests include:
+    <p>Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
+    <ul class="interest-list">
+      <li>AI for Chip Design</li>
+      <li>AI for Domain-Specific Code Generation</li>
+    </ul>
+    <p class="scholar-line">
       <a class="scholar-link" href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'>
         <img
           class="scholar-badge"
@@ -146,15 +134,9 @@ document.addEventListener("DOMContentLoaded", function () {
           loading="lazy"
           decoding="async"
           referrerpolicy="no-referrer"
-          onerror="this.style.display='none'; var f=this.parentNode.querySelector('.scholar-fallback'); if(f){f.style.display='inline';}"
         >
-        <span class="scholar-fallback">Google Scholar Profile</span>
       </a>
     </p>
-    <ul class="interest-list">
-      <li>AI for Chip Design</li>
-      <li>AI for Domain-Specific Code Generation</li>
-    </ul>
     <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
   </section>
 
