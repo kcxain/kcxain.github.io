@@ -4,7 +4,6 @@ title: ""
 excerpt: ""
 author_profile: true
 body_class: home
-analytics: false
 redirect_from:
   - /about/
   - /about.html
@@ -129,7 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
         loading="lazy"
         decoding="async"
         referrerpolicy="no-referrer"
+        onerror="this.style.display='none'; var f=this.parentNode.querySelector('.scholar-fallback'); if(f){f.style.display='inline';}"
       >
+      <span class="scholar-fallback">Google Scholar Profile</span>
     </a> Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
     <ul class="interest-list">
       <li>AI for Chip Design</li>
