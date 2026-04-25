@@ -89,26 +89,19 @@ document.addEventListener("DOMContentLoaded", function () {
       visitorsBox.appendChild(s);
     };
 
-    const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
-    const probeTimer = setTimeout(function () {
-      if (controller) controller.abort();
-      hideVisitors();
-    }, 2500);
+    const scheduleMapLoad = function () {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadMap, { timeout: 2000 });
+      } else {
+        setTimeout(loadMap, 0);
+      }
+    };
 
-    fetch(mapUrl, {
-      method: "GET",
-      mode: "no-cors",
-      cache: "no-store",
-      signal: controller ? controller.signal : undefined
-    })
-      .then(function () {
-        clearTimeout(probeTimer);
-        loadMap();
-      })
-      .catch(function () {
-        clearTimeout(probeTimer);
-        hideVisitors();
-      });
+    if (document.readyState === "complete") {
+      scheduleMapLoad();
+    } else {
+      window.addEventListener("load", scheduleMapLoad, { once: true });
+    }
   }
 
 });
@@ -120,23 +113,20 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-hero">
     <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
     <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
-    <p>Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
+    <p><a class="scholar-link" href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'>
+      <img
+        class="scholar-badge"
+        src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"
+        alt="Google Scholar citations"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+      >
+    </a> Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
     <ul class="interest-list">
       <li>AI for Chip Design</li>
       <li>AI for Domain-Specific Code Generation</li>
     </ul>
-    <p class="scholar-line">
-      <a class="scholar-link" href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'>
-        <img
-          class="scholar-badge"
-          src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"
-          alt="Google Scholar citations"
-          loading="lazy"
-          decoding="async"
-          referrerpolicy="no-referrer"
-        >
-      </a>
-    </p>
     <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
   </section>
 
@@ -150,17 +140,14 @@ document.addEventListener("DOMContentLoaded", function () {
         {% elsif item.content %}
           {{ item.content | markdownify | remove: '<p>' | remove: '</p>' }}
         {% else %}
-          <span class="time-tag">{{ item.date }}</span>
-          <span class="time-body">
-            <a href="{{ item.link_url }}">{{ item.title }}</a>
-            {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
-          </span>
+          <span class="news-date">[{{ item.date }}]</span>
+          <a href="{{ item.link_url }}">{{ item.title }}</a>
+          {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
         {% endif %}
       </li>
       {% endfor %}
     </ul>
   </section>
-
   <section class="about-section">
     <h2>Publications</h2>
     <ul class="about-list pub-list">
@@ -203,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% elsif link.type == "paper" %}
                   {% assign icon_class = "fas fa-file-alt" %}
                 {% endif %}
-                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" alt="HF" aria-hidden="true">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
+                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" width="95" height="88" alt="HF" aria-hidden="true" loading="lazy" decoding="async">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
               {% endfor %}
             </span>
           {% endif %}
@@ -233,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="edu-degree">Master</div>
         </div>
         <div class="edu-icon">
-          <img class="ict-logo" src="/images/logos/ict_logo.png" alt="ICT logo">
+          <img class="ict-logo" src="/images/logos/ict_logo.png" width="569" height="86" alt="ICT logo" loading="lazy" decoding="async">
         </div>
       </div>
       </div>
@@ -245,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="edu-degree">Undergraduate</div>
         </div>
         <div class="edu-icon">
-          <img src="/images/logos/hit_logo.png" alt="HIT logo">
+          <img src="/images/logos/hit_logo.png" width="1280" height="1164" alt="HIT logo" loading="lazy" decoding="async">
         </div>
       </div>
       </div>
@@ -263,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="edu-degree">AI Research Intern</div>
         </div>
         <div class="edu-icon">
-          <img class="cambricon-logo" src="/images/logos/cambricon_logo.png" alt="Cambricon logo">
+          <img class="cambricon-logo" src="/images/logos/cambricon_logo.png" width="1482" height="508" alt="Cambricon logo" loading="lazy" decoding="async">
         </div>
       </div>
       </div>
@@ -274,11 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2>Competitions</h2>
     <ul class="about-list plain-list">
       <li>
-        <span class="time-tag">2023.03</span>
-        <span class="time-body">
-          <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
-          <p>🏅<strong>1st</strong> place in one subtask and 🥉<strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
-        </span>
+        <span class="news-date">[2023.03]</span> <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
+        <p>🏅<strong>1st</strong> place in one subtask and 🥉<strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
       </li>
     </ul>
   </section>
@@ -286,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-section">
     <h2>Honors</h2>
     <ul class="about-list plain-list">
-      <li><span class="time-tag">2025.11</span><span class="time-body">Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</span></li>
+      <li><span class="news-date">[2025.11]</span> Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</li>
     </ul>
   </section>
 

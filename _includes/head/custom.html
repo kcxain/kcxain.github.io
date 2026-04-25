@@ -7,8 +7,13 @@
 <meta name="msapplication-TileImage" content="images/mstile-144x144.png?v=M44lzPylqQ">
 <meta name="msapplication-config" content="images/browserconfig.xml?v=M44lzPylqQ">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="assets/css/academicons.css" />
+<link rel="preconnect" href="https://kkcx.oss-cn-beijing.aliyuncs.com" crossorigin>
+<link rel="preconnect" href="https://img.shields.io" crossorigin>
+<link rel="dns-prefetch" href="//raw.githubusercontent.com">
+<link rel="dns-prefetch" href="//mapmyvisitors.com">
+<link rel="stylesheet" href="assets/css/academicons.min.css" />
 
+{% if page.mathjax or layout.mathjax %}
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -19,5 +24,6 @@
   });
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+{% endif %}
 
 <!-- end custom head snippets -->
