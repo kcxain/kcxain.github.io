@@ -66,6 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
+    const stopPendingLoads = function () {
+      if (typeof window.stop === "function" && document.readyState !== "complete") {
+        window.stop();
+      }
+    };
+
     const loadMap = function () {
       const s = document.createElement("script");
       s.id = "mapmyvisitors";
@@ -75,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const timer = setTimeout(function () {
         if (s.parentNode) s.parentNode.removeChild(s);
         hideVisitors();
+        stopPendingLoads();
       }, 6000);
 
       s.onload = function () {
@@ -83,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
       s.onerror = function () {
         clearTimeout(timer);
         hideVisitors();
+        stopPendingLoads();
       };
 
       visitorsBox.innerHTML = "";
@@ -93,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const probeTimer = setTimeout(function () {
       if (controller) controller.abort();
       hideVisitors();
+      stopPendingLoads();
     }, 2500);
 
     fetch(mapUrl, {
@@ -108,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(function () {
         clearTimeout(probeTimer);
         hideVisitors();
+        stopPendingLoads();
       });
   }
 
