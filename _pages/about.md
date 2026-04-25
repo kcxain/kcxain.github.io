@@ -66,29 +66,49 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
-    const s = document.createElement("script");
-    s.id = "mapmyvisitors";
-    s.async = true;
+    const loadMap = function () {
+      const s = document.createElement("script");
+      s.id = "mapmyvisitors";
+      s.async = true;
+      s.src = mapUrl;
 
-    const timer = setTimeout(function () {
-      s.onerror = null;
-      s.onload = null;
-      s.src = "";
-      if (s.parentNode) s.parentNode.removeChild(s);
+      const timer = setTimeout(function () {
+        if (s.parentNode) s.parentNode.removeChild(s);
+        hideVisitors();
+      }, 6000);
+
+      s.onload = function () {
+        clearTimeout(timer);
+      };
+      s.onerror = function () {
+        clearTimeout(timer);
+        hideVisitors();
+      };
+
+      visitorsBox.innerHTML = "";
+      visitorsBox.appendChild(s);
+    };
+
+    const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const probeTimer = setTimeout(function () {
+      if (controller) controller.abort();
       hideVisitors();
     }, 2500);
 
-    s.onload = function () {
-      clearTimeout(timer);
-    };
-    s.onerror = function () {
-      clearTimeout(timer);
-      hideVisitors();
-    };
-
-    visitorsBox.innerHTML = "";
-    visitorsBox.appendChild(s);
-    s.src = mapUrl;
+    fetch(mapUrl, {
+      method: "GET",
+      mode: "no-cors",
+      cache: "no-store",
+      signal: controller ? controller.signal : undefined
+    })
+      .then(function () {
+        clearTimeout(probeTimer);
+        loadMap();
+      })
+      .catch(function () {
+        clearTimeout(probeTimer);
+        hideVisitors();
+      });
   }
 
 });
