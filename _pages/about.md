@@ -89,19 +89,26 @@ document.addEventListener("DOMContentLoaded", function () {
       visitorsBox.appendChild(s);
     };
 
-    const scheduleMapLoad = function () {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(loadMap, { timeout: 2000 });
-      } else {
-        setTimeout(loadMap, 0);
-      }
-    };
+    const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const probeTimer = setTimeout(function () {
+      if (controller) controller.abort();
+      hideVisitors();
+    }, 2500);
 
-    if (document.readyState === "complete") {
-      scheduleMapLoad();
-    } else {
-      window.addEventListener("load", scheduleMapLoad, { once: true });
-    }
+    fetch(mapUrl, {
+      method: "GET",
+      mode: "no-cors",
+      cache: "no-store",
+      signal: controller ? controller.signal : undefined
+    })
+      .then(function () {
+        clearTimeout(probeTimer);
+        loadMap();
+      })
+      .catch(function () {
+        clearTimeout(probeTimer);
+        hideVisitors();
+      });
   }
 
 });
