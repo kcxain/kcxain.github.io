@@ -3,52 +3,41 @@
    ========================================================================== */
 
 $(document).ready(function(){
-   // Sticky footer
-  var bumpIt = function() {
-      $("body").css("margin-bottom", $(".page__footer").outerHeight(true));
-    },
-    didResize = false;
-
-  bumpIt();
-
-  $(window).resize(function() {
-    didResize = true;
-  });
-  setInterval(function() {
-    if (didResize) {
-      didResize = false;
-      bumpIt();
-    }
-  }, 250);
   // FitVids init
   $("#main").fitVids();
 
-  // init sticky sidebar
-  $(".sticky").Stickyfill();
+  var wideSidebar = window.matchMedia ? window.matchMedia("(min-width: 926px)") : null;
+  var stickyIsActive = false;
 
   var stickySideBar = function(){
-    var show = $(".author__urls-wrapper button").length === 0 ? $(window).width() > 925 : !$(".author__urls-wrapper button").is(":visible");
-    // console.log("has button: " + $(".author__urls-wrapper button").length === 0);
-    // console.log("Window Width: " + windowWidth);
-    // console.log("show: " + show);
-    //old code was if($(window).width() > 1024)
+    var show = $(".author__urls-wrapper button").length === 0 ? (wideSidebar ? wideSidebar.matches : $(window).width() > 925) : !$(".author__urls-wrapper button").is(":visible");
     if (show) {
-      // fix
-      Stickyfill.rebuild();
-      Stickyfill.init();
+      if (!stickyIsActive) {
+        $(".sticky").Stickyfill();
+        Stickyfill.init();
+        stickyIsActive = true;
+      } else {
+        Stickyfill.rebuild();
+      }
       $(".author__urls").show();
     } else {
-      // unfix
-      Stickyfill.stop();
+      if (stickyIsActive) {
+        Stickyfill.stop();
+        stickyIsActive = false;
+      }
       $(".author__urls").hide();
     }
   };
 
   stickySideBar();
 
-  $(window).resize(function(){
-    stickySideBar();
-  });
+  if (wideSidebar) {
+    if (wideSidebar.addEventListener) {
+      wideSidebar.addEventListener("change", stickySideBar);
+    } else if (wideSidebar.addListener) {
+      wideSidebar.addListener(stickySideBar);
+    }
+  }
 
   // Follow menu drop down
 
