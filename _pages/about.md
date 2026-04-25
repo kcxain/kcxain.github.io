@@ -130,21 +130,10 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-hero">
     <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
     <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
-    <p><a class="scholar-link" href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'>
-      <img
-        class="scholar-badge"
-        src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"
-        alt="Google Scholar citations"
-        loading="lazy"
-        decoding="async"
-        referrerpolicy="no-referrer"
-        onerror="this.style.display='none'; var f=this.parentNode.querySelector('.scholar-fallback'); if(f){f.style.display='inline';}"
-      >
-      <span class="scholar-fallback">Google Scholar Profile</span>
-    </a> Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
+    <p>Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
     <ul class="interest-list">
-      <li>AI for Chip Design</li>
-      <li>AI for Domain-Specific Code Generation</li>
+      <li><strong>AI for Chip Design</strong></li>
+      <li><strong>AI for Domain-Specific Code Generation</strong></li>
     </ul>
     <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
   </section>
@@ -168,7 +157,18 @@ document.addEventListener("DOMContentLoaded", function () {
     </ul>
   </section>
   <section class="about-section">
-    <h2>Publications</h2>
+    <h2>Publications <a class="scholar-link heading-scholar-link" href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'>
+      <img
+        class="scholar-badge"
+        src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"
+        alt="Google Scholar citations"
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+        onerror="this.style.display='none'; var f=this.parentNode.querySelector('.scholar-fallback'); if(f){f.style.display='inline';}"
+      >
+      <span class="scholar-fallback">Google Scholar Profile</span>
+    </a></h2>
     <ul class="about-list pub-list">
       {% for pub in site.data.publications %}
       <li>

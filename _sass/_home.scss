@@ -74,6 +74,15 @@
   text-align: center;
 }
 
+.heading-scholar-link {
+  margin-left: 0.45rem;
+  vertical-align: middle;
+}
+
+.heading-scholar-link .scholar-fallback {
+  font-size: 0.95rem;
+}
+
 .about-section {
   margin-top: 1.85rem;
 }
@@ -143,8 +152,6 @@
   position: relative;
   padding-left: 1rem;
   margin: 0.2rem 0;
-  color: rgba(15, 107, 127, 0.92);
-  font-weight: 600;
 }
 
 .interest-list li::before {
@@ -431,18 +438,19 @@ img.hf-icon {
   padding: 0.52rem 0.82rem;
   min-height: 74px;
   border-radius: 10px;
+  border: 1px solid rgba(18, 24, 32, 0.08);
 }
 
 .cv-timeline .cv-row:nth-child(1) .edu-card {
-  background: rgba(128, 128, 128, 0.08);
+  background: rgba(15, 107, 127, 0.038);
 }
 
 .cv-timeline .cv-row:nth-child(2) .edu-card {
-  background: rgba(128, 128, 128, 0.08);
+  background: rgba(15, 107, 127, 0.038);
 }
 
-.edu-card.intern-card {
-  background: rgba(128, 128, 128, 0.08);
+.cv-timeline .cv-row .edu-card.intern-card {
+  background: rgba(142, 91, 108, 0.055);
 }
 
 .edu-main {
