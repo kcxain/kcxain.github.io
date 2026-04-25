@@ -168,9 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
         {% elsif item.content %}
           {{ item.content | markdownify | remove: '<p>' | remove: '</p>' }}
         {% else %}
-          <span class="news-date">[{{ item.date }}]</span>
-          <a href="{{ item.link_url }}">{{ item.title }}</a>
-          {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
+          <span class="time-tag">{{ item.date }}</span>
+          <span class="time-body">
+            <a href="{{ item.link_url }}">{{ item.title }}</a>
+            {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
+          </span>
         {% endif %}
       </li>
       {% endfor %}
@@ -239,43 +241,49 @@ document.addEventListener("DOMContentLoaded", function () {
   </section>
 
   <section class="about-section">
-    <h2>Educations</h2>
-    <div class="edu-grid">
-      <div class="edu-card">
+    <h2>Education</h2>
+    <div class="cv-timeline">
+      <div class="cv-row">
+        <div class="cv-time">2024.08 - Present</div>
+        <div class="edu-card">
         <div class="edu-main">
           <div class="edu-school">Institute of Computing Technology</div>
           <div class="edu-degree">Master</div>
-          <div class="edu-time">2024.08 - Present</div>
         </div>
         <div class="edu-icon">
           <img class="ict-logo" src="/images/logos/ict_logo.png" alt="ICT logo">
         </div>
       </div>
-      <div class="edu-card">
+      </div>
+      <div class="cv-row">
+        <div class="cv-time">2020.09 - 2024.06</div>
+        <div class="edu-card">
         <div class="edu-main">
           <div class="edu-school">Harbin Institute of Technology</div>
           <div class="edu-degree">Undergraduate</div>
-          <div class="edu-time">2020.09 - 2024.06</div>
         </div>
         <div class="edu-icon">
           <img src="/images/logos/hit_logo.png" alt="HIT logo">
         </div>
+      </div>
       </div>
     </div>
   </section>
 
   <section class="about-section">
     <h2>Experience</h2>
-    <div class="edu-grid">
-      <div class="edu-card intern-card">
+    <div class="cv-timeline">
+      <div class="cv-row">
+        <div class="cv-time">2026.01 - Present</div>
+        <div class="edu-card intern-card">
         <div class="edu-main">
           <div class="edu-school">Cambricon</div>
           <div class="edu-degree">AI Research Intern</div>
-          <div class="edu-time">2026.01 - Present</div>
         </div>
         <div class="edu-icon">
           <img class="cambricon-logo" src="/images/logos/cambricon_logo.png" alt="Cambricon logo">
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -284,8 +292,11 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2>Competitions</h2>
     <ul class="about-list plain-list">
       <li>
-        <span class="news-date">[2023.03]</span> <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
-        <p>🏅<strong>1st</strong> place in one subtask and 🥉<strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
+        <span class="time-tag">2023.03</span>
+        <span class="time-body">
+          <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
+          <p>🏅<strong>1st</strong> place in one subtask and 🥉<strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
+        </span>
       </li>
     </ul>
   </section>
@@ -293,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-section">
     <h2>Honors</h2>
     <ul class="about-list plain-list">
-      <li><span class="news-date">[2025.11]</span> Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</li>
+      <li><span class="time-tag">2025.11</span><span class="time-body">Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</span></li>
     </ul>
   </section>
 
