@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <p>Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
     <ul class="interest-list">
       <li><strong>AI for Chip Design</strong></li>
-      <li><strong>AI for Domain-Specific Code Generation</strong></li>
+      <li><strong>AI for System</strong></li>
     </ul>
     <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
   </section>
