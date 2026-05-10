@@ -21,8 +21,21 @@
 
 .about-wrap {
   color: var(--ink);
-  font-family: Charter, "Iowan Old Style", "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", STSong, SimSun, serif;
-  font-size: 1.1rem;
+  font-family:
+    Charter,
+    "Iowan Old Style",
+    "Source Serif 4",
+    "Source Serif Pro",
+    Georgia,
+    "Times New Roman",
+    "Noto Serif CJK SC",
+    "Source Han Serif SC",
+    "Noto Serif SC",
+    "Songti SC",
+    STSong,
+    SimSun,
+    serif;
+  font-size: 1.14rem;
   line-height: 1.65;
 }
 
@@ -38,7 +51,7 @@
   background:
     linear-gradient(130deg, rgba(15, 107, 127, 0.05), rgba(184, 59, 94, 0.05)),
     var(--surface);
-  font-size: 1.13rem;
+  font-size: 1.18rem;
   padding: 1.2rem 1.1rem;
   margin-bottom: 1.2rem;
   border-radius: 0;
@@ -51,7 +64,7 @@
 
 .about-contact {
   background: rgba(184, 59, 94, 0.08);
-  font-size: 1rem;
+  font-size: 1.04rem;
   padding: 0.6rem 0.75rem;
   border-radius: 0;
 }
@@ -82,7 +95,7 @@
 }
 
 .heading-scholar-link .scholar-fallback {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 .about-section {
@@ -91,7 +104,7 @@
 
 .about-section h2 {
   margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 640;
   color: #4b5563;
   border-bottom: none !important;
@@ -136,7 +149,7 @@
 }
 
 .news-list {
-  font-size: 1rem;
+  font-size: 1.04rem;
 }
 
 .news-date {
@@ -198,7 +211,7 @@
 .pub-title {
   display: block;
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.14rem;
   font-weight: 700;
   margin-bottom: 0.12rem;
   line-height: 1.34;
@@ -217,7 +230,7 @@
   font-family: inherit;
   margin: 0.06rem 0 0;
   color: #4e5968;
-  font-size: 0.95rem !important;
+  font-size: 0.99rem !important;
   font-weight: 550;
   line-height: 1.45;
 }
@@ -294,7 +307,7 @@
 .pub-authors {
   font-family: inherit;
   color: #4e5968;
-  font-size: 0.95rem !important;
+  font-size: 0.99rem !important;
   font-weight: 500;
   line-height: 1.45;
   margin: 0.02rem 0 0;
@@ -359,7 +372,7 @@ img.hf-icon {
 .meta-grid div {
   padding: 0.55rem 0.7rem;
   background: rgba(255, 255, 255, 0.55);
-  font-size: 0.95rem;
+  font-size: 0.99rem;
 }
 
 .meta-grid strong {
@@ -392,7 +405,7 @@ img.hf-icon {
   position: relative;
   padding: 0.52rem 0.9rem 0 0;
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 1rem;
   font-weight: 560;
   line-height: 1.35;
   text-align: right;
@@ -465,7 +478,7 @@ img.hf-icon {
 .edu-school {
   color: var(--ink);
   font-weight: 720;
-  font-size: 1.12rem;
+  font-size: 1.16rem;
   line-height: 1.28;
   margin-bottom: 0;
   overflow-wrap: break-word;
@@ -474,14 +487,14 @@ img.hf-icon {
 .edu-time {
   color: var(--muted);
   font-weight: 400;
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   line-height: 1.35;
 }
 
 .edu-degree {
   color: #526071;
   font-weight: 680;
-  font-size: 1rem;
+  font-size: 1.04rem;
   line-height: 1.28;
   overflow-wrap: break-word;
 }
@@ -563,11 +576,11 @@ img.hf-icon {
   }
 
   .edu-school {
-    font-size: 1rem;
+    font-size: 1.04rem;
   }
 
   .edu-degree {
-    font-size: 0.94rem;
+    font-size: 0.98rem;
   }
 
   .edu-icon img {
