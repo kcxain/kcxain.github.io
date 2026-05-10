@@ -227,6 +227,7 @@
     border: 0;
     background: transparent;
     box-shadow: none;
+    text-align: center;
   }
 
   &:before {
@@ -287,13 +288,19 @@
   }
 }
 
+.author__urls .author__icon-item {
+  display: inline-block;
+  margin: 0 0.05rem 0.18rem;
+  vertical-align: middle;
+}
+
 .author__urls .author__icon-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.05rem;
   height: 2.05rem;
-  margin: 0 auto 0.25rem;
+  margin: 0;
   padding: 0;
   color: inherit;
   font-size: 1.28rem;

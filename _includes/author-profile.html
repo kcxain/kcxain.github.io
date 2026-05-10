@@ -37,10 +37,6 @@
             {% if author.uri %}
             <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
             {% endif %}
-            {% if author.email %}
-            <li><a class="author__icon-link" href="mailto:{{ author.email }}" aria-label="Email" title="Email"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
-            </li>
-            {% endif %}
             {% if author.keybase %}
             <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i>
                     Keybase</a></li>
@@ -86,10 +82,10 @@
                         aria-hidden="true"></i> Bitbucket</a></li>
             {% endif %}
             {% if author.github %}
-            <li><a class="author__icon-link" href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a></li>
+            <li class="author__icon-item"><a class="author__icon-link" href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a></li>
             {% endif %}
             {% if author.zhihu %}
-            <li><a class="author__icon-link" href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu"><i class="fab fa-fw fa-zhihu"
+            <li class="author__icon-item"><a class="author__icon-link" href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu"><i class="fab fa-fw fa-zhihu"
                         aria-hidden="true"></i></a></li>
             {% endif %}
             {% if author.stackoverflow %}
@@ -144,7 +140,7 @@
             </li>
             {% endif %}
             {% if author.googlescholar %}
-            <li><a class="author__icon-link" href="{{ author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i></a></li>
+            <li class="author__icon-item"><a class="author__icon-link" href="{{ author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i></a></li>
             {% endif %}
             {% if author.pubmed %}
             <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
@@ -163,9 +159,6 @@
         <div class="author__urls_sm">
             {% if author.uri %}
             <a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i></a>
-            {% endif %}
-            {% if author.email %}
-            <a href="mailto:{{ author.email }}" aria-label="Email" title="Email"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
             {% endif %}
             {% if author.keybase %}
             <a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i></a>
