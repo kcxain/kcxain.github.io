@@ -21,23 +21,10 @@
 
 .about-wrap {
   color: var(--ink);
-  font-family:
-    Charter,
-    "Iowan Old Style",
-    "Source Serif 4",
-    "Source Serif Pro",
-    Georgia,
-    "Times New Roman",
-    "Noto Serif CJK SC",
-    "Source Han Serif SC",
-    "Noto Serif SC",
-    "Songti SC",
-    STSong,
-    SimSun,
-    serif;
-  font-size: 1.14rem;
-  font-weight: 500;
-  line-height: 1.65;
+  font-family: $home-serif;
+  font-size: $home-font-size-body;
+  font-weight: $home-weight-medium;
+  line-height: $home-leading-body;
 }
 
 .about-wrap a,
@@ -52,7 +39,7 @@
   background:
     linear-gradient(130deg, rgba(15, 107, 127, 0.05), rgba(184, 59, 94, 0.05)),
     var(--surface);
-  font-size: 1.18rem;
+  font-size: $home-font-size-intro;
   padding: 1.2rem 1.1rem;
   margin-bottom: 1.2rem;
   border-radius: 0;
@@ -60,12 +47,12 @@
 
 .about-hero p {
   margin: 0.35rem 0;
-  line-height: 1.75;
+  line-height: $home-leading-loose;
 }
 
 .about-contact {
   background: rgba(184, 59, 94, 0.08);
-  font-size: 1.04rem;
+  font-size: $home-font-size-card-meta;
   padding: 0.6rem 0.75rem;
   border-radius: 0;
 }
@@ -73,7 +60,7 @@
 .scholar-link {
   display: inline-block;
   color: #4e5968;
-  font-weight: 600;
+  font-weight: $home-weight-semibold;
 }
 
 .scholar-badge {
@@ -96,7 +83,7 @@
 }
 
 .heading-scholar-link .scholar-fallback {
-  font-size: 0.98rem;
+  font-size: $home-font-size-small;
 }
 
 .about-section {
@@ -105,8 +92,8 @@
 
 .about-section h2 {
   margin-bottom: 0.75rem;
-  font-size: 1.55rem;
-  font-weight: 640;
+  font-size: $home-font-size-section;
+  font-weight: $home-weight-semibold;
   color: #4b5563;
   border-bottom: none !important;
   box-shadow: none !important;
@@ -142,20 +129,16 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.56em;
+  top: 0.68em;
   width: 0.32rem;
   height: 0.32rem;
   border-radius: 50%;
   background: rgba(15, 107, 127, 0.62);
 }
 
-.news-list {
-  font-size: 1.04rem;
-}
-
 .news-date {
   color: #4b5563;
-  font-weight: 600;
+  font-weight: $home-weight-semibold;
 }
 
 .interest-list {
@@ -174,7 +157,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.55em;
+  top: 0.67em;
   width: 0.32rem;
   height: 0.32rem;
   border-radius: 50%;
@@ -194,7 +177,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.56rem;
+  top: 0.72rem;
   width: 0.32rem;
   height: 0.32rem;
   border-radius: 50%;
@@ -212,10 +195,10 @@
 .pub-title {
   display: block;
   font-family: inherit;
-  font-size: 1.14rem;
-  font-weight: 700;
+  font-size: $home-font-size-title;
+  font-weight: $home-weight-semibold;
   margin-bottom: 0.12rem;
-  line-height: 1.34;
+  line-height: $home-leading-title;
 }
 
 .pub-title a {
@@ -230,15 +213,15 @@
 .pub-meta {
   font-family: inherit;
   margin: 0.06rem 0 0;
-  color: #4e5968;
-  font-size: 0.99rem !important;
-  font-weight: 550;
-  line-height: 1.45;
+  color: #465160;
+  font-size: $home-font-size-meta !important;
+  font-weight: $home-weight-medium;
+  line-height: $home-leading-meta;
 }
 
 .pub-venue {
   color: rgba(15, 107, 127, 0.88);
-  font-weight: 700;
+  font-weight: $home-weight-semibold;
 }
 
 .pub-venue-slot {
@@ -268,8 +251,8 @@
   box-shadow: 0 8px 20px rgba(18, 24, 32, 0.12);
   text-align: center;
   white-space: normal;
-  line-height: 1.45;
-  font-size: 0.86rem;
+  line-height: $home-leading-meta;
+  font-size: $home-font-size-tooltip;
   font-style: normal;
   opacity: 0;
   pointer-events: none;
@@ -307,20 +290,20 @@
 
 .pub-authors {
   font-family: inherit;
-  color: #4e5968;
-  font-size: 0.99rem !important;
-  font-weight: 500;
-  line-height: 1.45;
+  color: #465160;
+  font-size: $home-font-size-meta !important;
+  font-weight: $home-weight-medium;
+  line-height: $home-leading-meta;
   margin: 0.02rem 0 0;
 }
 
 .pub-authors .me {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: $home-weight-semibold;
 }
 
 .pub-links a {
-  font-weight: 400;
+  font-weight: $home-weight-medium;
   text-decoration: none;
 }
 
@@ -405,10 +388,10 @@ img.hf-icon {
 .cv-time {
   position: relative;
   padding: 0.52rem 0.9rem 0 0;
-  color: var(--muted);
-  font-size: 1rem;
-  font-weight: 560;
-  line-height: 1.35;
+  color: #4f5a68;
+  font-size: $home-font-size-time;
+  font-weight: $home-weight-medium;
+  line-height: $home-leading-title;
   text-align: right;
   white-space: nowrap;
 }
@@ -478,25 +461,25 @@ img.hf-icon {
 
 .edu-school {
   color: var(--ink);
-  font-weight: 720;
-  font-size: 1.16rem;
-  line-height: 1.28;
+  font-weight: $home-weight-semibold;
+  font-size: $home-font-size-card-title;
+  line-height: $home-leading-card;
   margin-bottom: 0;
   overflow-wrap: break-word;
 }
 
 .edu-time {
   color: var(--muted);
-  font-weight: 400;
-  font-size: 1.05rem;
-  line-height: 1.35;
+  font-weight: $home-weight-regular;
+  font-size: $home-font-size-card-meta;
+  line-height: $home-leading-title;
 }
 
 .edu-degree {
   color: #526071;
-  font-weight: 680;
-  font-size: 1.04rem;
-  line-height: 1.28;
+  font-weight: $home-weight-medium;
+  font-size: $home-font-size-card-meta;
+  line-height: $home-leading-card;
   overflow-wrap: break-word;
 }
 
@@ -577,11 +560,11 @@ img.hf-icon {
   }
 
   .edu-school {
-    font-size: 1.04rem;
+    font-size: $home-font-size-card-meta;
   }
 
   .edu-degree {
-    font-size: 0.98rem;
+    font-size: $home-font-size-small;
   }
 
   .edu-icon img {

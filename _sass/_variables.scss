@@ -45,6 +45,35 @@ $type-size-6                : 1em;   // ~12px
 $type-size-7                : 0.6875em; // ~11px
 $type-size-8                : 0.625em;  // ~10px
 
+/* home page typography */
+$home-serif-latin           : Charter, "Iowan Old Style", "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+$home-serif-cjk             : "Songti SC", "STSongti-SC-Regular", STSong, "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", SimSun, serif;
+$home-serif                 : Charter, "Iowan Old Style", "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", "Songti SC", "STSongti-SC-Regular", STSong, "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", SimSun, serif;
+$home-sans                  : -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+
+$home-weight-regular        : 400;
+$home-weight-medium         : 500;
+$home-weight-semibold       : 600;
+
+$home-font-size-body        : 1.14rem;
+$home-font-size-intro       : 1.18rem;
+$home-font-size-section     : 1.55rem;
+$home-font-size-title       : 1.16rem;
+$home-font-size-meta        : 1.04rem;
+$home-font-size-time        : 1.03rem;
+$home-font-size-card-title  : 1.16rem;
+$home-font-size-card-meta   : 1.04rem;
+$home-font-size-small       : 0.98rem;
+$home-font-size-tooltip     : 0.86rem;
+
+$home-leading-body          : 1.65;
+$home-leading-loose         : 1.75;
+$home-leading-title         : 1.34;
+$home-leading-meta          : 1.45;
+$home-leading-card          : 1.28;
+
+$home-name-gradient         : linear-gradient(90deg, #2f5f8f 0%, #6f617b 38%, #9a7650 58%, #4f756b 82%, #2f5f8f 100%);
+
 
 /*
    Colors
