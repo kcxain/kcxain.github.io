@@ -21,7 +21,7 @@
 
 .about-wrap {
   color: var(--ink);
-  font-family: Arial, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-family: Charter, "Iowan Old Style", "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", STSong, SimSun, serif;
   font-size: 1.1rem;
   line-height: 1.65;
 }
@@ -38,6 +38,7 @@
   background:
     linear-gradient(130deg, rgba(15, 107, 127, 0.05), rgba(184, 59, 94, 0.05)),
     var(--surface);
+  font-size: 1.13rem;
   padding: 1.2rem 1.1rem;
   margin-bottom: 1.2rem;
   border-radius: 0;
@@ -50,6 +51,7 @@
 
 .about-contact {
   background: rgba(184, 59, 94, 0.08);
+  font-size: 1rem;
   padding: 0.6rem 0.75rem;
   border-radius: 0;
 }
