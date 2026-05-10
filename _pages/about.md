@@ -130,12 +130,23 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-hero">
     <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
     <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
-    <p>Currently, my research interests center on <strong>Self-Evolving Coding Agent</strong> and <strong>Reinforcement Learning</strong>, with applications in:</p>
-    <ul class="interest-list">
-      <li><strong>AI for Chip Design</strong></li>
-      <li><strong>AI for System</strong></li>
-    </ul>
-    <p class="about-contact"><span style="color:red;">If you are seeking any form of collaboration, communication or offering internship opportunity, feel free to email me <a href="mailto:kcxain@gmail.com" style="color:red"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>.</span></p>
+    <p>Currently, my research interests focus on <strong>AI for Chip Design</strong> and <strong>AI for System</strong>:</p>
+    <div class="research-map" aria-label="Research methods and application domains">
+      <div class="research-ai">
+        <span class="research-ai__title">AI</span>
+        <span class="research-ai__method">Self-Evolving Coding Agent</span>
+        <span class="research-ai__method">Reinforcement Learning</span>
+      </div>
+      <div class="research-map__arrow" aria-hidden="true"></div>
+      <div class="research-map__domains">
+        <div class="research-domain research-domain--system">System</div>
+        <div class="research-domain research-domain--chip">Chip Design</div>
+      </div>
+    </div>
+    <p class="about-contact">
+      <span>Open to collaboration, academic exchange, and internship opportunities.</span>
+      <a href="mailto:kcxain@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>
+    </p>
   </section>
 
   <section class="about-section">

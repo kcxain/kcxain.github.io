@@ -287,6 +287,25 @@
   }
 }
 
+.author__urls .author__icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.05rem;
+  height: 2.05rem;
+  margin: 0 auto 0.25rem;
+  padding: 0;
+  color: inherit;
+  font-size: 1.28rem;
+  line-height: 1;
+  text-decoration: none;
+
+  &:hover {
+    color: #4e5968;
+    text-decoration: none;
+  }
+}
+
 .author__urls_sm{
   padding: .25em;
   font-size: 1.75em;
