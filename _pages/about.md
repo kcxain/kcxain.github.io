@@ -203,13 +203,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <span class="pub-links">
               {% for link in pub.links %}
                 {% assign icon_class = "" %}
+                {% assign icon_include = "" %}
                 {% if link.type == "code" %}
                   {% assign icon_class = "fab fa-github" %}
                 {% elsif link.type == "models" %}
                   {% assign icon_class = "hf-icon" %}
                 {% elsif link.type == "blog" %}
                   {% if link.url contains "zhihu.com" %}
-                    {% assign icon_class = "fab fa-zhihu" %}
+                    {% assign icon_include = "zhihu-square" %}
                   {% elsif link.url contains "weixin.qq.com" %}
                     {% assign icon_class = "fab fa-weixin" %}
                   {% else %}
@@ -218,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% elsif link.type == "paper" %}
                   {% assign icon_class = "fas fa-file-alt" %}
                 {% endif %}
-                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" width="95" height="88" alt="HF" aria-hidden="true" loading="lazy" decoding="async">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
+                <a class="{{ link.type }}" href="{{ link.url }}">[{% if icon_include == "zhihu-square" %}{% include icons/zhihu-square.svg %}{% elsif icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" width="95" height="88" alt="HF" aria-hidden="true" loading="lazy" decoding="async">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
               {% endfor %}
             </span>
           {% endif %}
