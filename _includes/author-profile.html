@@ -85,8 +85,7 @@
             <li class="author__icon-item"><a class="author__icon-link" href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a></li>
             {% endif %}
             {% if author.zhihu %}
-            <li class="author__icon-item"><a class="author__icon-link" href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu"><i class="fab fa-fw fa-zhihu"
-                        aria-hidden="true"></i></a></li>
+            <li class="author__icon-item"><a class="author__icon-link" href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu">{% include icons/zhihu-square.svg %}</a></li>
             {% endif %}
             {% if author.stackoverflow %}
             <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"><i
@@ -205,8 +204,7 @@
             <a href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>
             {% endif %}
             {% if author.zhihu %}
-            <a href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu"><i class="fab fa-fw fa-zhihu"
-                    aria-hidden="true"></i></a>
+            <a href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu">{% include icons/zhihu-square.svg %}</a>
             {% endif %}
             {% if author.stackoverflow %}
             <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"><i

@@ -313,6 +313,18 @@
   }
 }
 
+.zhihu-square-icon {
+  width: 1.08em;
+  height: 1.08em;
+  color: inherit;
+  vertical-align: -0.12em;
+}
+
+.author__icon-link:hover .zhihu-square-icon,
+.author__urls_sm a:hover .zhihu-square-icon {
+  color: #4e5968;
+}
+
 .author__urls_sm{
   padding: .25em;
   font-size: 1.75em;

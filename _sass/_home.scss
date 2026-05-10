@@ -2,6 +2,28 @@
    Home page
    ========================================================================== */
 
+@font-face {
+  font-family: "Home CJK Serif";
+  src:
+    local("Songti SC"),
+    local("SongtiSC-Regular"),
+    local("STSongti-SC-Regular"),
+    local("STSong"),
+    local("Songti TC"),
+    local("SongtiTC-Regular"),
+    local("Source Han Serif SC"),
+    local("SourceHanSerifSC-Regular"),
+    local("Noto Serif CJK SC"),
+    local("NotoSerifCJKsc-Regular"),
+    local("Noto Serif SC"),
+    local("SimSun"),
+    local("NSimSun");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
 .home .masthead {
   display: none !important;
 }
@@ -535,7 +557,7 @@ img.hf-icon {
 .edu-school {
   color: var(--ink);
   font-weight: $home-weight-semibold;
-  font-size: $home-font-size-card-title;
+  font-size: $home-font-size-title;
   line-height: $home-leading-card;
   margin-bottom: 0;
   overflow-wrap: break-word;
