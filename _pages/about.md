@@ -200,10 +200,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="pub-meta">
           <span class="pub-venue-slot"><span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ pub.conf }}, {{ pub.year }}</span></span>
           {% if pub.links and pub.links.size > 0 %}
-            <span class="sep">&nbsp;&nbsp;</span>
             <span class="pub-links">
               {% for link in pub.links %}
-                {% unless forloop.first %}<span class="sep">|</span>{% endunless %}
                 {% assign icon_class = "" %}
                 {% if link.type == "code" %}
                   {% assign icon_class = "fab fa-github" %}
@@ -272,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-section">
     <h2>Experience</h2>
     <div class="cv-timeline">
-      <div class="cv-row">
+      <div class="cv-row cv-row--compact">
         <div class="cv-time">2026.01 - Present</div>
         <div class="edu-card intern-card">
         <div class="edu-main">

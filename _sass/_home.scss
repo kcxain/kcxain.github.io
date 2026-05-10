@@ -23,7 +23,30 @@
     local("NSimSun"),
     url("/assets/fonts/noto-serif-sc/noto-serif-sc-chinese-simplified-400-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400 500;
+  font-display: swap;
+  unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "Home CJK Serif";
+  src:
+    local("STZhongsong"),
+    local("华文中宋"),
+    local("Songti SC Bold"),
+    local("SongtiSC-Bold"),
+    local("STSongti-SC-Bold"),
+    local("STSong"),
+    local("Source Han Serif SC Bold"),
+    local("SourceHanSerifSC-Bold"),
+    local("Noto Serif CJK SC Bold"),
+    local("NotoSerifCJKsc-Bold"),
+    local("Noto Serif SC Bold"),
+    local("SimSun"),
+    local("NSimSun"),
+    url("/assets/fonts/noto-serif-sc/noto-serif-sc-chinese-simplified-700-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600 700;
   font-display: swap;
   unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
 }
@@ -187,6 +210,11 @@
   font-weight: $home-weight-semibold;
 }
 
+.news-list {
+  font-size: 1.08rem;
+  font-weight: $home-weight-medium;
+}
+
 .research-map {
   position: relative;
   display: grid;
@@ -301,7 +329,7 @@
 .pub-title {
   display: block;
   font-family: inherit;
-  font-size: $home-font-size-title;
+  font-size: $home-font-size-body;
   font-weight: $home-weight-semibold;
   margin-bottom: 0.12rem;
   line-height: $home-leading-title;
@@ -409,8 +437,14 @@
 }
 
 .pub-links a {
+  margin-right: 0.34rem;
+  white-space: nowrap;
   font-weight: $home-weight-medium;
   text-decoration: none;
+}
+
+.pub-links {
+  margin-left: 0.82rem;
 }
 
 .pub-link-icon {
@@ -448,11 +482,6 @@ img.hf-icon {
   opacity: 1 !important;
 }
 
-.pub-links .sep {
-  color: #9aa3af;
-  margin: 0 0.3rem;
-}
-
 .meta-grid {
   display: grid;
   gap: 0.55rem;
@@ -485,27 +514,37 @@ img.hf-icon {
 }
 
 .cv-row {
+  --cv-time-padding-top: 0.98rem;
+  --cv-dot-top: 1.58rem;
+  --cv-line-top: 2.15rem;
+
   display: grid;
   grid-template-columns: 9.4rem minmax(0, 1fr);
   column-gap: 1rem;
   align-items: stretch;
 }
 
+.cv-row--compact {
+  --cv-time-padding-top: 0.88rem;
+  --cv-dot-top: 1.46rem;
+  --cv-line-top: 2.03rem;
+}
+
 .cv-time {
   position: relative;
-  padding: 0.52rem 0.9rem 0 0;
+  padding: var(--cv-time-padding-top) 0.9rem 0 0;
   color: #4f5a68;
   font-size: $home-font-size-time;
   font-weight: $home-weight-medium;
   line-height: $home-leading-title;
-  text-align: right;
+  text-align: left;
   white-space: nowrap;
 }
 
 .cv-time::before {
   content: "";
   position: absolute;
-  top: 0.96rem;
+  top: var(--cv-dot-top);
   right: -0.34rem;
   width: 0.52rem;
   height: 0.52rem;
@@ -518,9 +557,9 @@ img.hf-icon {
 .cv-time::after {
   content: "";
   position: absolute;
-  top: 1.53rem;
+  top: var(--cv-line-top);
   right: -0.08rem;
-  bottom: -0.98rem;
+  bottom: -2.05rem;
   width: 1px;
   background: rgba(18, 24, 32, 0.14);
 }
@@ -660,10 +699,6 @@ img.hf-icon {
 
   .edu-school {
     font-size: $home-font-size-card-meta;
-  }
-
-  .edu-degree {
-    font-size: $home-font-size-small;
   }
 
   .edu-icon img {
