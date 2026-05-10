@@ -46,10 +46,9 @@ $type-size-7                : 0.6875em; // ~11px
 $type-size-8                : 0.625em;  // ~10px
 
 /* home page typography */
-$home-cjk-serif-family      : "Home CJK Serif";
 $home-serif-latin           : Charter, "Iowan Old Style", "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
-$home-serif-cjk             : $home-cjk-serif-family, STZhongsong, "华文中宋", "Songti SC", "SongtiSC-Regular", "STSongti-SC-Regular", STSong, "Songti TC", "SongtiTC-Regular", "Source Han Serif SC", "SourceHanSerifSC-Regular", "Noto Serif CJK SC", "NotoSerifCJKsc-Regular", "Noto Serif SC", SimSun, NSimSun, serif;
-$home-serif                 : $home-cjk-serif-family, Charter, "Iowan Old Style", "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", STZhongsong, "华文中宋", "Songti SC", "SongtiSC-Regular", "STSongti-SC-Regular", STSong, "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", SimSun, serif;
+$home-serif-cjk             : STZhongsong, "华文中宋", "Songti SC", "SongtiSC-Regular", "STSongti-SC-Regular", STSong, "Songti TC", "SongtiTC-Regular", "Source Han Serif SC", "SourceHanSerifSC-Regular", "Noto Serif CJK SC", "NotoSerifCJKsc-Regular", "Noto Serif SC", SimSun, NSimSun, serif;
+$home-serif                 : Charter, "Iowan Old Style", "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", STZhongsong, "华文中宋", "Songti SC", "SongtiSC-Regular", "STSongti-SC-Regular", STSong, "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", SimSun, serif;
 $home-sans                  : -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
 
 $home-weight-regular        : 400;
