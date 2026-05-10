@@ -2,6 +2,55 @@
    Home page
    ========================================================================== */
 
+/* CJK-only webfont fallback; unicode-range keeps Latin text on the Latin serif stack. */
+@font-face {
+  font-family: "Home CJK Serif";
+  src:
+    local("STZhongsong"),
+    local("华文中宋"),
+    local("Songti SC"),
+    local("SongtiSC-Regular"),
+    local("STSongti-SC-Regular"),
+    local("STSong"),
+    local("Songti TC"),
+    local("SongtiTC-Regular"),
+    local("Source Han Serif SC"),
+    local("SourceHanSerifSC-Regular"),
+    local("Noto Serif CJK SC"),
+    local("NotoSerifCJKsc-Regular"),
+    local("Noto Serif SC"),
+    local("SimSun"),
+    local("NSimSun"),
+    url("/assets/fonts/noto-serif-sc/noto-serif-sc-chinese-simplified-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "Home CJK Serif";
+  src:
+    local("STZhongsong"),
+    local("华文中宋"),
+    local("Songti SC Bold"),
+    local("SongtiSC-Bold"),
+    local("STSongti-SC-Bold"),
+    local("STSong"),
+    local("Source Han Serif SC Bold"),
+    local("SourceHanSerifSC-Bold"),
+    local("Noto Serif CJK SC Bold"),
+    local("NotoSerifCJKsc-Bold"),
+    local("Noto Serif SC Bold"),
+    local("SimSun"),
+    local("NSimSun"),
+    url("/assets/fonts/noto-serif-sc/noto-serif-sc-chinese-simplified-700-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
 .home .masthead {
   display: none !important;
 }
@@ -631,7 +680,7 @@ img.hf-icon {
   .cv-time::before {
     left: 0;
     right: auto;
-    top: 0.34rem;
+    top: 0.43rem;
     width: 0.38rem;
     height: 0.38rem;
     border-width: 1.5px;
@@ -750,11 +799,29 @@ img.hf-icon {
   .edu-card {
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.18rem;
+    padding: 0.46rem 0.64rem 0.34rem;
   }
 
   .edu-icon {
     flex: none;
     width: 100%;
     justify-content: flex-start;
+    line-height: 0;
+  }
+
+  .edu-icon img {
+    height: 26px;
+    max-width: 54px;
+  }
+
+  .edu-icon img.ict-logo {
+    height: 22px;
+    max-width: 106px;
+  }
+
+  .edu-icon img.cambricon-logo {
+    height: 18px;
+    max-width: 92px;
   }
 }
