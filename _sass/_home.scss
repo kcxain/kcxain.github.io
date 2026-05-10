@@ -2,10 +2,12 @@
    Home page
    ========================================================================== */
 
-/* Noto Serif SC is used when mobile systems do not provide a CJK serif font. */
+/* Prefer ZhongSong-style local CJK serif fonts; Noto Serif SC is a final webfont fallback. */
 @font-face {
   font-family: "Home CJK Serif";
   src:
+    local("STZhongsong"),
+    local("华文中宋"),
     local("Songti SC"),
     local("SongtiSC-Regular"),
     local("STSongti-SC-Regular"),
