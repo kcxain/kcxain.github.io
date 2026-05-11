@@ -460,6 +460,16 @@
   vertical-align: -0.12em;
 }
 
+.pub-links .zhihu-blog-link {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+}
+
+.pub-links .zhihu-blog-link .zhihu-square-icon {
+  margin-right: 0;
+}
+
 .pub-links a:hover {
   text-decoration: none;
 }
