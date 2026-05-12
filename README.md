@@ -65,6 +65,30 @@ Some examples:
 1. If you change the source code of the website, the livereload server will automatically refresh.
 1. When you finish the modification of your homepage, `commit` your changings and `push` to your remote REPO using `git` command.
 
+## Update CJK Font Subsets
+
+The homepage uses subsetted Noto Serif SC webfonts to keep Chinese serif text consistent without shipping the full font files to visitors.
+
+The browser loads only these generated files:
+
+```text
+assets/fonts/noto-serif-sc/noto-serif-sc-chinese-simplified-400-normal.woff2
+assets/fonts/noto-serif-sc/noto-serif-sc-chinese-simplified-700-normal.woff2
+```
+
+The complete source fonts are kept under `_font_sources/noto-serif-sc/` so new Chinese characters can be added later. This directory, together with `scripts/`, is excluded from the generated Jekyll site in `_config.yml`.
+
+After editing Chinese text in `_pages`, `_data`, `_config.yml`, or `_includes/author-profile.html`, regenerate the font subsets manually:
+
+```bash
+python3 -m pip install -r scripts/requirements-fonts.txt
+python3 scripts/subset_cjk_fonts.py
+```
+
+The script scans the website source for CJK characters, merges them with `_font_sources/noto-serif-sc/safety_chars.txt`, then rewrites the two webfont files in `assets/fonts/noto-serif-sc/`.
+
+If future content may use Chinese words that are not yet on the page, add those characters or phrases to `_font_sources/noto-serif-sc/safety_chars.txt` before running the script. For example, keep common resume terms such as `国家奖学金` and `三好学生标兵` there so they are available before they appear in the homepage text.
+
 # Acknowledges
 
 - AcadHomepage incorporates Font Awesome, which is distributed under the terms of the SIL OFL 1.1 and MIT License.

@@ -211,7 +211,7 @@
 }
 
 .news-list {
-  font-size: 1.08rem;
+  font-size: $home-font-size-time;
   font-weight: $home-weight-medium;
 }
 
@@ -258,7 +258,7 @@
   justify-self: center;
   color: rgba(18, 24, 32, 0.42);
   font-family: $home-serif-latin;
-  font-size: 2.15rem;
+  font-size: $home-font-size-arrow;
   font-weight: $home-weight-regular;
   line-height: 1;
 }
@@ -516,13 +516,29 @@ img.hf-icon {
 }
 
 .map-container {
-  width: 50%;
+  box-sizing: border-box;
+  width: min(100%, 30rem);
   margin: 2rem auto;
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  overflow-y: visible;
   padding: 1rem;
+  text-align: center;
+}
+
+.map-container > :not(style):not(script) {
+  max-width: 100% !important;
+}
+
+.map-container img,
+.map-container iframe,
+.map-container canvas,
+.map-container svg {
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 .cv-timeline {
@@ -667,6 +683,54 @@ img.hf-icon {
 }
 
 @media (max-width: 860px) {
+  .about-wrap {
+    font-size: $home-mobile-font-size-body;
+  }
+
+  .about-hero {
+    font-size: $home-mobile-font-size-intro;
+  }
+
+  .about-hero .about-contact {
+    font-size: $home-mobile-font-size-card-meta;
+  }
+
+  .heading-scholar-link .scholar-fallback {
+    font-size: $home-mobile-font-size-small;
+  }
+
+  .about-section h2 {
+    font-size: $home-mobile-font-size-section;
+  }
+
+  .news-list,
+  .cv-time {
+    font-size: $home-mobile-font-size-time;
+  }
+
+  .research-ai__title,
+  .research-domain {
+    font-size: $home-mobile-font-size-card-title;
+  }
+
+  .research-ai__method,
+  .meta-grid div {
+    font-size: $home-mobile-font-size-small;
+  }
+
+  .pub-title {
+    font-size: $home-mobile-font-size-body;
+  }
+
+  .pub-meta,
+  .pub-authors {
+    font-size: $home-mobile-font-size-meta !important;
+  }
+
+  .pub-venue-abbr::after {
+    font-size: $home-mobile-font-size-tooltip;
+  }
+
   .meta-grid {
     grid-template-columns: 1fr;
   }
@@ -715,7 +779,12 @@ img.hf-icon {
   }
 
   .edu-school {
-    font-size: $home-font-size-card-meta;
+    font-size: $home-mobile-font-size-card-title;
+  }
+
+  .edu-time,
+  .edu-degree {
+    font-size: $home-mobile-font-size-card-meta;
   }
 
   .edu-icon img {
@@ -763,7 +832,7 @@ img.hf-icon {
 
   .research-map__arrow {
     grid-column: auto;
-    font-size: 1.9rem;
+    font-size: $home-mobile-font-size-arrow;
   }
 
   .research-map__arrow::after {
@@ -777,7 +846,7 @@ img.hf-icon {
 
   .research-domain {
     min-height: 3rem;
-    font-size: $home-font-size-card-meta;
+    font-size: $home-mobile-font-size-card-title;
   }
 
   .research-ai__method {

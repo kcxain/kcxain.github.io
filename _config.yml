@@ -82,6 +82,7 @@ exclude:
   - LICENSE
   - README
   - Rakefile
+  - _font_sources
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
@@ -90,6 +91,7 @@ exclude:
   - log
   - node_modules
   - package.json
+  - scripts
   - tmp
   - vendor
 keep_files:
