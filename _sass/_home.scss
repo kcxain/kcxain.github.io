@@ -515,30 +515,65 @@ img.hf-icon {
   color: var(--ink);
 }
 
-.map-container {
+.visitor-map-card {
+  --visitor-map-max-width: 30rem;
+  --visitor-map-radius: 10px;
   box-sizing: border-box;
-  width: min(100%, 30rem);
+  width: min(100%, var(--visitor-map-max-width));
   margin: 2rem auto;
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border-radius: var(--visitor-map-radius);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow-x: auto;
-  overflow-y: visible;
-  padding: 1rem;
+  padding: 0.75rem;
+}
+
+.visitor-map {
+  width: 100%;
+  overflow: hidden;
   text-align: center;
 }
 
-.map-container > :not(style):not(script) {
-  max-width: 100% !important;
+.visitor-map style,
+.visitor-map script {
+  display: none !important;
 }
 
-.map-container img,
-.map-container iframe,
-.map-container canvas,
-.map-container svg {
+.visitor-map #mapmyvisitors-widget {
+  box-sizing: border-box;
+  width: 100% !important;
   max-width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+}
+
+.visitor-map #mapmyvisitors-widget > .mapmyvisitors-map-container {
+  width: 100% !important;
+  overflow: hidden;
+  border-radius: calc(var(--visitor-map-radius) - 3px);
+}
+
+.visitor-map .mapmyvisitors-map {
+  width: 100% !important;
   height: auto !important;
+  min-height: 8.5rem;
+  aspect-ratio: 2.04 / 1;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+
+.visitor-map .mapmyvisitors-bottom-text {
+  box-sizing: border-box;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.visitor-map img,
+.visitor-map iframe,
+.visitor-map canvas,
+.visitor-map svg {
+  max-width: 100% !important;
 }
 
 .cv-timeline {
@@ -735,10 +770,13 @@ img.hf-icon {
     grid-template-columns: 1fr;
   }
 
-  .map-container {
-    width: 100%;
-    margin: 1rem 0;
-    border-radius: 12px;
+  .visitor-map-card {
+    margin: 1rem auto;
+    padding: 0.65rem;
+  }
+
+  .visitor-map .mapmyvisitors-map {
+    min-height: 7.5rem;
   }
 
   .cv-row {

@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const visitorsBox = document.getElementById("visitors-box");
   if (visitorsBox) {
     const visitorsSection = visitorsBox.closest(".about-section");
-    const mapUrl = "https://mapmyvisitors.com/map.js?cl=665e5e&w=a&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631";
+    const mapSourceWidth = 856;
+    const mapUrl = "https://mapmyvisitors.com/map.js?cl=665e5e&w=" + mapSourceWidth + "&t=tt&d=SjjurNgWllQXVKAe4foD6Jsl7veBsrfGxa02WosLzvE&co=ffffff&ct=808080&cmo=ff7c53&cmn=31d631";
 
     const hideVisitors = function () {
       if (visitorsSection) {
@@ -312,7 +313,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <section class="about-section">
     <h2>Visitors</h2>
-    <div class="map-container" id="visitors-box"></div>
+    <div class="visitor-map-card">
+      <div class="visitor-map" id="visitors-box" aria-label="Visitor map"></div>
+    </div>
   </section>
 
 </div>
