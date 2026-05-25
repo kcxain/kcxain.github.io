@@ -199,7 +199,18 @@ document.addEventListener("DOMContentLoaded", function () {
         </span>
         <p class="pub-authors">{{ pub.authors | replace: "Changxin Ke", "<span class='me'>Changxin Ke</span>" }}</p>
         <p class="pub-meta">
-          <span class="pub-venue-slot"><span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ pub.conf }}, {{ pub.year }}</span></span>
+          {% if pub.conf and pub.conf != "" %}
+            {% assign venue_label = pub.conf | append: ", " | append: pub.year %}
+          {% else %}
+            {% assign venue_label = pub.year %}
+          {% endif %}
+          <span class="pub-venue-slot">
+            {% if pub.conf_full and pub.conf_full != "" %}
+              <span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ venue_label }}</span>
+            {% else %}
+              <span class="pub-venue">{{ venue_label }}</span>
+            {% endif %}
+          </span>
           {% if pub.links and pub.links.size > 0 %}
             <span class="pub-links">
               {% for link in pub.links %}

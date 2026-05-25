@@ -1,5 +1,25 @@
 [
   {
+    "conf": "Preprint",
+    "year": "2026",
+    "conf_full": "Preprint",
+    "label": "preprint",
+    "title": "OpenClaw Research: A Systematic Survey of Large Language Model Agents in Open Deployment",
+    "authors": "Shuo Lu, Kecheng Yu, Siru Jiang, Yinuo Xu, Bing Zhan, Yanbo Wang, Changxin Ke, Yuan Xu, Xin Xiong, Xinyun Zhou, Zhengbo Wang, Lijun Sheng, Aijing Yu, Haosen Yang, Yunpu Ma, Nicu Sebe, Tat-Seng Chua, Philip Torr, Ran He, Jian Liang",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://openreview.net/pdf?id=5PMzjzEy6J",
+        "type": "paper"
+      },
+      {
+        "name": "Code",
+        "url": "https://github.com/shuolucs/Awesome-OpenClaw-Research",
+        "type": "code"
+      }
+    ]
+  },
+  {
     "conf": "ACL",
     "year": "2026",
     "conf_full": "The 64th Annual Meeting of the Association for Computational Linguistics",
