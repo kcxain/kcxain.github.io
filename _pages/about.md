@@ -204,9 +204,13 @@ document.addEventListener("DOMContentLoaded", function () {
           {% else %}
             {% assign venue_label = pub.year %}
           {% endif %}
+          {% assign has_venue_tooltip = false %}
+          {% if pub.conf_full and pub.conf_full != "" %}
+            {% assign has_venue_tooltip = true %}
+          {% endif %}
           <span class="pub-venue-slot">
-            {% if pub.conf_full and pub.conf_full != "" %}
-              <span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}">{{ venue_label }}</span>
+            {% if has_venue_tooltip %}
+              <span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}" aria-label="{{ venue_label }}: {{ pub.conf_full }}">{{ venue_label }}</span>
             {% else %}
               <span class="pub-venue">{{ venue_label }}</span>
             {% endif %}

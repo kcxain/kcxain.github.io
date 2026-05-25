@@ -375,8 +375,9 @@
   left: 50%;
   bottom: calc(100% + 10px);
   transform: translate(-50%, 4px);
-  min-width: 180px;
-  max-width: 320px;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 280px;
   padding: 0.34rem 0.5rem;
   background: rgba(255, 255, 255, 0.97);
   color: #1f2937;
@@ -844,9 +845,8 @@ img.hf-icon {
     left: 0;
     right: auto;
     transform: translate(0, 4px);
-    min-width: min(14rem, 50vw) !important;
-    width: fit-content !important;
-    max-width: 50vw !important;
+    width: max-content !important;
+    max-width: min(18rem, 50vw) !important;
     text-align: left;
   }
 
