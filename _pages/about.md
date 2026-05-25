@@ -208,11 +208,15 @@ document.addEventListener("DOMContentLoaded", function () {
           {% if pub.conf_full and pub.conf_full != "" %}
             {% assign has_venue_tooltip = true %}
           {% endif %}
+          {% assign venue_class = "pub-venue" %}
+          {% if pub.conf == "Preprint" %}
+            {% assign venue_class = venue_class | append: " pub-venue--preprint" %}
+          {% endif %}
           <span class="pub-venue-slot">
             {% if has_venue_tooltip %}
-              <span class="pub-venue pub-venue-abbr" data-full="{{ pub.conf_full }}" aria-label="{{ venue_label }}: {{ pub.conf_full }}">{{ venue_label }}</span>
+              <span class="{{ venue_class }} pub-venue-abbr" data-full="{{ pub.conf_full }}" aria-label="{{ venue_label }}: {{ pub.conf_full }}">{{ venue_label }}</span>
             {% else %}
-              <span class="pub-venue">{{ venue_label }}</span>
+              <span class="{{ venue_class }}">{{ venue_label }}</span>
             {% endif %}
           </span>
           {% if pub.links and pub.links.size > 0 %}
