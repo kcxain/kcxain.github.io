@@ -96,8 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
           setStat("scholar-citations", data.google_scholar && data.google_scholar.citations);
           setStat("zhihu-followers", data.zhihu && data.zhihu.followers);
           setStat("zhihu-voteups", data.zhihu && data.zhihu.upvotes);
-          setStat("zhihu-favorites", data.zhihu && data.zhihu.favorites);
-          setStat("github-followers", data.github && data.github.followers);
           setStat("github-stars", data.github && data.github.stars);
         })
         .catch(function () {});
@@ -208,35 +206,37 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-section contributions-section">
     <h2>Contributions</h2>
     <ul class="contribution-stats" data-contribution-stats>
-      <li class="contribution-stat">
-        <span class="contribution-stat__source">Google Scholar</span>
-        <span class="contribution-stat__value" data-stat="scholar-citations">--</span>
-        <span class="contribution-stat__label">Citations</span>
+      <li class="contribution-stat contribution-stat--scholar">
+        <a class="contribution-stat__link" href="{{ site.author.googlescholar }}" aria-label="Google Scholar citations">
+          <span class="contribution-stat__mark" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+          <span class="contribution-stat__source">Google Scholar</span>
+          <span class="contribution-stat__value" data-stat="scholar-citations">--</span>
+          <span class="contribution-stat__label">Citations</span>
+        </a>
       </li>
-      <li class="contribution-stat">
-        <span class="contribution-stat__source">Zhihu</span>
-        <span class="contribution-stat__value" data-stat="zhihu-followers">--</span>
-        <span class="contribution-stat__label">Followers</span>
+      <li class="contribution-stat contribution-stat--github">
+        <a class="contribution-stat__link" href="https://github.com/{{ site.author.github }}?tab=repositories" aria-label="GitHub stars">
+          <span class="contribution-stat__mark" aria-hidden="true"><i class="fab fa-github"></i></span>
+          <span class="contribution-stat__source">GitHub</span>
+          <span class="contribution-stat__value" data-stat="github-stars">--</span>
+          <span class="contribution-stat__label">Stars</span>
+        </a>
       </li>
-      <li class="contribution-stat">
-        <span class="contribution-stat__source">Zhihu</span>
-        <span class="contribution-stat__value" data-stat="zhihu-voteups">--</span>
-        <span class="contribution-stat__label">Upvotes</span>
+      <li class="contribution-stat contribution-stat--zhihu">
+        <a class="contribution-stat__link" href="https://www.zhihu.com/people/{{ site.author.zhihu }}" aria-label="Zhihu followers">
+          <span class="contribution-stat__mark" aria-hidden="true">{% include icons/zhihu-square.svg %}</span>
+          <span class="contribution-stat__source">Zhihu</span>
+          <span class="contribution-stat__value" data-stat="zhihu-followers">--</span>
+          <span class="contribution-stat__label">Followers</span>
+        </a>
       </li>
-      <li class="contribution-stat">
-        <span class="contribution-stat__source">Zhihu</span>
-        <span class="contribution-stat__value" data-stat="zhihu-favorites">--</span>
-        <span class="contribution-stat__label">Favorites</span>
-      </li>
-      <li class="contribution-stat">
-        <span class="contribution-stat__source">GitHub</span>
-        <span class="contribution-stat__value" data-stat="github-followers">--</span>
-        <span class="contribution-stat__label">Followers</span>
-      </li>
-      <li class="contribution-stat">
-        <span class="contribution-stat__source">GitHub</span>
-        <span class="contribution-stat__value" data-stat="github-stars">--</span>
-        <span class="contribution-stat__label">Stars</span>
+      <li class="contribution-stat contribution-stat--zhihu">
+        <a class="contribution-stat__link" href="https://www.zhihu.com/people/{{ site.author.zhihu }}" aria-label="Zhihu upvotes">
+          <span class="contribution-stat__mark" aria-hidden="true">{% include icons/zhihu-square.svg %}</span>
+          <span class="contribution-stat__source">Zhihu</span>
+          <span class="contribution-stat__value" data-stat="zhihu-voteups">--</span>
+          <span class="contribution-stat__label">Upvotes</span>
+        </a>
       </li>
     </ul>
   </section>
@@ -340,48 +340,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <section class="about-section">
     <h2>Education</h2>
-    <div class="cv-timeline">
-      <div class="cv-row">
-        <div class="cv-time">2024.08 - Present</div>
-        <div class="edu-card">
-        <div class="edu-main">
-          <div class="edu-school">Institute of Computing Technology</div>
-          <div class="edu-degree">Master</div>
-        </div>
-        <div class="edu-icon">
-          <img class="ict-logo" src="/images/logos/ict_logo.png" width="569" height="86" alt="ICT logo" loading="lazy" decoding="async">
-        </div>
-      </div>
-      </div>
-      <div class="cv-row">
-        <div class="cv-time">2020.09 - 2024.06</div>
-        <div class="edu-card">
-        <div class="edu-main">
-          <div class="edu-school">Harbin Institute of Technology</div>
-          <div class="edu-degree">Undergraduate</div>
-        </div>
-        <div class="edu-icon">
-          <img src="/images/logos/hit_logo.png" width="1280" height="1164" alt="HIT logo" loading="lazy" decoding="async">
+    <div class="timeline">
+      <div class="timeline__item">
+        <div class="timeline__date">2024.08 - Present</div>
+        <div class="timeline__axis" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <div class="timeline__main">
+            <div class="timeline__title">Institute of Computing Technology</div>
+            <div class="timeline__meta">Master</div>
+          </div>
+          <div class="timeline__logo timeline__logo--wordmark">
+            <img src="/images/logos/ict_logo.png" width="569" height="86" alt="ICT logo" loading="lazy" decoding="async">
+          </div>
         </div>
       </div>
+      <div class="timeline__item">
+        <div class="timeline__date">2020.09 - 2024.06</div>
+        <div class="timeline__axis" aria-hidden="true"></div>
+        <div class="timeline__card">
+          <div class="timeline__main">
+            <div class="timeline__title">Harbin Institute of Technology</div>
+            <div class="timeline__meta">Undergraduate</div>
+          </div>
+          <div class="timeline__logo timeline__logo--seal">
+            <img src="/images/logos/hit_logo.png" width="1280" height="1164" alt="HIT logo" loading="lazy" decoding="async">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="about-section">
     <h2>Experience</h2>
-    <div class="cv-timeline">
-      <div class="cv-row cv-row--compact">
-        <div class="cv-time">2026.01 - Present</div>
-        <div class="edu-card intern-card">
-        <div class="edu-main">
-          <div class="edu-school">Cambricon</div>
-          <div class="edu-degree">AI Research Intern</div>
+    <div class="timeline">
+      <div class="timeline__item">
+        <div class="timeline__date">2026.01 - Present</div>
+        <div class="timeline__axis" aria-hidden="true"></div>
+        <div class="timeline__card timeline__card--experience">
+          <div class="timeline__main">
+            <div class="timeline__title">Cambricon</div>
+            <div class="timeline__meta">AI Research Intern</div>
+          </div>
+          <div class="timeline__logo timeline__logo--brand">
+            <img src="/images/logos/cambricon_logo.png" width="1482" height="508" alt="Cambricon logo" loading="lazy" decoding="async">
+          </div>
         </div>
-        <div class="edu-icon">
-          <img class="cambricon-logo" src="/images/logos/cambricon_logo.png" width="1482" height="508" alt="Cambricon logo" loading="lazy" decoding="async">
-        </div>
-      </div>
       </div>
     </div>
   </section>

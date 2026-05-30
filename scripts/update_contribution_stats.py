@@ -140,7 +140,7 @@ def update_zhihu(stats: dict[str, Any], errors: dict[str, str]) -> None:
 
     source_url = (
         f"https://www.zhihu.com/api/v4/members/{quote(zhihu_user)}"
-        "?include=follower_count,voteup_count,favorited_count"
+        "?include=follower_count,voteup_count"
     )
     headers = {
         "Accept": "application/json, text/plain, */*",
@@ -160,7 +160,6 @@ def update_zhihu(stats: dict[str, Any], errors: dict[str, str]) -> None:
     mapping = {
         "followers": "follower_count",
         "upvotes": "voteup_count",
-        "favorites": "favorited_count",
     }
     for target_key, source_key in mapping.items():
         value = parse_int(data.get(source_key))
@@ -186,12 +185,6 @@ def update_github(stats: dict[str, Any], errors: dict[str, str]) -> None:
         raise RuntimeError("GitHub username is not configured")
 
     headers = github_headers()
-    user_data, _ = fetch_json(f"https://api.github.com/users/{quote(github_user)}", headers)
-    followers = parse_int(user_data.get("followers"))
-    if followers is None:
-        raise RuntimeError("GitHub followers missing from response")
-    stats["github"]["followers"] = followers
-
     stars = 0
     page = 1
     while page <= 10:
@@ -219,8 +212,8 @@ def display_path(path: Path) -> str:
 def has_required_values(stats: dict[str, Any], group: str) -> bool:
     required = {
         "google_scholar": ("citations",),
-        "zhihu": ("followers", "upvotes", "favorites"),
-        "github": ("followers", "stars"),
+        "zhihu": ("followers", "upvotes"),
+        "github": ("stars",),
     }
     values = stats.get(group) or {}
     return all(parse_int(values.get(key)) is not None for key in required[group])
@@ -237,10 +230,8 @@ def main() -> int:
         "zhihu": {
             "followers": previous(existing, "zhihu", "followers"),
             "upvotes": previous(existing, "zhihu", "upvotes"),
-            "favorites": previous(existing, "zhihu", "favorites"),
         },
         "github": {
-            "followers": previous(existing, "github", "followers"),
             "stars": previous(existing, "github", "stars"),
         },
         "errors": {},
