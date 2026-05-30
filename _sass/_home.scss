@@ -84,6 +84,7 @@ $home-breakpoint-tight: 360px;
   --home-size-small: #{$home-font-size-small};
   --home-size-tooltip: #{$home-font-size-tooltip};
   --home-size-arrow: #{$home-font-size-arrow};
+  --home-section-content-gap: 0.75rem;
 
   color: var(--ink);
   font-family: $home-serif;
@@ -147,7 +148,7 @@ $home-breakpoint-tight: 360px;
 }
 
 .about-section h2 {
-  margin-bottom: 0.75rem;
+  margin: 0 0 var(--home-section-content-gap);
   font-size: var(--home-size-section);
   font-weight: $home-weight-semibold;
   color: #4b5563;
