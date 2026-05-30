@@ -55,6 +55,61 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const contributionStats = document.querySelector("[data-contribution-stats]");
+  if (contributionStats) {
+    const parseStatNumber = function (value) {
+      const match = String(value == null ? "" : value).trim().replace(/,/g, "").match(/([\d.]+)\s*([kKmM])?/);
+      if (!match) return NaN;
+      const multiplier = match[2] && match[2].toLowerCase() === "m" ? 1000000 : match[2] ? 1000 : 1;
+      return Number(match[1]) * multiplier;
+    };
+
+    const setStat = function (name, value) {
+      const node = contributionStats.querySelector("[data-stat='" + name + "']");
+      const number = parseStatNumber(value);
+      if (!node || !Number.isFinite(number)) return;
+      node.textContent = new Intl.NumberFormat("en-US").format(Math.round(number));
+      node.classList.add("is-loaded");
+    };
+
+    const fetchWithTimeout = function (url) {
+      const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+      const timer = controller ? window.setTimeout(function () { controller.abort(); }, 7000) : null;
+      const options = {};
+      if (controller) options.signal = controller.signal;
+      return fetch(url, options).finally(function () {
+        if (timer) window.clearTimeout(timer);
+      });
+    };
+
+    const fetchJson = function (url) {
+      return fetchWithTimeout(url).then(function (response) {
+        if (!response.ok) throw new Error("Request failed");
+        return response.json();
+      });
+    };
+
+    const loadContributionStats = function () {
+      const statsUrl = "https://raw.githubusercontent.com/{{ site.repository }}/contribution-stats/contribution_stats.json";
+      fetchJson(statsUrl)
+        .then(function (data) {
+          setStat("scholar-citations", data.google_scholar && data.google_scholar.citations);
+          setStat("zhihu-followers", data.zhihu && data.zhihu.followers);
+          setStat("zhihu-voteups", data.zhihu && data.zhihu.upvotes);
+          setStat("zhihu-favorites", data.zhihu && data.zhihu.favorites);
+          setStat("github-followers", data.github && data.github.followers);
+          setStat("github-stars", data.github && data.github.stars);
+        })
+        .catch(function () {});
+    };
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(loadContributionStats, { timeout: 2000 });
+    } else {
+      window.setTimeout(loadContributionStats, 0);
+    }
+  }
+
   const visitorsBox = document.getElementById("visitors-box");
   if (visitorsBox) {
     const visitorsSection = visitorsBox.closest(".about-section");
@@ -150,6 +205,42 @@ document.addEventListener("DOMContentLoaded", function () {
     </p>
   </section>
 
+  <section class="about-section contributions-section">
+    <h2>Contributions</h2>
+    <ul class="contribution-stats" data-contribution-stats>
+      <li class="contribution-stat">
+        <span class="contribution-stat__source">Google Scholar</span>
+        <span class="contribution-stat__value" data-stat="scholar-citations">--</span>
+        <span class="contribution-stat__label">Citations</span>
+      </li>
+      <li class="contribution-stat">
+        <span class="contribution-stat__source">Zhihu</span>
+        <span class="contribution-stat__value" data-stat="zhihu-followers">--</span>
+        <span class="contribution-stat__label">Followers</span>
+      </li>
+      <li class="contribution-stat">
+        <span class="contribution-stat__source">Zhihu</span>
+        <span class="contribution-stat__value" data-stat="zhihu-voteups">--</span>
+        <span class="contribution-stat__label">Upvotes</span>
+      </li>
+      <li class="contribution-stat">
+        <span class="contribution-stat__source">Zhihu</span>
+        <span class="contribution-stat__value" data-stat="zhihu-favorites">--</span>
+        <span class="contribution-stat__label">Favorites</span>
+      </li>
+      <li class="contribution-stat">
+        <span class="contribution-stat__source">GitHub</span>
+        <span class="contribution-stat__value" data-stat="github-followers">--</span>
+        <span class="contribution-stat__label">Followers</span>
+      </li>
+      <li class="contribution-stat">
+        <span class="contribution-stat__source">GitHub</span>
+        <span class="contribution-stat__value" data-stat="github-stars">--</span>
+        <span class="contribution-stat__label">Stars</span>
+      </li>
+    </ul>
+  </section>
+
   <section class="about-section">
     <h2>News</h2>
     <ul class="about-list plain-list news-list">
@@ -169,18 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </ul>
   </section>
   <section class="about-section">
-    <h2>Publications <a class="scholar-link heading-scholar-link" href='https://scholar.google.com/citations?user=puvUUPwAAAAJ'>
-      <img
-        class="scholar-badge"
-        src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/kcxain/kcxain.github.io/refs/heads/google-scholar-stats/gs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"
-        alt="Google Scholar citations"
-        loading="lazy"
-        decoding="async"
-        referrerpolicy="no-referrer"
-        onerror="this.style.display='none'; var f=this.parentNode.querySelector('.scholar-fallback'); if(f){f.style.display='inline';}"
-      >
-      <span class="scholar-fallback">Google Scholar Profile</span>
-    </a></h2>
+    <h2>Publications</h2>
     <ul class="about-list pub-list">
       {% for pub in site.data.publications %}
       <li>

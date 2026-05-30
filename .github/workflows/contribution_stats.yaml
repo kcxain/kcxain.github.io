@@ -1,0 +1,42 @@
+name: Update Contribution Stats
+
+on:
+  page_build:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 8 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update static contribution stats
+        run: |
+          mkdir -p contribution_stats_results
+          curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/contribution-stats/contribution_stats.json" \
+            -o contribution_stats_results/contribution_stats.json || true
+          CONTRIBUTION_STATS_OUTPUT=contribution_stats_results/contribution_stats.json \
+            python3 scripts/update_contribution_stats.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+
+      - name: Push contribution stats branch
+        run: |
+          cd contribution_stats_results
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git add contribution_stats.json
+          git commit -m "Update contribution stats"
+          git push "${remote_repo}" HEAD:contribution-stats --force

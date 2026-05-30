@@ -24,7 +24,7 @@ Some examples:
 - [Personal Homepage of the author](https://rayeren.github.io/)
 
 ## Key Features
-- **Automatically update google scholar citations**: using the google scholar crawler and github action, this REPO can update the author citations and publication citations automatically.
+- **Automatically update contribution stats**: using GitHub Actions, this REPO can update Google Scholar, Zhihu, and GitHub stats automatically.
 - **Support Google analytics**: you can trace the traffics of your homepage by easy configuration.
 - **Responsive**: this homepage automatically adjust for different screen sizes and viewports.
 - **Beautiful and Simple Design**: this homepage is beautiful and simple, which is very suitable for academic personal homepage.
@@ -33,10 +33,6 @@ Some examples:
 ## Quick Start
 
 1. Fork this REPO and rename to `USERNAME.github.io`, where `USERNAME` is your github USERNAME.
-1. Configure the google scholar citation crawler:
-    1. Find your google scholar ID in the url of your google scholar page (e.g., https://scholar.google.com/citations?user=SCHOLAR_ID), where `SCHOLAR_ID` is your google scholar ID.
-    1. Set GOOGLE_SCHOLAR_ID variable to your google scholar ID in `Settings -> Secrets -> Actions -> New repository secret` of the REPO website with `name=GOOGLE_SCHOLAR_ID` and `value=SCHOLAR_ID`.
-    1. Click the `Action` of the REPO website and enable the workflows by clicking *"I understand my workflows, go ahead and enable them"*. This github action will generate google scholar citation stats data `gs_data.json` in `google-scholar-stats` branch of your REPO. When you update your main branch, this action will be triggered. This action will also be trigger 08:00 UTC everyday.
 1. Generate favicon using [favicon-generator](https://redketchup.io/favicon-generator) and download all generated files to `REPO/images`.
 1. Modify the configuration of your homepage `_config.yml`:
     1. `title`: the title of your homepage
@@ -48,12 +44,6 @@ Some examples:
     1. More configuration details are described in the comments.
 1. Add your homepage content in `_pages/about.md`.
     1. You can use html+markdown syntax just same as jekyll.
-    1. You can use a `<span>` tag with class `show_paper_citations` and attribute `data` to display the citations of your paper. Set the data to the google scholar paper ID. For
-        ```html
-        <span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span>
-        ``` 
-        > Q: How to get the google scholar paper ID?   
-        > A: Enter your google scholar homepage and click the paper name. Then you can see the paper ID from `citation_for_view=XXXX`, where `XXXX` is the required paper ID.
 1. Your page will be published at `https://USERNAME.github.io`.
 
 ## Debug Locally
@@ -64,6 +54,25 @@ Some examples:
 1. Open http://127.0.0.1:4000 in your browser.
 1. If you change the source code of the website, the livereload server will automatically refresh.
 1. When you finish the modification of your homepage, `commit` your changings and `push` to your remote REPO using `git` command.
+
+## Update Contribution Stats
+
+The `Contributions` section reads static data from:
+
+```text
+https://raw.githubusercontent.com/<repository>/contribution-stats/contribution_stats.json
+```
+
+GitHub Actions runs `.github/workflows/contribution_stats.yaml` every day and updates this file with Google Scholar citations, Zhihu followers/upvotes/favorites, and GitHub followers/stars. The workflow force-pushes the result to the `contribution-stats` branch, so the main branch does not get a new commit for every scheduled stats update and the stats branch only keeps one latest commit.
+
+To update the file manually:
+
+```bash
+CONTRIBUTION_STATS_OUTPUT=contribution_stats_results/contribution_stats.json \
+  python3 scripts/update_contribution_stats.py
+```
+
+The script uses `_config.yml` for the Google Scholar, GitHub, and Zhihu usernames. If one source is temporarily unavailable, it keeps the previous value already stored in the output JSON and records the failure under the `errors` field.
 
 ## Update CJK Font Subsets
 

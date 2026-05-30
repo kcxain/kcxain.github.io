@@ -126,35 +126,6 @@
   margin-right: 0.28rem;
 }
 
-.scholar-link {
-  display: inline-block;
-  color: #4e5968;
-  font-weight: $home-weight-semibold;
-}
-
-.scholar-badge {
-  vertical-align: middle;
-}
-
-.scholar-fallback {
-  display: none;
-  margin-left: 0.25rem;
-}
-
-.scholar-line {
-  margin-top: 0.5rem !important;
-  text-align: center;
-}
-
-.heading-scholar-link {
-  margin-left: 0.45rem;
-  vertical-align: middle;
-}
-
-.heading-scholar-link .scholar-fallback {
-  font-size: $home-font-size-small;
-}
-
 .about-section {
   margin-top: 1.85rem;
 }
@@ -180,6 +151,48 @@
   margin-bottom: 0.65rem;
   background: rgba(255, 255, 255, 0.55);
   border-radius: 0;
+}
+
+.contribution-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.58rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contribution-stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.48rem;
+  row-gap: 0.02rem;
+  align-items: baseline;
+  padding: 0.56rem 0.7rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(18, 24, 32, 0.08);
+}
+
+.contribution-stat__source {
+  grid-column: 1 / -1;
+  color: #66717f;
+  font-size: $home-font-size-small;
+  font-weight: $home-weight-medium;
+  line-height: $home-leading-meta;
+}
+
+.contribution-stat__value {
+  color: var(--ink);
+  font-size: $home-font-size-title;
+  font-weight: $home-weight-semibold;
+  line-height: $home-leading-title;
+}
+
+.contribution-stat__label {
+  color: #526071;
+  font-size: $home-font-size-card-meta;
+  font-weight: $home-weight-medium;
+  line-height: $home-leading-meta;
 }
 
 .plain-list {
@@ -735,10 +748,6 @@ img.hf-icon {
     font-size: $home-mobile-font-size-card-meta;
   }
 
-  .heading-scholar-link .scholar-fallback {
-    font-size: $home-mobile-font-size-small;
-  }
-
   .about-section h2 {
     font-size: $home-mobile-font-size-section;
   }
@@ -756,6 +765,22 @@ img.hf-icon {
   .research-ai__method,
   .meta-grid div {
     font-size: $home-mobile-font-size-small;
+  }
+
+  .contribution-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contribution-stat__source {
+    font-size: $home-mobile-font-size-small;
+  }
+
+  .contribution-stat__value {
+    font-size: $home-mobile-font-size-card-title;
+  }
+
+  .contribution-stat__label {
+    font-size: $home-mobile-font-size-card-meta;
   }
 
   .pub-title {
@@ -893,6 +918,10 @@ img.hf-icon {
 
   .research-ai__method {
     width: fit-content;
+  }
+
+  .contribution-stats {
+    grid-template-columns: 1fr;
   }
 
   .edu-icon {

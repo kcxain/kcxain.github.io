@@ -25,7 +25,7 @@ bash run_server.sh   # runs: bundle exec jekyll liveserve
 - **`_layouts/default.html`** — Base layout wrapping all pages.
 - **`_includes/`** — Partials: author-profile sidebar, head/SEO tags, analytics, scripts.
 - **`_sass/`** — SCSS partials compiled by Jekyll. Custom styles for the about page are inline in `about.md`, not in SCSS files.
-- **`google_scholar_crawler/`** — Python script + GitHub Action that auto-updates citation stats daily. Pushes `gs_data.json` to the `google-scholar-stats` branch. Requires `GOOGLE_SCHOLAR_ID` secret.
+- **`scripts/update_contribution_stats.py`** — Updates `contribution_stats.json` for Google Scholar, Zhihu, and GitHub stats. Scheduled by `.github/workflows/contribution_stats.yaml`, which force-pushes the result to the `contribution-stats` branch.
 
 ## Common Tasks
 

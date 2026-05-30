@@ -4,3 +4,5 @@ push.sh
 .bundle/
 .ruby-version
 vendor/
+contribution_stats_results/
+scripts/__pycache__/
