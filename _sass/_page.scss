@@ -11,6 +11,10 @@
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
+  .home & {
+    animation: none;
+  }
+
   @include breakpoint($x-large) {
     max-width: $x-large;
   }
