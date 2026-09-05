@@ -55,59 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const contributionStats = document.querySelector("[data-contribution-stats]");
-  if (contributionStats) {
-    const parseStatNumber = function (value) {
-      const match = String(value == null ? "" : value).trim().replace(/,/g, "").match(/([\d.]+)\s*([kKmM])?/);
-      if (!match) return NaN;
-      const multiplier = match[2] && match[2].toLowerCase() === "m" ? 1000000 : match[2] ? 1000 : 1;
-      return Number(match[1]) * multiplier;
-    };
-
-    const setStat = function (name, value) {
-      const node = contributionStats.querySelector("[data-stat='" + name + "']");
-      const number = parseStatNumber(value);
-      if (!node || !Number.isFinite(number)) return;
-      node.textContent = new Intl.NumberFormat("en-US").format(Math.round(number));
-      node.classList.add("is-loaded");
-    };
-
-    const fetchWithTimeout = function (url) {
-      const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
-      const timer = controller ? window.setTimeout(function () { controller.abort(); }, 7000) : null;
-      const options = {};
-      if (controller) options.signal = controller.signal;
-      return fetch(url, options).finally(function () {
-        if (timer) window.clearTimeout(timer);
-      });
-    };
-
-    const fetchJson = function (url) {
-      return fetchWithTimeout(url).then(function (response) {
-        if (!response.ok) throw new Error("Request failed");
-        return response.json();
-      });
-    };
-
-    const loadContributionStats = function () {
-      const statsUrl = "https://raw.githubusercontent.com/{{ site.repository }}/contribution-stats/contribution_stats.json";
-      fetchJson(statsUrl)
-        .then(function (data) {
-          setStat("scholar-citations", data.google_scholar && data.google_scholar.citations);
-          setStat("zhihu-followers", data.zhihu && data.zhihu.followers);
-          setStat("zhihu-voteups", data.zhihu && data.zhihu.upvotes);
-          setStat("github-stars", data.github && data.github.stars);
-        })
-        .catch(function () {});
-    };
-
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(loadContributionStats, { timeout: 2000 });
-    } else {
-      window.setTimeout(loadContributionStats, 0);
-    }
-  }
-
   const visitorsBox = document.getElementById("visitors-box");
   if (visitorsBox) {
     const visitorsSection = visitorsBox.closest(".about-section");
@@ -191,27 +138,23 @@ document.addEventListener("DOMContentLoaded", function () {
         <strong>RSI</strong>
         <span>Recursive Self-Improvement</span>
       </figcaption>
-      <p class="research-map__sr-only" id="research-map-desc">AI uses self-evolving agents and reinforcement learning to improve chip design through AI4Chip and system software through AI4Sys. Advances across this hardware and software stack enable stronger AI, which drives the next iteration.</p>
+      <p class="research-map__sr-only" id="research-map-desc">AI uses self-evolving agents and reinforcement learning to improve chips and system software. Advances across this hardware and software stack enable stronger AI, which drives the next iteration.</p>
       <div class="research-map__cycle">
-        <div class="research-ai">
+        <div class="research-ai research-ai--source">
           <strong class="research-ai__title">AI</strong>
-        </div>
-        <div class="research-map__arrow" aria-hidden="true"></div>
-        <div class="research-methods">
-          <span class="research-methods__heading">Methods</span>
-          <span class="research-methods__item">Self-Evolving Agents</span>
-          <span class="research-methods__item">Reinforcement Learning</span>
+          <div class="research-ai__methods">
+            <span>Self-Evolving Agents</span>
+            <span>Reinforcement Learning</span>
+          </div>
         </div>
         <div class="research-map__arrow" aria-hidden="true"><span>improves</span></div>
         <div class="research-map__stack">
           <div class="research-domain research-domain--system">
-            <strong>AI4Sys</strong>
-            <span>System Software</span>
+            <strong>System Software</strong>
           </div>
-          <span class="research-map__stack-arrow" aria-hidden="true">↑</span>
+          <span class="research-map__stack-arrow" aria-hidden="true"></span>
           <div class="research-domain research-domain--chip">
-            <strong>AI4Chip</strong>
-            <span>Chip Design</span>
+            <strong>Chip</strong>
           </div>
         </div>
         <div class="research-map__arrow" aria-hidden="true"><span>enables</span></div>
@@ -223,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </figure>
     <p class="about-contact">
       <span>Open to collaboration, academic exchange, and internship opportunities.</span>
-      <a href="mailto:kcxain@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>
+      <a href="mailto:kcxain@gmail.com">{% include icons/envelope.svg %} kcxain@gmail.com</a>
     </p>
   </section>
 
@@ -232,17 +175,17 @@ document.addEventListener("DOMContentLoaded", function () {
     <ul class="contribution-stats" data-contribution-stats>
       <li class="contribution-stat contribution-stat--scholar">
         <a class="contribution-stat__link" href="{{ site.author.googlescholar }}" aria-label="Google Scholar citations">
-          <span class="contribution-stat__mark" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+          <span class="contribution-stat__mark" aria-hidden="true">{% include icons/graduation-cap.svg %}</span>
           <span class="contribution-stat__source">Google Scholar</span>
-          <span class="contribution-stat__value" data-stat="scholar-citations">--</span>
+          <span class="contribution-stat__value" data-stat="scholar-citations">{% include stat-number.html value=site.data.contribution_stats.google_scholar.citations %}</span>
           <span class="contribution-stat__label">Citations</span>
         </a>
       </li>
       <li class="contribution-stat contribution-stat--github">
         <a class="contribution-stat__link" href="https://github.com/{{ site.author.github }}?tab=repositories" aria-label="GitHub stars">
-          <span class="contribution-stat__mark" aria-hidden="true"><i class="fab fa-github"></i></span>
+          <span class="contribution-stat__mark" aria-hidden="true">{% include icons/github.svg %}</span>
           <span class="contribution-stat__source">GitHub</span>
-          <span class="contribution-stat__value" data-stat="github-stars">--</span>
+          <span class="contribution-stat__value" data-stat="github-stars">{% include stat-number.html value=site.data.contribution_stats.github.stars %}</span>
           <span class="contribution-stat__label">Stars</span>
         </a>
       </li>
@@ -250,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a class="contribution-stat__link" href="https://www.zhihu.com/people/{{ site.author.zhihu }}" aria-label="Zhihu followers">
           <span class="contribution-stat__mark" aria-hidden="true">{% include icons/zhihu-square.svg %}</span>
           <span class="contribution-stat__source">Zhihu</span>
-          <span class="contribution-stat__value" data-stat="zhihu-followers">--</span>
+          <span class="contribution-stat__value" data-stat="zhihu-followers">{% include stat-number.html value=site.data.contribution_stats.zhihu.followers %}</span>
           <span class="contribution-stat__label">Followers</span>
         </a>
       </li>
@@ -258,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a class="contribution-stat__link" href="https://www.zhihu.com/people/{{ site.author.zhihu }}" aria-label="Zhihu upvotes">
           <span class="contribution-stat__mark" aria-hidden="true">{% include icons/zhihu-square.svg %}</span>
           <span class="contribution-stat__source">Zhihu</span>
-          <span class="contribution-stat__value" data-stat="zhihu-voteups">--</span>
+          <span class="contribution-stat__value" data-stat="zhihu-voteups">{% include stat-number.html value=site.data.contribution_stats.zhihu.upvotes %}</span>
           <span class="contribution-stat__label">Upvotes</span>
         </a>
       </li>
@@ -329,21 +272,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% assign icon_class = "" %}
                 {% assign icon_include = "" %}
                 {% if link.type == "code" %}
-                  {% assign icon_class = "fab fa-github" %}
+                  {% assign icon_include = "github" %}
                 {% elsif link.type == "models" %}
                   {% assign icon_class = "hf-icon" %}
                 {% elsif link.type == "blog" %}
                   {% if link.url contains "zhihu.com" %}
                     {% assign icon_include = "zhihu-square" %}
                   {% elsif link.url contains "weixin.qq.com" %}
-                    {% assign icon_class = "fab fa-weixin" %}
+                    {% assign icon_include = "weixin" %}
                   {% else %}
-                    {% assign icon_class = "far fa-newspaper" %}
+                    {% assign icon_include = "newspaper" %}
                   {% endif %}
                 {% elsif link.type == "paper" %}
-                  {% assign icon_class = "fas fa-file-alt" %}
+                  {% assign icon_include = "file-alt" %}
                 {% endif %}
-                <a class="{{ link.type }}{% if icon_include == "zhihu-square" %} zhihu-blog-link{% endif %}" href="{{ link.url }}">[{% if icon_include == "zhihu-square" %}{% include icons/zhihu-square.svg %}{% elsif icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" width="95" height="88" alt="HF" aria-hidden="true" loading="lazy" decoding="async">{% elsif icon_class != "" %}<i class="{{ icon_class }} pub-link-icon" aria-hidden="true"></i>{% endif %}{{ link.name }}]</a>
+                <a class="{{ link.type }}{% if icon_include == "zhihu-square" %} zhihu-blog-link{% endif %}" href="{{ link.url }}">[{% if icon_include == "zhihu-square" %}{% include icons/zhihu-square.svg %}{% elsif icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" width="95" height="88" alt="HF" aria-hidden="true" loading="lazy" decoding="async">{% elsif icon_include != "" %}{% assign icon_path = "icons/" | append: icon_include | append: ".svg" %}{% include {{ icon_path }} class="pub-link-icon" %}{% endif %}{{ link.name }}]</a>
               {% endfor %}
             </span>
           {% endif %}

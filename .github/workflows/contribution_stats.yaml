@@ -1,13 +1,16 @@
 name: Update Contribution Stats
 
 on:
-  page_build:
   workflow_dispatch:
   schedule:
     - cron: "20 8 * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: contribution-stats
+  cancel-in-progress: false
 
 jobs:
   update:

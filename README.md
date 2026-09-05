@@ -57,22 +57,32 @@ Some examples:
 
 ## Update Contribution Stats
 
-The `Contributions` section reads static data from:
+The `Contributions` section is rendered into HTML from `_data/contribution_stats.json`. Visitors receive the numbers with the page, including when JavaScript or third-party requests are unavailable.
 
-```text
-https://raw.githubusercontent.com/<repository>/contribution-stats/contribution_stats.json
+`.github/workflows/contribution_stats.yaml` runs daily and on manual dispatch. It updates the independent `contribution-stats` branch using `github-actions[bot]`; that branch keeps only its latest commit. The default branch receives no automated statistics commits.
+
+After a successful statistics update, `.github/workflows/pages.yaml` fetches the published snapshot into its temporary build workspace, builds Jekyll, and deploys a Pages artifact. Code pushes to `main` and manual dispatch also build the site. The committed snapshot is a fallback for local previews and temporary network failures; the build validates all four counters before replacing it. The existing updater keeps previous values when an individual source is unavailable.
+
+Before enabling this deployment workflow, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. The `github-pages` environment must allow deployments from `main`. The workflow uses the built-in token and creates no source commits.
+
+Refresh the local build snapshot:
+
+```bash
+python3 scripts/fetch_contribution_stats.py
 ```
 
-GitHub Actions runs `.github/workflows/contribution_stats.yaml` every day and updates this file with Google Scholar citations, Zhihu followers/upvotes/favorites, and GitHub followers/stars. The workflow force-pushes the result to the `contribution-stats` branch, so the main branch does not get a new commit for every scheduled stats update and the stats branch only keeps one latest commit.
-
-To update the file manually:
+Run the source-data updater manually:
 
 ```bash
 CONTRIBUTION_STATS_OUTPUT=contribution_stats_results/contribution_stats.json \
   python3 scripts/update_contribution_stats.py
 ```
 
-The script uses `_config.yml` for the Google Scholar, GitHub, and Zhihu usernames. If one source is temporarily unavailable, it keeps the previous value already stored in the output JSON and records the failure under the `errors` field.
+The source-data updater reads the account identifiers from `_config.yml`. Its output is published to:
+
+```text
+https://raw.githubusercontent.com/<repository>/contribution-stats/contribution_stats.json
+```
 
 ## Update CJK Font Subsets
 

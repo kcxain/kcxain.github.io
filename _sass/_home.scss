@@ -139,7 +139,7 @@ $home-breakpoint-tight: 360px;
   white-space: nowrap;
 }
 
-.about-contact i {
+.about-contact .site-icon {
   margin-right: 0.28rem;
 }
 
@@ -149,6 +149,7 @@ $home-breakpoint-tight: 360px;
 
 .about-section h2 {
   margin: 0 0 var(--home-section-content-gap);
+  font-family: inherit;
   font-size: var(--home-size-section);
   font-weight: $home-weight-semibold;
   color: #4b5563;
@@ -339,18 +340,17 @@ $home-breakpoint-tight: 360px;
 }
 
 .research-map__cycle {
-  --research-unit: calc((100% - 8.6rem) / 4.25);
+  --research-unit: calc((100% - 6.8rem) / 3.7);
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.65fr) 1.8rem minmax(0, 1.35fr) 3.4rem minmax(0, 1.35fr) 3.4rem minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1.6fr) 3.4rem minmax(0, 1.2fr) 3.4rem minmax(0, 0.9fr);
   grid-template-rows: 10rem;
   align-items: center;
   padding: 0.2rem 0 1.6rem;
 }
 
 .research-ai,
-.research-domain,
-.research-methods {
+.research-domain {
   min-width: 0;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.45);
@@ -380,29 +380,23 @@ $home-breakpoint-tight: 360px;
   }
 }
 
-.research-methods {
+.research-ai--source {
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  column-gap: 0.6rem;
+  height: 5.5rem;
+  padding: 0.55rem 0.6rem;
+}
+
+.research-ai__methods {
   display: grid;
-  padding: 0.65rem 0.6rem;
-  border-color: rgba(15, 107, 127, 0.22);
-  border-top: 2px solid rgba(15, 107, 127, 0.55);
-}
-
-.research-methods__heading {
-  margin-bottom: 0.45rem;
-  color: var(--accent-a);
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.research-methods__item {
-  padding: 0.4rem 0;
-  color: var(--ink);
+  align-content: center;
+  align-self: stretch;
+  justify-self: stretch;
+  gap: 0.3rem;
+  padding-left: 0.6rem;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
   font-size: var(--home-size-small);
-
-  + .research-methods__item {
-    border-top: 1px solid var(--line);
-  }
 }
 
 .research-map__arrow {
@@ -465,22 +459,26 @@ $home-breakpoint-tight: 360px;
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.4rem;
+
+  &::after {
+    content: "\2191";
+  }
 }
 
 .research-map__feedback {
   position: absolute;
   right: calc(var(--research-unit) * 0.45);
   bottom: 0.5rem;
-  left: calc(var(--research-unit) * 0.325);
+  left: calc(var(--research-unit) * 0.8);
   height: 4.35rem;
   border: solid rgba(184, 59, 94, 0.35);
-  border-width: 0 1px 1px;
+  border-width: 0 1px 1px 0;
   color: var(--accent-b);
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 1rem;
     left: -3px;
     width: 5px;
     height: 5px;
@@ -488,9 +486,18 @@ $home-breakpoint-tight: 360px;
     border-width: 1px 0 0 1px;
     transform: rotate(45deg);
   }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid rgba(184, 59, 94, 0.35);
+  }
 }
 
-// Keep all four modules readable within the space left by the sidebar.
+// Compact layout: methods beside AI, software and chip on a shared row.
 @container (max-width: 620px) {
   .research-map__cycle {
     grid-template-columns: minmax(0, 1fr);
@@ -499,8 +506,19 @@ $home-breakpoint-tight: 360px;
     padding: 0 0 0 1.5rem;
   }
 
-  .research-methods {
-    padding: 0.55rem 0.85rem;
+  .research-map__stack {
+    grid-template-columns: minmax(0, 1fr) 1.4rem minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    height: 4.3rem;
+    align-items: stretch;
+  }
+
+  .research-map__stack-arrow {
+    align-self: center;
+
+    &::after {
+      content: "\2190";
+    }
   }
 
   .research-map__arrow {
@@ -510,8 +528,12 @@ $home-breakpoint-tight: 360px;
     gap: 0.4rem;
 
     span {
-      position: static;
-      transform: none;
+      position: absolute;
+      top: 50%;
+      right: calc(50% + 0.7rem);
+      bottom: auto;
+      left: auto;
+      transform: translateY(-50%);
     }
 
     &::after {
@@ -521,7 +543,7 @@ $home-breakpoint-tight: 360px;
   }
 
   .research-map__feedback {
-    top: 1.75rem;
+    top: 2.75rem;
     bottom: 1.75rem;
     left: 0.5rem;
     right: auto;
@@ -535,7 +557,12 @@ $home-breakpoint-tight: 360px;
       right: 0;
       transform: rotate(135deg);
     }
+
+    &::after {
+      display: none;
+    }
   }
+
 }
 
 .pub-list li {
@@ -588,13 +615,13 @@ $home-breakpoint-tight: 360px;
   font-family: inherit;
   margin: 0.06rem 0 0;
   color: #465160;
-  font-size: var(--home-size-meta) !important;
+  font-size: var(--home-size-small) !important;
   font-weight: $home-weight-medium;
   line-height: $home-leading-meta;
 }
 
 .pub-venue {
-  color: rgba(15, 107, 127, 0.88);
+  color: #07586b;
   font-weight: $home-weight-semibold;
 }
 
@@ -669,9 +696,9 @@ $home-breakpoint-tight: 360px;
 
 .pub-authors {
   font-family: inherit;
-  color: #465160;
-  font-size: var(--home-size-meta) !important;
-  font-weight: $home-weight-medium;
+  color: var(--muted);
+  font-size: var(--home-size-small) !important;
+  font-weight: $home-weight-regular;
   line-height: $home-leading-meta;
   margin: 0.02rem 0 0;
 }
@@ -812,14 +839,14 @@ img.hf-icon {
   --timeline-dot-size: 0.52rem;
   --timeline-dot-top: 1.02rem;
   --timeline-line-top: 1.54rem;
-  --timeline-logo-slot: 7.6rem;
-  --timeline-logo-height: 3.65rem;
-  --timeline-wordmark-slot: 14rem;
-  --timeline-wordmark-height: 2.45rem;
-  --timeline-seal-slot: 4.7rem;
-  --timeline-seal-height: 3.85rem;
-  --timeline-brand-slot: 8.9rem;
-  --timeline-brand-height: 2.75rem;
+  --timeline-logo-slot: 6rem;
+  --timeline-logo-height: 2.9rem;
+  --timeline-wordmark-slot: 12.5rem;
+  --timeline-wordmark-height: 2.25rem;
+  --timeline-seal-slot: 3.7rem;
+  --timeline-seal-height: 3rem;
+  --timeline-brand-slot: 7rem;
+  --timeline-brand-height: 2.2rem;
 
   display: grid;
   gap: var(--timeline-gap);
@@ -883,7 +910,7 @@ img.hf-icon {
   min-width: 0;
   gap: 1rem;
   padding: 0.52rem 0.82rem;
-  min-height: 74px;
+  min-height: 66px;
   border-radius: 10px;
   border: 1px solid rgba(18, 24, 32, 0.08);
   background: rgba(15, 107, 127, 0.038);
@@ -977,13 +1004,13 @@ img.hf-icon {
     --timeline-dot-size: 0.38rem;
     --timeline-dot-top: 0.53rem;
     --timeline-logo-slot: 6rem;
-    --timeline-logo-height: 3.15rem;
-    --timeline-wordmark-slot: 10.5rem;
-    --timeline-wordmark-height: 2rem;
-    --timeline-seal-slot: 4.1rem;
-    --timeline-seal-height: 3.35rem;
-    --timeline-brand-slot: 7.4rem;
-    --timeline-brand-height: 2.3rem;
+    --timeline-logo-height: 2.6rem;
+    --timeline-wordmark-slot: 9.5rem;
+    --timeline-wordmark-height: 1.8rem;
+    --timeline-seal-slot: 3.4rem;
+    --timeline-seal-height: 2.75rem;
+    --timeline-brand-slot: 6rem;
+    --timeline-brand-height: 1.9rem;
   }
 
   .timeline__item {
@@ -1046,12 +1073,12 @@ img.hf-icon {
   .timeline {
     --timeline-logo-slot: 5rem;
     --timeline-logo-height: 2.65rem;
-    --timeline-wordmark-slot: 8.1rem;
-    --timeline-wordmark-height: 1.72rem;
-    --timeline-seal-slot: 3.5rem;
-    --timeline-seal-height: 2.85rem;
-    --timeline-brand-slot: 5.8rem;
-    --timeline-brand-height: 1.95rem;
+    --timeline-wordmark-slot: 7.5rem;
+    --timeline-wordmark-height: 1.6rem;
+    --timeline-seal-slot: 2.9rem;
+    --timeline-seal-height: 2.35rem;
+    --timeline-brand-slot: 4.8rem;
+    --timeline-brand-height: 1.6rem;
   }
 }
 
@@ -1063,16 +1090,53 @@ img.hf-icon {
   .timeline {
     --timeline-logo-slot: 4.25rem;
     --timeline-logo-height: 2.2rem;
-    --timeline-wordmark-slot: 5.6rem;
+    --timeline-wordmark-slot: 5.4rem;
     --timeline-wordmark-height: 1.2rem;
-    --timeline-seal-slot: 3rem;
-    --timeline-seal-height: 2.45rem;
-    --timeline-brand-slot: 4.8rem;
-    --timeline-brand-height: 1.62rem;
+    --timeline-seal-slot: 2.5rem;
+    --timeline-seal-height: 2rem;
+    --timeline-brand-slot: 4.2rem;
+    --timeline-brand-height: 1.4rem;
   }
 
   .timeline__card {
     gap: 0.45rem;
     padding: 0.5rem 0.62rem;
+  }
+}
+
+// Small inline SVGs share the original Font Awesome glyph geometry.
+.site-icon {
+  display: inline-block;
+  width: var(--icon-width, 1em);
+  height: 1em;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
+
+.site-icon--fixed {
+  width: 1.25em;
+}
+
+.site-icon.pub-link-icon {
+  vertical-align: -0.125em;
+}
+
+.home .author__name {
+  margin-bottom: 0;
+}
+
+.home .author__name::before {
+  display: none;
+}
+
+.home a:focus-visible,
+.home .pub-venue-abbr:focus-visible {
+  outline: 2px solid var(--accent-a);
+  outline-offset: 3px;
+}
+
+@media (min-width: $large) {
+  .home .author__urls-wrapper {
+    margin-top: 1rem;
   }
 }

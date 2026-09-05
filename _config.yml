@@ -7,7 +7,9 @@
 
 # Site Settings
 title                    : "Changxin Ke 柯昌鑫"
-description              : ""
+description              : "Changxin Ke at the Institute of Computing Technology. Research in AI4Chip, AI4Sys and recursive self-improvement through self-evolving agents and reinforcement learning."
+url                      : "https://kechang.xin"
+social_image             : "/images/social-preview.png"
 repository               : "kcxain/kcxain.github.io"
 
 # google analytics
@@ -21,7 +23,7 @@ baidu_site_verification  :  "codeva-29sjI1qGIE" # get baidu_site_verification fr
 # Site Author
 author:
   name             : "Changxin Ke（柯昌鑫）"
-  avatar           : "https://kkcx.oss-cn-beijing.aliyuncs.com/site//phota3.jpg"
+  avatar           : "/images/avatar.webp"
   bio              :
   location         : "Beijing, China"
   employer         :

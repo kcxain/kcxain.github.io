@@ -11,9 +11,11 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="assets/css/main.css">
+{% if page.body_class == "home" %}
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+{% else %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% endif %}
 
 <meta http-equiv="cleartype" content="on">
-<head>
-  <base target="_blank">
-</head>
+<base target="_blank">

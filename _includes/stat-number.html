@@ -1,0 +1,7 @@
+{%- assign digits = include.value | default: '--' | append: '' | split: '' -%}
+{%- for digit in digits -%}
+  {{- digit -}}
+  {%- assign remaining = digits.size | minus: forloop.index -%}
+  {%- assign group = remaining | modulo: 3 -%}
+  {%- if remaining > 0 and group == 0 -%},{%- endif -%}
+{%- endfor -%}

@@ -5,20 +5,22 @@
 <div itemscope itemtype="http://schema.org/Person" class="profile_box">
 
     <div class="author__avatar">
-        <img src="{{ author.avatar }}" class="author__avatar" alt="{{ author.name }}">
+        <img src="{{ author.avatar }}" class="author__avatar" alt="{{ author.name }}" width="350" height="350" decoding="async">
     </div>
 
+    {% assign author_heading = "h3" %}
+    {% if page.body_class == "home" %}{% assign author_heading = "h1" %}{% endif %}
     <div class="author__content">
         {% assign author_name_parts = author.name | split: "（" %}
         {% if author_name_parts.size > 1 %}
         {% assign author_name_primary = author_name_parts[0] | strip %}
         {% assign author_name_secondary = author_name_parts[1] | remove: "）" | strip %}
-        <h3 class="author__name author__name--stacked">
+        <{{ author_heading }} class="author__name author__name--stacked">
             <span class="author__name-line">{{ author_name_primary }}</span>
             <span class="author__name-line author__name-line--zh">{{ author_name_secondary }}</span>
-        </h3>
+        </{{ author_heading }}>
         {% else %}
-        <h3 class="author__name">{{ author.name }}</h3>
+        <{{ author_heading }} class="author__name">{{ author.name }}</{{ author_heading }}>
         {% endif %}
         {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
     </div>
@@ -26,11 +28,6 @@
     <div class="author__urls-wrapper">
         <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
         <ul class="author__urls social-icons">
-            {% if site.description %}
-            <li>
-                <div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div>
-            </li>
-            {% endif %}
             {% if author.employer %}
             <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
             {% endif %}
@@ -82,7 +79,7 @@
                         aria-hidden="true"></i> Bitbucket</a></li>
             {% endif %}
             {% if author.github %}
-            <li class="author__icon-item"><a class="author__icon-link" href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a></li>
+            <li class="author__icon-item"><a class="author__icon-link" href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub">{% include icons/github.svg class="site-icon--fixed" %}</a></li>
             {% endif %}
             {% if author.zhihu %}
             <li class="author__icon-item"><a class="author__icon-link" href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu">{% include icons/zhihu-square.svg %}</a></li>
@@ -139,7 +136,7 @@
             </li>
             {% endif %}
             {% if author.googlescholar %}
-            <li class="author__icon-item"><a class="author__icon-link" href="{{ author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i></a></li>
+            <li class="author__icon-item"><a class="author__icon-link" href="{{ author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar">{% include icons/graduation-cap.svg class="site-icon--fixed" %}</a></li>
             {% endif %}
             {% if author.pubmed %}
             <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
@@ -201,7 +198,7 @@
                     aria-hidden="true"></i></a>
             {% endif %}
             {% if author.github %}
-            <a href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>
+            <a href="https://github.com/{{ author.github }}" aria-label="GitHub" title="GitHub">{% include icons/github.svg class="site-icon--fixed" %}</a>
             {% endif %}
             {% if author.zhihu %}
             <a href="https://www.zhihu.com/people/{{ author.zhihu }}" aria-label="Zhihu" title="Zhihu">{% include icons/zhihu-square.svg %}</a>
@@ -253,7 +250,7 @@
             <a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine" aria-hidden="true"></i></a>
             {% endif %}
             {% if author.googlescholar %}
-            <a href="{{ author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i></a>
+            <a href="{{ author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar">{% include icons/graduation-cap.svg class="site-icon--fixed" %}</a>
             {% endif %}
             {% if author.pubmed %}
             <a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i></a>
