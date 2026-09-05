@@ -182,21 +182,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <div class="about-wrap">
   <section class="about-hero">
-    <p>I am a second-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), Chinese Academy of Sciences, advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>.</p>
+    <p>I am a third-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>, <a href='https://www.ict.cas.cn/sourcedb/cn/jssrck/202502/t20250220_7530352.html'>Prof. Yuanbo Wen</a> and <a href='https://www.ict.cas.cn/sourcedb/cn/jssrck/202003/t20200310_5509322.html'>Prof. Xishan Zhang</a>.</p>
+
     <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
-    <p>Currently, my research interests focus on <strong>AI for Chip Design</strong> and <strong>AI for System</strong>.</p>
-    <div class="research-map" aria-label="Research methods and application domains">
-      <div class="research-ai">
-        <span class="research-ai__title">AI</span>
-        <span class="research-ai__method">Self-Evolving Coding Agent</span>
-        <span class="research-ai__method">Reinforcement Learning</span>
+    <p>My research focuses on <strong>AI4Chip</strong> and <strong>AI4Sys</strong>, toward <strong>Recursive Self-Improvement (RSI)</strong>: AI advances chip design and system software, enabling more capable AI to drive the next round of improvement.</p>
+    <figure class="research-map" aria-labelledby="research-map-title" aria-describedby="research-map-desc">
+      <figcaption class="research-map__heading" id="research-map-title">
+        <strong>RSI</strong>
+        <span>Recursive Self-Improvement</span>
+      </figcaption>
+      <p class="research-map__sr-only" id="research-map-desc">AI uses self-evolving agents and reinforcement learning to improve chip design through AI4Chip and system software through AI4Sys. Advances across this hardware and software stack enable stronger AI, which drives the next iteration.</p>
+      <div class="research-map__cycle">
+        <div class="research-ai">
+          <strong class="research-ai__title">AI</strong>
+        </div>
+        <div class="research-map__arrow" aria-hidden="true"></div>
+        <div class="research-methods">
+          <span class="research-methods__heading">Methods</span>
+          <span class="research-methods__item">Self-Evolving Agents</span>
+          <span class="research-methods__item">Reinforcement Learning</span>
+        </div>
+        <div class="research-map__arrow" aria-hidden="true"><span>improves</span></div>
+        <div class="research-map__stack">
+          <div class="research-domain research-domain--system">
+            <strong>AI4Sys</strong>
+            <span>System Software</span>
+          </div>
+          <span class="research-map__stack-arrow" aria-hidden="true">↑</span>
+          <div class="research-domain research-domain--chip">
+            <strong>AI4Chip</strong>
+            <span>Chip Design</span>
+          </div>
+        </div>
+        <div class="research-map__arrow" aria-hidden="true"><span>enables</span></div>
+        <div class="research-ai research-ai--next">
+          <strong class="research-ai__title">Stronger AI</strong>
+        </div>
+        <div class="research-map__feedback" aria-hidden="true"></div>
       </div>
-      <div class="research-map__arrow" aria-hidden="true"></div>
-      <div class="research-map__domains">
-        <div class="research-domain research-domain--system">System</div>
-        <div class="research-domain research-domain--chip">Chip Design</div>
-      </div>
-    </div>
+    </figure>
     <p class="about-contact">
       <span>Open to collaboration, academic exchange, and internship opportunities.</span>
       <a href="mailto:kcxain@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> kcxain@gmail.com</a>
