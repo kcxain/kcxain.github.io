@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <div class="about-wrap">
   <section class="about-hero">
-    <p>I am a third-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Prof. Rui Zhang</a>, <a href='https://www.ict.cas.cn/sourcedb/cn/jssrck/202502/t20250220_7530352.html'>Prof. Yuanbo Wen</a> and <a href='https://www.ict.cas.cn/sourcedb/cn/jssrck/202003/t20200310_5509322.html'>Prof. Xishan Zhang</a>.</p>
+    <p>I am a third-year Master's student at the Intelligent Processor Research Center, Institute of Computing Technology (ICT), advised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Rui Zhang</a>, <a href='https://www.ict.cas.cn/sourcedb/cn/jssrck/202502/t20250220_7530352.html'>Yuanbo Wen</a> and <a href='https://www.ict.cas.cn/sourcedb/cn/jssrck/202003/t20200310_5509322.html'>Xishan Zhang</a>.</p>
 
-    <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Prof. Wei-Nan Zhang</a>.</p>
+    <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System research, supervised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Wei-Nan Zhang</a>.</p>
     <p>My research focuses on <strong>AI4Chip</strong> and <strong>AI4Sys</strong>, toward <strong>Recursive Self-Improvement (RSI)</strong>: AI advances chip design and system software, enabling more capable AI to drive the next round of improvement.</p>
     <figure class="research-map" aria-labelledby="research-map-title" aria-describedby="research-map-desc">
       <figcaption class="research-map__heading" id="research-map-title">
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <span class="research-map__stack-arrow" aria-hidden="true"></span>
           <div class="research-domain research-domain--chip">
-            <strong>Chip</strong>
+            <strong>Chip Design</strong>
           </div>
         </div>
         <div class="research-map__arrow" aria-hidden="true"><span>enables</span></div>

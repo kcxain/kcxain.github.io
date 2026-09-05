@@ -401,6 +401,7 @@ $home-breakpoint-tight: 360px;
 
 .research-map__arrow {
   position: relative;
+  height: 1.5rem;
   color: var(--muted);
   text-align: center;
   font-size: 0.74rem;
@@ -408,14 +409,32 @@ $home-breakpoint-tight: 360px;
 
   span {
     position: absolute;
-    bottom: 1.6rem;
+    bottom: calc(50% + 0.4rem);
     left: 50%;
     transform: translateX(-50%);
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0.2rem;
+    left: 0.2rem;
+    height: 1px;
+    background: currentColor;
+    transform: translateY(-50%);
+  }
+
   &::after {
-    content: "\2192";
-    font-size: 1.45rem;
+    content: "";
+    position: absolute;
+    top: calc(50% - 2.5px);
+    right: 0.2rem;
+    width: 5px;
+    height: 5px;
+    border: solid currentColor;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
   }
 }
 
@@ -502,7 +521,7 @@ $home-breakpoint-tight: 360px;
   .research-map__cycle {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
-    gap: 0.5rem;
+    gap: 0.3rem;
     padding: 0 0 0 1.5rem;
   }
 
@@ -522,10 +541,7 @@ $home-breakpoint-tight: 360px;
   }
 
   .research-map__arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
+    height: 1.6rem;
 
     span {
       position: absolute;
@@ -536,9 +552,22 @@ $home-breakpoint-tight: 360px;
       transform: translateY(-50%);
     }
 
+    &::before {
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      height: auto;
+      transform: translateX(-50%);
+    }
+
     &::after {
-      content: "\2193";
-      font-size: 1.2rem;
+      top: auto;
+      right: auto;
+      bottom: 0;
+      left: calc(50% - 2.5px);
+      transform: rotate(135deg);
     }
   }
 
@@ -838,7 +867,6 @@ img.hf-icon {
   --timeline-axis-width: 0.52rem;
   --timeline-dot-size: 0.52rem;
   --timeline-dot-top: 1.02rem;
-  --timeline-line-top: 1.54rem;
   --timeline-logo-slot: 6rem;
   --timeline-logo-height: 2.9rem;
   --timeline-wordmark-slot: 12.5rem;
@@ -891,9 +919,9 @@ img.hf-icon {
 .timeline__axis::after {
   content: "";
   position: absolute;
-  top: var(--timeline-line-top);
+  top: calc(var(--timeline-dot-top) + var(--timeline-dot-size) / 2);
   left: 50%;
-  bottom: calc(0rem - var(--timeline-gap));
+  bottom: calc(0rem - var(--timeline-gap) - var(--timeline-dot-top) - var(--timeline-dot-size) / 2);
   width: 1px;
   transform: translateX(-50%);
   background: rgba(18, 24, 32, 0.14);
@@ -1005,8 +1033,8 @@ img.hf-icon {
     --timeline-dot-top: 0.53rem;
     --timeline-logo-slot: 6rem;
     --timeline-logo-height: 2.6rem;
-    --timeline-wordmark-slot: 9.5rem;
-    --timeline-wordmark-height: 1.8rem;
+    --timeline-wordmark-slot: 10.5rem;
+    --timeline-wordmark-height: 2rem;
     --timeline-seal-slot: 3.4rem;
     --timeline-seal-height: 2.75rem;
     --timeline-brand-slot: 6rem;
@@ -1073,8 +1101,8 @@ img.hf-icon {
   .timeline {
     --timeline-logo-slot: 5rem;
     --timeline-logo-height: 2.65rem;
-    --timeline-wordmark-slot: 7.5rem;
-    --timeline-wordmark-height: 1.6rem;
+    --timeline-wordmark-slot: 8.5rem;
+    --timeline-wordmark-height: 1.8rem;
     --timeline-seal-slot: 2.9rem;
     --timeline-seal-height: 2.35rem;
     --timeline-brand-slot: 4.8rem;
@@ -1090,8 +1118,8 @@ img.hf-icon {
   .timeline {
     --timeline-logo-slot: 4.25rem;
     --timeline-logo-height: 2.2rem;
-    --timeline-wordmark-slot: 5.4rem;
-    --timeline-wordmark-height: 1.2rem;
+    --timeline-wordmark-slot: 6rem;
+    --timeline-wordmark-height: 1.4rem;
     --timeline-seal-slot: 2.5rem;
     --timeline-seal-height: 2rem;
     --timeline-brand-slot: 4.2rem;
