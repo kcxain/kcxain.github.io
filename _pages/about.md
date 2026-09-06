@@ -131,7 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-hero">
     <p>I am a third-year PhD candidate of <strong>Intelligent Processor Research Center（智能处理器研究中心）</strong>, Institute of Computing Technology, supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Rui Zhang</a>, <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202502/t20250220_7530352.html'>Yuanbo Wen</a> and <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202003/t20200310_5509322.html'>Xishan Zhang</a>.</p>
 
-    <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System, advised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Wei-Nan Zhang</a>.</p>
+    <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, working on <strong>Dialogue System</strong>, advised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Wei-Nan Zhang</a>.</p>
+
     <p>My research focuses on <strong>Recursive Self-Improvement (RSI)</strong> through <strong>AI4Chip</strong> and <strong>AI4Sys</strong>: AI improves chip design and system software, enabling more capable AI.</p>
     <ul>
       <li><strong>Reinforcement Learning for Model Post-Training</strong></li>
