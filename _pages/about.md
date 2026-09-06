@@ -132,12 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
     <p>I am a third-year Master's student at the <strong>Intelligent Processor Research Center（智能处理器研究中心）</strong>, Institute of Computing Technology, supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Rui Zhang</a>, <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202502/t20250220_7530352.html'>Yuanbo Wen</a> and <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202003/t20200310_5509322.html'>Xishan Zhang</a>.</p>
 
     <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, focusing on Dialogue System, advised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Wei-Nan Zhang</a>.</p>
-    <p>My research vision is to enable <strong>Recursive Self-Improvement (RSI)</strong> through <strong>AI4Chip</strong> and <strong>AI4Sys</strong>: AI improves chip design and system software, and advances in this computational foundation enable more capable AI to drive the next cycle of improvement.</p>
-    <p>To pursue this vision, I am interested in three complementary research directions:</p>
+    <p>My research focuses on <strong>Recursive Self-Improvement (RSI)</strong> through <strong>AI4Chip</strong> and <strong>AI4Sys</strong>: AI improves chip design and system software, and enable more capable AI.</p>
     <ul>
-      <li><strong>Reinforcement Learning for Model Post-Training:</strong> Developing learning methods that improve reasoning, tool use, and decision-making through interaction and feedback.</li>
-      <li><strong>Self-Verifying and Self-Improving Agents:</strong> Building agents that verify their own outputs and use verification feedback to iteratively refine their strategies and capabilities.</li>
-      <li><strong>Reliable Scaling for Frontier Discovery:</strong> Building agent systems that reliably translate increased compute and collaboration into novel, verifiable discoveries in real-world software and hardware environments.</li>
+      <li><strong>Reinforcement Learning for Model Post-Training</strong></li>
+      <li><strong>Self-Verifying and Self-Improving Agents</strong></li>
+      <li><strong>Agent Systems for Reliably Scaling Frontier Discovery</strong></li>
     </ul>
     <figure class="research-map" aria-labelledby="research-map-title" aria-describedby="research-map-desc">
       <figcaption class="research-map__heading" id="research-map-title">
