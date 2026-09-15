@@ -1,0 +1,16 @@
+{
+  "errors": {
+    "google_scholar": "failed to fetch https://scholar.google.com/citations?user=puvUUPwAAAAJ&hl=en: HTTP Error 403: Forbidden"
+  },
+  "github": {
+    "stars": 506
+  },
+  "google_scholar": {
+    "citations": 67
+  },
+  "updated_at": "2026-09-15T13:35:39+00:00",
+  "zhihu": {
+    "followers": 4914,
+    "upvotes": 14031
+  }
+}
