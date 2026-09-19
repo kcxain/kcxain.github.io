@@ -1,0 +1,16 @@
+{
+  "errors": {
+    "google_scholar": "Google Scholar citations missing from profile page"
+  },
+  "github": {
+    "stars": 506
+  },
+  "google_scholar": {
+    "citations": 67
+  },
+  "updated_at": "2026-09-19T12:30:48+00:00",
+  "zhihu": {
+    "followers": 4938,
+    "upvotes": 14092
+  }
+}
