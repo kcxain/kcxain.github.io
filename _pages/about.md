@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-section">
     <h2>Services</h2>
     <ul class="about-list plain-list">
-      <li>Reviewer: EMNLP 2023, NeurIPS 2026, AAAI 2027</li>
+      <li>Reviewer: EMNLP 2023, NeurIPS 2026, AAAI 2027, ICLR 2027</li>
     </ul>
   </section>
 
