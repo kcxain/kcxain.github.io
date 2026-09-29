@@ -292,7 +292,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 {% elsif link.type == "paper" %}
                   {% assign icon_include = "file-alt" %}
                 {% endif %}
-                <a class="{{ link.type }}{% if icon_include == "zhihu-square" %} zhihu-blog-link{% endif %}" href="{{ link.url }}">[{% if icon_include == "zhihu-square" %}{% include icons/zhihu-square.svg %}{% elsif icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" width="95" height="88" alt="HF" aria-hidden="true" loading="lazy" decoding="async">{% elsif icon_include != "" %}{% assign icon_path = "icons/" | append: icon_include | append: ".svg" %}{% include {{ icon_path }} class="pub-link-icon" %}{% endif %}{{ link.name }}]</a>
+                {% capture icon_markup %}{% if icon_include == "zhihu-square" %}{% include icons/zhihu-square.svg %}{% elsif icon_class == "hf-icon" %}<img class="pub-link-icon hf-icon" src="/images/logos/huggingface.svg" width="95" height="88" alt="HF" aria-hidden="true" loading="lazy" decoding="async">{% elsif icon_include != "" %}{% assign icon_path = "icons/" | append: icon_include | append: ".svg" %}{% include {{ icon_path }} class="pub-link-icon" %}{% endif %}{% endcapture %}
+                <a class="{{ link.type }}{% if icon_include == "zhihu-square" %} zhihu-blog-link{% endif %}" href="{{ link.url }}">[{{ icon_markup | strip }}{{ link.name }}]</a>
               {% endfor %}
             </span>
           {% endif %}
