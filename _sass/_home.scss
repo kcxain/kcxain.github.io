@@ -747,8 +747,12 @@ $home-breakpoint-tight: 360px;
   margin-left: 0.82rem;
 }
 
-.pub-link-icon {
+.pub-links .pub-link-icon,
+.pub-links .zhihu-square-icon {
   margin-right: 0.18rem;
+}
+
+.pub-link-icon {
   font-size: 0.92em;
   vertical-align: -0.02em;
 }
@@ -756,7 +760,6 @@ $home-breakpoint-tight: 360px;
 .pub-links .zhihu-square-icon {
   width: 0.96em;
   height: 0.96em;
-  margin-right: 0.18rem;
   vertical-align: -0.12em;
 }
 
@@ -764,10 +767,6 @@ $home-breakpoint-tight: 360px;
   display: inline-flex;
   align-items: center;
   vertical-align: baseline;
-}
-
-.pub-links .zhihu-blog-link .zhihu-square-icon {
-  margin-right: 0;
 }
 
 .pub-links a:hover {
@@ -790,7 +789,6 @@ img.hf-icon {
   width: 1em;
   height: 1em;
   vertical-align: -0.12em;
-  margin-right: 0.18rem;
   display: inline-block;
   border: none !important;
   outline: none !important;
