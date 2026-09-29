@@ -4,6 +4,31 @@
     "year": "2026",
     "conf_full": "Preprint",
     "label": "preprint",
+    "title": "KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation",
+    "authors": "Changxin Ke, Rui Zhang, Zixiang Fang, Zhenghong Li, Yuanbo Wen, Jiashuo Shen, Shuo Wang, Jiaming Guo, Ling Li, Qi Guo, Yunji Chen",
+    "links": [
+      {
+        "name": "Paper",
+        "url": "https://arxiv.org/abs/2609.33074",
+        "type": "paper"
+      },
+      {
+        "name": "Code",
+        "url": "https://github.com/kcxain/KernelZero",
+        "type": "code"
+      },
+      {
+        "name": "Models",
+        "url": "https://huggingface.co/collections/kcxain/kernelzero",
+        "type": "models"
+      }
+    ]
+  },
+  {
+    "conf": "Preprint",
+    "year": "2026",
+    "conf_full": "Preprint",
+    "label": "preprint",
     "title": "OpenClaw Research: A Systematic Survey of Large Language Model Agents in Open Deployment",
     "authors": "Shuo Lu, Kecheng Yu, Siru Jiang, Yinuo Xu, Bing Zhan, Yanbo Wang, Changxin Ke, Yuan Xu, Xin Xiong, Xinyun Zhou, Zhengbo Wang, Lijun Sheng, Aijing Yu, Haosen Yang, Yunpu Ma, Nicu Sebe, Tat-Seng Chua, Philip Torr, Ran He, Jian Liang",
     "links": [
