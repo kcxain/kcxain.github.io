@@ -1,0 +1,35 @@
+<section class="about-section conference-section" aria-labelledby="conference-heading" data-conference-map data-assets="{{ '/assets/maps/jsvectormap/' | relative_url }}">
+  <h2 id="conference-heading">Conferences Attended</h2>
+  <div class="conference-card">
+    <div class="conference-map-stage" hidden>
+      <div id="conference-map" class="conference-map" role="group" aria-label="Conference locations. Select a city marker or a conference in the list to explore."></div>
+      <div class="conference-map-controls" role="group" aria-label="Map controls">
+        <button type="button" data-map-action="overview" aria-label="Show world map" title="Show world map">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3H3v4m10-4h4v4M3 13v4h4m10-4v4h-4"/></svg>
+        </button>
+        <span class="conference-control-divider" aria-hidden="true"></span>
+        <button type="button" data-map-action="in" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M10 4v12"/></svg></button>
+        <button type="button" data-map-action="out" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/></svg></button>
+      </div>
+    </div>
+    <ul class="conference-list" aria-label="Conferences attended" tabindex="0">
+      {% for conference in site.data.conferences %}
+      <li>
+        <button class="conference-entry" type="button" data-conference-index="{{ forloop.index0 }}" aria-pressed="false" disabled>
+          <strong class="conference-entry-name">{{ conference.name | escape }}{% if conference.name_zh %}<span class="conference-entry-zh">（{{ conference.name_zh | escape }}）</span>{% endif %}</strong>
+          <span class="conference-entry-meta">
+            <span class="conference-entry-date">
+              {% assign start_month = conference.date_start | date: '%Y-%m' %}{% assign end_month = conference.date_end | date: '%Y-%m' %}
+              <time datetime="{{ conference.date_start }}">{{ conference.date_start | date: '%b %-d' }}</time>–<time datetime="{{ conference.date_end }}">{% if start_month == end_month %}{{ conference.date_end | date: '%-d, %Y' }}{% else %}{{ conference.date_end | date: '%b %-d, %Y' }}{% endif %}</time>
+            </span>
+            <span class="conference-entry-city">{{ conference.city | escape }}</span>
+          </span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <p class="conference-map-status" role="status" aria-live="polite"></p>
+  <script type="application/json" data-conference-data>{{ site.data.conferences | jsonify | replace: '<', '\u003c' }}</script>
+</section>
+<script src="{{ '/assets/js/conference-map.js' | relative_url }}" defer></script>

@@ -304,15 +304,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </section>
 
   <section class="about-section">
-    <h2>Patents</h2>
-    <ul class="about-list plain-list">
-      <li>一种自验证式的探索预训练语言模型中明喻知识的方法及其系统
-        <p>张伟男，马龙轩，柯昌鑫，刘挺</p>
-      </li>
-    </ul>
-  </section>
-
-  <section class="about-section">
     <h2>Education</h2>
     <div class="timeline">
       <div class="timeline__item">
@@ -363,6 +354,17 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </section>
 
+  {% include conference-map.html %}
+
+  <section class="about-section">
+    <h2>Patents</h2>
+    <ul class="about-list plain-list">
+      <li>一种自验证式的探索预训练语言模型中明喻知识的方法及其系统
+        <p>张伟男，马龙轩，柯昌鑫，刘挺</p>
+      </li>
+    </ul>
+  </section>
+
   <section class="about-section">
     <h2>Competitions</h2>
     <ul class="about-list plain-list">
@@ -376,7 +378,8 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="about-section">
     <h2>Honors</h2>
     <ul class="about-list plain-list">
-      <li><span class="news-date">[2026.05]</span> Outstanding Model Student（三好标兵）, UCAS</li>
+      <li><span class="news-date">[2026.10]</span> Huang Kun–Cambricon Qingjin Award（黄昆-寒武纪青衿奖）, 20th National Semiconductor and Integrated Technology Conference</li>
+      <li><span class="news-date">[2026.05]</span> Outstanding Model Student（三好学生标兵）, UCAS</li>
       <li><span class="news-date">[2025.11]</span> Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</li>
     </ul>
   </section>

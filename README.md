@@ -46,6 +46,28 @@ Some examples:
     1. You can use html+markdown syntax just same as jekyll.
 1. Your page will be published at `https://USERNAME.github.io`.
 
+## Conference map
+
+Edit `_data/conferences.json` to maintain the homepage's conference map. Each entry
+contains `name` (English), optional `name_zh` (shown in parentheses), `date_start`
+and `date_end` (ISO dates), `city`, and `coords` in **[latitude, longitude]** order.
+Use `source_url` to preserve the official source of the name and conference dates.
+Entries appear in file order, currently newest first. `labelOffset: [x, y]` can
+adjust city labels in pixels. Coordinates identify cities; the dates represent
+the full advertised conference period, including registration or associated events.
+
+The desktop list sits to the right of the map, with a fixed shared height and
+independent vertical scrolling. On narrow screens it stacks below the map and
+retains a capped scrollable height. Name typography inherits the homepage body
+font and size. Select a conference to focus its marker, or select a marker to
+reveal its row in the list.
+
+The component uses locally hosted jsVectorMap 1.7.0 under `assets/maps/jsvectormap/`
+with its MIT license. Its scripts and world map load within 300px of the section.
+The conference list is rendered by Jekyll and stays readable with JavaScript
+disabled or map resources unavailable. Styles live in `_sass/_conference-map.scss`;
+interactions live in `assets/js/conference-map.js`.
+
 ## Debug Locally
 
 1. Clone your REPO to local using `git clone`.

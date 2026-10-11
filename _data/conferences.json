@@ -1,0 +1,49 @@
+[
+  {
+    "name": "20th National Semiconductor and Integrated Technology Conference",
+    "name_zh": "第二十届半导体与集成技术会议",
+    "date_start": "2026-10-09",
+    "date_end": "2026-10-11",
+    "city": "Qingdao",
+    "coords": [
+      36.0671,
+      120.3826
+    ],
+    "labelOffset": [
+      10,
+      -16
+    ],
+    "source_url": "https://meet.cie.org.cn/cms/10922/index.html"
+  },
+  {
+    "name": "Apsara Conference",
+    "name_zh": "云栖大会",
+    "date_start": "2026-09-22",
+    "date_end": "2026-09-24",
+    "city": "Hangzhou",
+    "coords": [
+      30.2741,
+      120.1551
+    ],
+    "labelOffset": [
+      10,
+      20
+    ],
+    "source_url": "https://www.alibabacloud.com/en/apsara-conference/2026-about"
+  },
+  {
+    "name": "EurIPS",
+    "date_start": "2025-12-02",
+    "date_end": "2025-12-07",
+    "city": "Copenhagen",
+    "coords": [
+      55.6761,
+      12.5683
+    ],
+    "labelOffset": [
+      10,
+      -14
+    ],
+    "source_url": "https://eurips.cc/conference/"
+  }
+]
