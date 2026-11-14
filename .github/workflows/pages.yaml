@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "20 8 * * *"
 
 permissions:
   contents: read
@@ -26,6 +28,29 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verify profile stats failure recovery
+        run: python3 -m unittest discover -s scripts -p 'test_profile_stats.py'
+
+      - name: Restore last successful profile counts
+        uses: actions/cache/restore@v4
+        with:
+          path: _data/profile_stats.json
+          key: profile-stats-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: profile-stats-v1-
+
+      - name: Refresh public profile counts
+        run: python3 scripts/update_profile_stats.py
+
+      - name: Cache profile counts
+        uses: actions/cache/save@v4
+        with:
+          path: _data/profile_stats.json
+          key: profile-stats-v1-${{ github.run_id }}-${{ github.run_attempt }}
 
       - uses: ruby/setup-ruby@v1
         with:

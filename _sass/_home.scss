@@ -109,11 +109,31 @@ h1 span {
   margin-bottom: 0.8rem;
 }
 .intro .resource-links {
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.25rem;
   font-size: var(--size-detail);
 }
 .intro .resource-links li {
   white-space: nowrap;
+}
+.intro .profile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 1.4rem;
+  font-size: var(--size-detail);
+  color: var(--secondary);
+}
+.profile-stats > span {
+  white-space: nowrap;
+}
+.profile-count {
+  margin-left: 0.25em;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+  font-style: italic;
+  font-variant-numeric: tabular-nums;
 }
 
 .content-section {

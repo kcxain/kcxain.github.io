@@ -101,3 +101,22 @@ uncompressed sizes and gzip estimates, not measured network timings.
 
 See `LICENSE` for the original theme license and
 `_includes/icons/ATTRIBUTION.md` for the retained Font Awesome SVG attribution.
+
+## Inline profile counts
+
+Google Scholar citations and Zhihu followers appear in a compact text row below
+the profile links, with bold italic numbers. Their labels and last successful update dates are available on
+hover. `_data/profile_stats.json` is the validated fallback snapshot.
+
+`python3 scripts/update_profile_stats.py` refreshes only these two counts. The
+Pages workflow runs daily at 08:20 UTC, on pushes and on manual dispatch. It
+restores the latest snapshot from Actions cache, fetches each source independently,
+then caches and renders the result. A blocked source retains its last count and
+update date. If the cache expires, the committed snapshot provides the fallback.
+There are no browser-side stats requests or automated commits to `main`.
+
+Run failure-recovery checks with:
+
+```bash
+python3 -m unittest discover -s scripts -p 'test_profile_stats.py'
+```

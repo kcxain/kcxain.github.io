@@ -57,6 +57,12 @@ def check(destination):
     assert len(page.ids) == len(set(page.ids)), "Duplicate IDs"
     assert set(page.references) <= set(page.ids), "Broken icon or accessible-description reference"
     assert page.stylesheets == 1, "Expected a single stylesheet"
+    stats = json.loads((ROOT / "_data/profile_stats.json").read_text())
+    for source, field, label in (("google_scholar", "citations", "citations"), ("zhihu", "followers", "followers")):
+        count = stats[source][field]
+        assert type(count) is int and count >= 0, "Invalid cached profile count"
+        assert f'aria-label="{count} {label}"' in html, "Missing inline profile count"
+        assert f'{count:,}</span>' in html, "Incorrect count formatting"
     for link in page.links:
         if link.startswith("#"):
             assert link[1:] in page.ids, f"Broken anchor: {link}"
