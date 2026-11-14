@@ -78,7 +78,7 @@ section {
 
 .intro {
   display: flow-root;
-  padding: 3rem 0 2rem;
+  padding: 3rem 0 var(--section-space);
 }
 h1 {
   font-size: 2.6rem;
@@ -92,11 +92,6 @@ h1 span {
   font-size: 0.6em;
   letter-spacing: 0;
 }
-.intro .email {
-  margin-bottom: 0.25rem;
-  font-size: var(--size-detail);
-  overflow-wrap: anywhere;
-}
 .portrait {
   float: right;
   width: 190px;
@@ -106,6 +101,9 @@ h1 span {
 .intro p {
   margin-bottom: 0.8rem;
 }
+.intro > :last-child {
+  margin-bottom: 0;
+}
 .intro > ul:not(.resource-links) {
   padding-left: 1.25rem;
   margin-bottom: 0.8rem;
@@ -113,6 +111,9 @@ h1 span {
 .intro .resource-links {
   margin-bottom: 1.4rem;
   font-size: var(--size-detail);
+}
+.intro .resource-links li {
+  white-space: nowrap;
 }
 
 .content-section {
@@ -258,11 +259,6 @@ h3 {
 .publication-links li {
   white-space: nowrap;
 }
-.publication-links li + li::before {
-  content: "/";
-  margin-right: 0.6rem;
-  color: var(--muted);
-}
 
 .dated-list {
   padding: 0;
@@ -306,7 +302,7 @@ h3 {
     width: calc(100% - 2.5rem);
   }
   .intro {
-    padding: 2rem 0 1.5rem;
+    padding: 2rem 0 var(--section-space);
   }
   h1 {
     font-size: 2rem;
