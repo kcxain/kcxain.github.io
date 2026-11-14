@@ -17,7 +17,7 @@
   --title-space: 0.5rem;
   --item-space: 1rem;
   --inline-space: 0.5rem;
-  --link: #285d82;
+  --link: #204b69;
   --accent: #a84736;
   --muted: #706c63;
 }
@@ -93,7 +93,7 @@ h1 span {
   letter-spacing: 0;
 }
 .intro .email {
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.25rem;
   font-size: var(--size-detail);
   overflow-wrap: anywhere;
 }
@@ -111,7 +111,8 @@ h1 span {
   margin-bottom: 0.8rem;
 }
 .intro .resource-links {
-  margin-top: 1rem;
+  margin-bottom: 1.4rem;
+  font-size: var(--size-detail);
 }
 
 .content-section {

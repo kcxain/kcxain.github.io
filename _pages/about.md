@@ -10,6 +10,11 @@ redirect_from:
   <img class="portrait" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name | escape }}" width="350" height="350" fetchpriority="high" decoding="async">
   <h1 id="about-title">{{ site.author.name_en }} <span lang="zh">{{ site.author.name_zh }}</span></h1>
   <p class="email"><a href="mailto:{{ site.author.email }}">{% include icon.html name="envelope" %} {{ site.author.email }}</a></p>
+  <ul class="resource-links" aria-label="Profile links">
+    <li><a href="{{ site.author.googlescholar }}">{% include icon.html name="graduation-cap" %} Google Scholar</a></li>
+    <li><a href="https://github.com/{{ site.author.github }}">{% include icon.html name="github" %} GitHub</a></li>
+    <li><a href="https://www.zhihu.com/people/{{ site.author.zhihu }}">{% include icon.html name="zhihu-square" %} Zhihu</a></li>
+  </ul>
   <p>I am a third-year PhD candidate of <strong>Intelligent Processor Research Center（智能处理器研究中心）</strong>, Institute of Computing Technology, supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Rui Zhang</a>, <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202502/t20250220_7530352.html'>Yuanbo Wen</a> and <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202003/t20200310_5509322.html'>Xishan Zhang</a>.</p>
 
   <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, working on Dialogue System, advised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Wei-Nan Zhang</a>.</p>
@@ -21,11 +26,6 @@ redirect_from:
     <li>Agent Systems for Reliably Scaling Frontier Discovery</li>
   </ul>
   <p>Open to collaboration, academic exchange, and internship opportunities.</p>
-  <ul class="resource-links" aria-label="Profile links">
-    <li><a href="{{ site.author.googlescholar }}">{% include icon.html name="graduation-cap" %} Google Scholar</a></li>
-    <li><a href="https://github.com/{{ site.author.github }}">{% include icon.html name="github" %} GitHub</a></li>
-    <li><a href="https://www.zhihu.com/people/{{ site.author.zhihu }}">{% include icon.html name="zhihu-square" %} Zhihu</a></li>
-  </ul>
 </section>
 
 <section id="news" class="content-section" aria-labelledby="news-title">
