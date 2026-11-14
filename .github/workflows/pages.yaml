@@ -4,9 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  workflow_run:
-    workflows: [Update Contribution Stats]
-    types: [completed]
 
 permissions:
   contents: read
@@ -17,7 +14,6 @@ concurrency:
 
 jobs:
   build:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -28,20 +24,21 @@ jobs:
           ref: main
           persist-credentials: false
 
-      - name: Verify stats fallback handling
-        run: python3 -m unittest discover -s scripts -p 'test_fetch_contribution_stats.py'
-
-      - name: Load published stats into the build workspace
-        run: python3 scripts/fetch_contribution_stats.py
-
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Verify generated site and asset budgets
+        run: python3 scripts/check_site.py _site
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v4

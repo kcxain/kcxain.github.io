@@ -1,0 +1,24 @@
+<article class="publication" aria-labelledby="paper-{{ include.index }}">
+  <h3 id="paper-{{ include.index }}">{{ include.pub.title }}</h3>
+  <p class="authors">{{ include.pub.authors | replace: "Changxin Ke", "<strong>Changxin Ke</strong>" }}</p>
+  <div class="publication-meta">
+    <p class="venue">
+      {% if include.pub.conf and include.pub.conf != "" %}
+        {% assign has_full_name = false %}
+        {% if include.pub.conf_full and include.pub.conf_full != "" %}{% assign has_full_name = true %}{% endif %}
+        <span class="venue-name{% if include.pub.conf == 'Preprint' %} venue-name--preprint{% endif %}{% if has_full_name %} venue-name--expandable{% endif %}"{% if has_full_name %} tabindex="0" aria-describedby="venue-full-{{ include.index }}"{% endif %}>
+          {{ include.pub.conf }} {{ include.pub.year }}{% if has_full_name %}<span class="venue-tooltip" id="venue-full-{{ include.index }}" role="tooltip">{{ include.pub.conf_full }}</span>{% endif %}
+        </span>
+      {% else %}
+        {{ include.pub.year }}
+      {% endif %}
+    </p>
+    {% if include.pub.links.size > 0 %}
+    <ul class="resource-links publication-links" aria-label="Resources for {{ include.pub.title | escape }}">
+      {% for link in include.pub.links %}
+      <li><a href="{{ link.url }}">{% include resource-icon.html link=link %} {{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</article>

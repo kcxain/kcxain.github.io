@@ -1,166 +1,54 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# Restart the local server after changing this file.
+title: "Changxin Ke 柯昌鑫"
+description: "Changxin Ke at the Institute of Computing Technology. Research in AI4Chip, AI4Sys and recursive self-improvement through self-evolving agents and reinforcement learning."
+url: "https://kechang.xin"
+baseurl: ""
+repository: "kcxain/kcxain.github.io"
+social_image: "/images/social-preview.png"
+google_analytics_id: "G-DPHEPHLJ3G"
+baidu_site_verification: "codeva-29sjI1qGIE"
 
-# Site Settings
-title                    : "Changxin Ke 柯昌鑫"
-description              : "Changxin Ke at the Institute of Computing Technology. Research in AI4Chip, AI4Sys and recursive self-improvement through self-evolving agents and reinforcement learning."
-url                      : "https://kechang.xin"
-social_image             : "/images/social-preview.png"
-repository               : "kcxain/kcxain.github.io"
-
-# google analytics
-google_analytics_id      :  "G-DPHEPHLJ3G" # get google_analytics_id from https://analytics.google.com/analytics/
-
-# SEO Related
-google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
-bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
-baidu_site_verification  :  "codeva-29sjI1qGIE" # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
-
-# Site Author
 author:
-  name             : "Changxin Ke（柯昌鑫）"
-  avatar           : "/images/avatar.webp"
-  bio              :
-  location         : "Beijing, China"
-  employer         :
-  pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=puvUUPwAAAAJ"
-  email            : "kcxain@gmail.com"
-  zhihu            : "deconx"
-  researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "kcxain"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         : # e.g., "linkedin username"
-  dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : # e.g., "https://orcid.org/xxxx"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : 
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
+  name: "Changxin Ke（柯昌鑫）"
+  name_en: "Changxin Ke"
+  name_zh: "柯昌鑫"
+  avatar: "/images/avatar.webp"
+  googlescholar: "https://scholar.google.com/citations?user=puvUUPwAAAAJ"
+  email: "kcxain@gmail.com"
+  zhihu: "deconx"
+  github: "kcxain"
 
-
-# Reading Files
 include:
-  - .htaccess
   - _pages
-  - files
 exclude:
   - docs
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - .github
-  - CHANGELOG
-  - Capfile
-  - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - _font_sources
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
-  - node_modules
-  - package.json
   - scripts
-  - tmp
+  - _font_sources
+  - _image_sources
   - vendor
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - AGENTS.md
+  - LICENSE
+  - run_server.sh
+  - .bundle
+  - .github
+  - .jekyll-cache
+  - .sass-cache
 
-
-# Conversion
+encoding: utf-8
 markdown: kramdown
 highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-# Defaults
-defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: default
-      author_profile: true
-
-
-# Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
-# Plugins
+  style: compressed
+timezone: Asia/Shanghai
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development

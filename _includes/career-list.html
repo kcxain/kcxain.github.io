@@ -1,0 +1,15 @@
+<ul class="dated-list">
+  {% for entry in include.entries %}
+  <li>
+    <span class="date">{{ entry.date }}</span>
+    <div>
+      <div class="institution-name">
+        {% assign logo_path = '/images/logos/' | append: entry.logo | append: '.webp' %}
+        <img class="institution-logo institution-logo--{{ entry.logo }}" src="{{ logo_path | relative_url }}" width="{{ entry.width }}" height="{{ entry.height }}" alt="" loading="lazy" decoding="async">
+        <strong>{{ entry.name }}</strong>
+      </div>
+      <p>{{ entry.role }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

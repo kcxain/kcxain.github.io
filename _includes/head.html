@@ -1,21 +1,8 @@
 <meta charset="utf-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 {% include seo.html %}
-
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-{% if page.body_class == "home" %}
 <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
-{% else %}
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-{% endif %}
-
-<meta http-equiv="cleartype" content="on">
-<base target="_blank">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-16x16.png' | relative_url }}">
+<meta name="theme-color" content="#ffffff">

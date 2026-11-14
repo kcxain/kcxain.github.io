@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+  <body class="home">
+    {% include icons/sprite.svg %}
+    <a class="skip-link" href="#main">Skip to content</a>
+    <main id="main" class="container" tabindex="-1">
+      {{ content }}
+    </main>
+    <footer class="container site-footer">
+      <a href="#about">Back to top ↑</a>
+    </footer>
+    {% include analytics.html %}
+  </body>
+</html>

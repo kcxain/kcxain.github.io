@@ -1,0 +1,30 @@
+{
+  "education": [
+    {
+      "date": "2024.08 – Present",
+      "name": "Institute of Computing Technology",
+      "role": "PhD",
+      "logo": "ict",
+      "width": 54,
+      "height": 42
+    },
+    {
+      "date": "2020.09 – 2024.06",
+      "name": "Harbin Institute of Technology",
+      "role": "Undergraduate",
+      "logo": "hit",
+      "width": 72,
+      "height": 65
+    }
+  ],
+  "experience": [
+    {
+      "date": "2026.01 – Present",
+      "name": "Cambricon Technology",
+      "role": "AI Research Intern",
+      "logo": "cambricon",
+      "width": 174,
+      "height": 60
+    }
+  ]
+}

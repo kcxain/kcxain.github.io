@@ -1,0 +1,16 @@
+{%- case include.link.type -%}
+  {%- when "paper" -%}
+    {%- include icon.html name="file-alt" -%}
+  {%- when "code" -%}
+    {%- include icon.html name="github" -%}
+  {%- when "models" -%}
+    <img class="site-icon" src="{{ '/images/logos/huggingface.svg' | relative_url }}" width="16" height="16" alt="" aria-hidden="true" loading="lazy" decoding="async">
+  {%- when "blog" -%}
+    {%- if include.link.url contains "zhihu.com" -%}
+      {%- include icon.html name="zhihu-square" -%}
+    {%- elsif include.link.url contains "weixin.qq.com" -%}
+      {%- include icon.html name="weixin" -%}
+    {%- else -%}
+      {%- include icon.html name="newspaper" -%}
+    {%- endif -%}
+{%- endcase -%}

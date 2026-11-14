@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Regenerate the CJK webfont subsets used by the homepage.
 
-The script scans source content for CJK characters, merges them with a small
-manually maintained safety charset, and writes subsetted WOFF2 files.
+The script scans source content for CJK characters and writes subsetted WOFF2
+files. An optional safety charset supports anticipated future content.
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ DEFAULT_SCAN_PATHS = (
     "_pages",
     "_data",
     "_config.yml",
-    "_includes/author-profile.html",
+    "_includes",
 )
 
 TEXT_SUFFIXES = {
@@ -84,7 +84,7 @@ def iter_text_files(path: Path) -> list[Path]:
     )
 
 
-def collect_chars(paths: list[Path], safety_file: Path) -> str:
+def collect_chars(paths: list[Path], safety_file: Path | None) -> str:
     chars: set[str] = set()
 
     for path in paths:
@@ -92,7 +92,7 @@ def collect_chars(paths: list[Path], safety_file: Path) -> str:
             text = text_file.read_text(encoding="utf-8", errors="ignore")
             chars.update(char for char in text if is_cjk_char(char))
 
-    if safety_file.exists():
+    if safety_file is not None and safety_file.exists():
         text = safety_file.read_text(encoding="utf-8", errors="ignore")
         chars.update(char for char in text if is_cjk_char(char))
 
@@ -110,15 +110,11 @@ def subset_font(source: Path, output: Path, chars_file: Path) -> None:
         f"--text-file={chars_file}",
         "--flavor=woff2",
         "--layout-features=*",
-        "--glyph-names",
-        "--symbol-cmap",
-        "--legacy-cmap",
         "--notdef-glyph",
         "--notdef-outline",
         "--recommended-glyphs",
-        "--name-IDs=*",
-        "--name-legacy",
-        "--name-languages=*",
+        "--name-IDs=1,2,3,4,6",
+        "--name-languages=0x409",
     ]
     subset.main(args)
 
@@ -153,6 +149,7 @@ def parse_args() -> argparse.Namespace:
             + "."
         ),
     )
+    parser.add_argument("--include-safety", action="store_true", help="Also include the optional future-content safety charset.")
     parser.add_argument(
         "--safety-chars",
         default=str(SAFETY_CHARS.relative_to(ROOT)),
@@ -170,7 +167,7 @@ def main() -> int:
     args = parse_args()
     scan_paths = [ROOT / path for path in DEFAULT_SCAN_PATHS]
     scan_paths.extend(ROOT / path for path in args.scan)
-    safety_file = ROOT / args.safety_chars
+    safety_file = ROOT / args.safety_chars if args.include_safety else None
     chars_file = Path(args.chars_out)
 
     chars = collect_chars(scan_paths, safety_file)

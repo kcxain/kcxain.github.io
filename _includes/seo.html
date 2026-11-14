@@ -1,6 +1,4 @@
-<!-- begin SEO -->
 {% assign seo_url = site.url | default: "" %}
-{% if seo_url == "" %}{% assign seo_url = site.github.url %}{% endif %}
 {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.baseurl | prepend: seo_url %}
 {% assign seo_title = page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once %}
 {% assign seo_description = page.description | default: page.excerpt | default: site.description | markdownify | strip_html | strip_newlines | escape_once %}
@@ -32,20 +30,6 @@
 {% endif %}
 <meta name="twitter:title" content="{{ seo_title }}">
 <meta name="twitter:description" content="{{ seo_description }}">
-{% if site.twitter.username %}
-  <meta name="twitter:site" content="@{{ site.twitter.username | replace: '@', '' }}">
-{% endif %}
-
-{% if site.facebook %}
-  {% if site.facebook.publisher %}
-    <meta property="article:publisher" content="{{ site.facebook.publisher }}">
-  {% endif %}
-
-  {% if site.facebook.app_id %}
-    <meta property="fb:app_id" content="{{ site.facebook.app_id }}">
-  {% endif %}
-{% endif %}
-
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
 {% endif %}
@@ -55,4 +39,3 @@
 {% if site.baidu_site_verification %}
   <meta name="baidu-site-verification" content="{{ site.baidu_site_verification }}" />
 {% endif %}
-<!-- end SEO -->

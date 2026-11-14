@@ -1,28 +1,5 @@
 ---
 ---
 
-// Homepage bundle: shared typography and layout plus the homepage components.
-// Other pages continue to use main.scss and its full template styles.
-@import "vendor/breakpoint/breakpoint";
-@import "variables";
-@import "mixins";
-@import "vendor/susy/susy";
-@import "reset";
-@import "base";
-@import "utilities";
-@import "animations";
-@import "page";
-@import "sidebar";
+@import "fonts";
 @import "home";
-@import "conference-map";
-@import "print";
-
-$scroll_offset: 2em;
-h1:before, .anchor:before {
-  content: '';
-  display: block;
-  position: relative;
-  width: 0;
-  height: $scroll_offset;
-  margin-top: -$scroll_offset;
-}
