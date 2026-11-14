@@ -1,6 +1,7 @@
+{% capture highlighted_author %}<strong>{{ site.author.name_en }}</strong>{% endcapture %}
 <article class="publication" aria-labelledby="paper-{{ include.index }}">
   <h3 id="paper-{{ include.index }}">{{ include.pub.title }}</h3>
-  <p class="authors">{{ include.pub.authors | replace: "Changxin Ke", "<strong>Changxin Ke</strong>" }}</p>
+  <p class="authors">{{ include.pub.authors | replace: site.author.name_en, highlighted_author }}</p>
   <div class="publication-meta">
     <p class="venue">
       {% if include.pub.conf and include.pub.conf != "" %}

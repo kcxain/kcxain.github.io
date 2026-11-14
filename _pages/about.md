@@ -30,18 +30,10 @@ redirect_from:
 
 <section id="news" class="content-section" aria-labelledby="news-title">
   <h2 id="news-title">News</h2>
-  <ul class="news-list">
+  <ul class="detail-list">
     {% for item in site.data.news %}
     <li>
-      {% if item.content_html %}
-        {{ item.content_html }}
-      {% elsif item.content %}
-        {{ item.content | markdownify | remove: '<p>' | remove: '</p>' }}
-      {% else %}
-        <span class="news-date">[{{ item.date }}]</span>
-        <a href="{{ item.link_url }}">{{ item.title }}</a>
-        {{ item.text_after_link }} <strong>{{ item.venue }}</strong>.
-      {% endif %}
+      {{ item.content_html }}
     </li>
     {% endfor %}
   </ul>
@@ -79,7 +71,7 @@ redirect_from:
   <h2 id="competitions-title">Competitions</h2>
   <ul class="detail-list">
     <li>
-      <span class="news-date">[2023.03]</span> <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
+      <span class="date">[2023.03]</span> <a href='https://dstc11.dstc.community'>The 11th Dialog System Technology Challenge</a>
       <p><strong>1st</strong> place in one subtask and <strong>3rd</strong> place overall, in the task of enhancing task-oriented dialogue generation with external knowledge retrieval.</p>
     </li>
   </ul>
@@ -88,9 +80,9 @@ redirect_from:
 <section class="content-section" aria-labelledby="honors-title">
   <h2 id="honors-title">Honors</h2>
   <ul class="detail-list">
-    <li><span class="news-date">[2026.10]</span> Huang Kun–Cambricon Qingjin Award（黄昆-寒武纪青衿奖）, 20th National Semiconductor and Integrated Technology Conference</li>
-    <li><span class="news-date">[2026.05]</span> Outstanding Model Student（三好学生标兵）, UCAS</li>
-    <li><span class="news-date">[2025.11]</span> Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</li>
+    <li><span class="date">[2026.10]</span> Huang Kun–Cambricon Qingjin Award（黄昆-寒武纪青衿奖）, 20th National Semiconductor and Integrated Technology Conference</li>
+    <li><span class="date">[2026.05]</span> Outstanding Model Student（三好学生标兵）, UCAS</li>
+    <li><span class="date">[2025.11]</span> Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</li>
   </ul>
 </section>
 

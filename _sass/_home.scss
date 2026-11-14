@@ -7,9 +7,16 @@
   --text: #292823;
   --background: #fff;
   --venue: #28766d;
-  --size-meta: 0.9rem;
+  // Two text sizes and two line heights cover the page's reading hierarchy.
+  --size-detail: 0.9375rem;
+  --leading-body: 1.55;
+  --leading-compact: 1.25;
+  --strong: #000;
+  --secondary: #454545;
   --section-space: 0.8rem;
   --title-space: 0.5rem;
+  --item-space: 1rem;
+  --inline-space: 0.5rem;
   --link: #285d82;
   --accent: #a84736;
   --muted: #706c63;
@@ -20,7 +27,7 @@
 }
 body {
   margin: 0;
-  line-height: 1.55;
+  line-height: var(--leading-body);
 }
 h1, h2, h3, p, ul {
   margin: 0;
@@ -75,7 +82,7 @@ section {
 }
 h1 {
   font-size: 2.6rem;
-  line-height: 1.2;
+  line-height: var(--leading-compact);
   font-weight: 500;
   letter-spacing: -0.035em;
   margin-bottom: 0.4rem;
@@ -87,7 +94,8 @@ h1 span {
 }
 .intro .email {
   margin-bottom: 1.4rem;
-  font-size: 0.92rem;
+  font-size: var(--size-detail);
+  overflow-wrap: anywhere;
 }
 .portrait {
   float: right;
@@ -114,67 +122,66 @@ h2 {
   color: var(--accent);
   font-size: 1.4rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: var(--leading-compact);
 }
 h3 {
-  color: #000;
+  color: var(--strong);
   font-size: 1rem;
-  line-height: 1.45;
+  line-height: var(--leading-compact);
   font-weight: 700;
 }
-.news-list, .detail-list {
+.detail-list {
   padding-left: 1.25rem;
 }
-.news-list li, .detail-list li {
+.detail-list li {
   padding-left: 0.2rem;
-  margin-bottom: 0.55rem;
+  margin-bottom: var(--inline-space);
 }
-.news-list li:last-child, .detail-list li:last-child {
+.detail-list li:last-child {
   margin-bottom: 0;
 }
-.news-list li::marker, .detail-list li::marker {
+.detail-list li::marker {
   color: var(--muted);
 }
-.news-date, .date {
-  color: #454545;
-  font-size: 1rem;
+.date {
+  color: var(--secondary);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
 .publication-list {
   display: grid;
-  gap: 1.15rem;
+  gap: var(--item-space);
 }
 .publication {
   min-width: 0;
   overflow-wrap: anywhere;
 }
+.authors, .publication-meta {
+  font-size: var(--size-detail);
+  line-height: var(--leading-compact);
+}
 .authors {
   margin-top: 0.15rem;
   color: var(--muted);
-  line-height: 1.35;
 }
 .authors strong {
-  color: #000;
+  color: var(--strong);
 }
 .publication-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.1rem 1rem;
+  gap: 0.25rem var(--item-space);
   margin-top: 0.25rem;
-  font-size: var(--size-meta);
 }
 .venue {
-  font-size: 1rem;
   font-variant-numeric: tabular-nums;
 }
 .venue-name {
   position: relative;
   display: inline-block;
   color: var(--venue);
-  font-size: inherit;
   font-weight: 700;
   white-space: nowrap;
   text-decoration-line: underline;
@@ -203,9 +210,8 @@ h3 {
   background: var(--background);
   color: var(--text);
   box-shadow: 0 2px 8px #0000000d;
-  font-size: 0.85rem;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: var(--leading-body);
   white-space: normal;
 }
 .venue-name:hover .venue-tooltip, .venue-name:focus .venue-tooltip {
@@ -214,21 +220,21 @@ h3 {
 .resource-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0 1.1rem;
+  align-items: baseline;
+  gap: 0 var(--item-space);
   padding: 0;
   list-style: none;
 }
 .resource-links a {
-  display: inline-block;
-  padding: 0.15rem 0;
+  display: inline;
 }
 .site-icon {
   display: inline-block;
-  width: 0.95em;
-  height: 0.95em;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
   vertical-align: -0.1em;
   fill: currentColor;
-  margin-right: 0.15em;
 }
 .publication-links {
   gap: 0 0.6rem;
@@ -242,9 +248,11 @@ h3 {
 .publication-links .site-icon--weixin {
   color: #07c160;
 }
-.publication-links .site-icon--file-alt,
+.publication-links .site-icon--file-alt {
+  color: #a96565;
+}
 .publication-links .site-icon--newspaper {
-  color: #454545;
+  color: var(--secondary);
 }
 .publication-links li {
   white-space: nowrap;
@@ -254,22 +262,23 @@ h3 {
   margin-right: 0.6rem;
   color: var(--muted);
 }
+
 .dated-list {
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.9rem;
+  gap: var(--item-space);
 }
 .dated-list li {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
-  gap: 1rem;
+  gap: var(--item-space);
   align-items: baseline;
 }
 .institution-name {
   display: flex;
-  align-items: center;
-  gap: 0.15rem 0.5rem;
+  align-items: baseline;
+  gap: var(--inline-space);
 }
 .institution-role {
   white-space: nowrap;
@@ -277,8 +286,7 @@ h3 {
 .institution-logo {
   display: block;
   flex-shrink: 0;
-  height: auto;
-  object-fit: contain;
+  align-self: center;
 }
 .institution-logo--ict,
 .institution-logo--hit {
@@ -289,7 +297,7 @@ h3 {
 }
 .site-footer {
   padding: 1rem 0 2rem;
-  font-size: 0.85rem;
+  font-size: var(--size-detail);
 }
 
 @media (max-width: 640px) {
@@ -309,10 +317,6 @@ h3 {
   .portrait {
     width: 112px;
     margin: 0.2rem 0 0.8rem 1rem;
-  }
-  .intro .email {
-    margin-bottom: 1.2rem;
-    overflow-wrap: anywhere;
   }
   :root {
     --section-space: 0.75rem;

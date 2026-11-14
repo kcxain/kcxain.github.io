@@ -32,7 +32,20 @@ server after editing `_config.yml`. Google Analytics runs only in production.
 | Shared inline SVG symbols | `_includes/icons/sprite.svg` |
 
 `assets/css/home.scss` imports the two stylesheet partials. Change the variables
-at the top of `_home.scss` for shared colors, metadata size and section spacing.
+at the top of `_home.scss` for shared colors, typography and spacing:
+
+- Body text: 16px with `--leading-body: 1.55`.
+- Authors, venue/year and resource links: `--size-detail: 0.9375rem` (15px),
+  `--leading-compact: 1.25`. These share a single rule; children inherit it.
+- Titles use the compact line height; heading sizes establish the hierarchy.
+- Icons use `1em` dimensions and follow their surrounding text size.
+- Section, title, item and inline spacing have shared variables.
+
+News uses one `content_html` field per item and the same `.detail-list` / `.date`
+styles as the remaining text lists. Publications use `conf`, `conf_full`, `year`,
+`title`, `authors` and `links`; author highlighting reads `author.name_en` from
+`_config.yml`.
+
 The publication template places venue, year and resource links in one wrapping
 row. Venue full names appear on hover and keyboard focus. SVG symbols are defined
 once per page and reused through `_includes/icon.html`.
@@ -40,7 +53,7 @@ once per page and reused through `_includes/icon.html`.
 ## Assets
 
 The avatar is a high-priority WebP with explicit dimensions. Career logos are
-lazy-loaded lossless WebP images. HIT and Cambricon use 3× display resolution;
+lazy-loaded lossless WebP images. HIT and Cambricon retain high-density display resolution;
 the compact ICT icon retains its supplied source resolution. Full-size logo
 sources live in `_image_sources/`, which is excluded from deployment.
 

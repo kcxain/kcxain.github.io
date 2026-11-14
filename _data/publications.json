@@ -3,7 +3,6 @@
     "conf": "Preprint",
     "year": "2026",
     "conf_full": "Preprint",
-    "label": "preprint",
     "title": "KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation",
     "authors": "Changxin Ke, Rui Zhang, Zixiang Fang, Zhenghong Li, Yuanbo Wen, Jiaming Guo, Ling Li, Qi Guo, Yunji Chen",
     "links": [
@@ -21,6 +20,11 @@
         "name": "Models",
         "url": "https://huggingface.co/collections/kcxain/kernelzero",
         "type": "models"
+      },
+      {
+        "name": "Blog",
+        "url": "https://zhuanlan.zhihu.com/p/2089152555117027544",
+        "type": "blog"
       }
     ]
   },
@@ -28,7 +32,6 @@
     "conf": "Preprint",
     "year": "2026",
     "conf_full": "Preprint",
-    "label": "preprint",
     "title": "OpenClaw Research: A Systematic Survey of Large Language Model Agents in Open Deployment",
     "authors": "Shuo Lu, Kecheng Yu, Siru Jiang, Yinuo Xu, Bing Zhan, Yanbo Wang, Changxin Ke, Yuan Xu, Xin Xiong, Xinyun Zhou, Zhengbo Wang, Lijun Sheng, Aijing Yu, Haosen Yang, Yunpu Ma, Nicu Sebe, Tat-Seng Chua, Philip Torr, Ran He, Jian Liang",
     "links": [
@@ -48,7 +51,6 @@
     "conf": "ACL",
     "year": "2026",
     "conf_full": "The 64th Annual Meeting of the Association for Computational Linguistics",
-    "label": "ACL'26",
     "title": "QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization",
     "authors": "Changxin Ke, Rui Zhang, Jiaming Guo, Yuanbo Wen, Li Ding, Shuo Wang, Xuyuan Zhu, Xiong Peng, Di Huang, Zidong Du, Xing Hu, Qi Guo, Yunji Chen",
     "links": [
@@ -78,7 +80,6 @@
     "conf": "NeurIPS",
     "year": "2025",
     "conf_full": "The Thirty-Ninth Annual Conference on Neural Information Processing Systems",
-    "label": "NeurIPS'25",
     "title": "QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation",
     "authors": "Changxin Ke, Rui Zhang, Shuo Wang, Li Ding, Guangli Li, Yuanbo Wen, Shuoming Zhang, Ruiyuan Xu, Jin Qin, Jiaming Guo, Chenxi Wang, Ling Li, Qi Guo, Yunji Chen",
     "links": [
@@ -108,7 +109,6 @@
     "conf": "SCIS",
     "year": "2025",
     "conf_full": "SCIENCE CHINA Information Sciences",
-    "label": "SCIS",
     "title": "Large processor chip model",
     "authors": "Kaiyan Chang, Mingzhi Chen, Yunji Chen, Zhirong Chen, Dongrui Fan, Junfeng Gong, Nan Guo, Yinhe Han, Qinfen Hao, Shuo Hou, Xuan Huang, Pengwei Jin, Changxin Ke, Cangyuan Li, Guangli Li, Huawei Li, Kuan Li, Naipeng Li, Shengwen Liang, Cheng Liu, Hongwei Liu, Jiahua Liu, Junliang Lv, Jianan Mu, Jin Qin, Bin Sun, Chenxi Wang, Duo Wang, Mingjun Wang, Ying Wang, Chenggang Wu, Peiyang Wu, Teng Wu, Xiao Xiao, Mengyao Xie, Chenwei Xiong, Ruiyuan Xu, Mingyu Yan, Xiaochun Ye, Kuai Yu, Rui Zhang, Shuoming Zhang, Jiacheng Zhao",
     "links": [
@@ -123,7 +123,6 @@
     "conf": "Neurocomputing",
     "year": "2025",
     "conf_full": "Neurocomputing",
-    "label": "Neurocomputing'25",
     "title": "Sycophancy in Vision-Language Models: A Systematic Analysis and an Inference-Time Mitigation Framework",
     "authors": "Yunpu Zhao, Rui Zhang, Junbin Xiao, Changxin Ke, Ruibo Hou, Yifan Hao, Ling Li",
     "links": [
@@ -138,7 +137,6 @@
     "conf": "COLING",
     "year": "2024",
     "conf_full": "The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation",
-    "label": "COLING'24",
     "title": "A Self-verified Method for Exploring Simile Knowledge from Pre-trained Language Models",
     "authors": "Longxuan Ma, Changxin Ke, Shuhan Zhou, Churui Sun, Weinan Zhang, Ting Liu",
     "links": [
@@ -158,7 +156,6 @@
     "conf": "DSTC @ ACL",
     "year": "2023",
     "conf_full": "The Eleventh Dialog System Technology Challenge",
-    "label": "DSTC11",
     "title": "A Difference-aware Ensemble Method for Task-oriented Dialogue with Subjective Knowledge",
     "authors": "Changxin Ke, Churui Sun, Longxuan Ma, Weinan Zhang, Ting Liu",
     "links": [
@@ -178,7 +175,6 @@
     "conf": "Findings of ACL",
     "year": "2023",
     "conf_full": "The 61st Annual Meeting of the Association for Computational Linguistics",
-    "label": "ACL'23",
     "title": "I run as fast as a rabbit, can you? A Multilingual Simile Dialogue Dataset",
     "authors": "Longxuan Ma, Weinan Zhang, Shuhan Zhou, Churui Sun, Changxin Ke, Ting Liu",
     "links": [
