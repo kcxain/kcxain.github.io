@@ -232,6 +232,19 @@ h3 {
 .publication-links {
   gap: 0 0.6rem;
 }
+.publication-links .site-icon--github {
+  color: #181717;
+}
+.publication-links .site-icon--zhihu-square {
+  color: #0084ff;
+}
+.publication-links .site-icon--weixin {
+  color: #07c160;
+}
+.publication-links .site-icon--file-alt,
+.publication-links .site-icon--newspaper {
+  color: #454545;
+}
 .publication-links li {
   white-space: nowrap;
 }
