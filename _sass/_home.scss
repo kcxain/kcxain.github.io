@@ -267,9 +267,11 @@ h3 {
 }
 .institution-name {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 0.15rem 0.5rem;
+}
+.institution-role {
+  white-space: nowrap;
 }
 .institution-logo {
   display: block;
