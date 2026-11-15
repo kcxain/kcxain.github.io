@@ -53,8 +53,8 @@ once per page and reused through `_includes/icon.html`.
 ## Assets
 
 The avatar is a high-priority WebP with explicit dimensions. Career logos are
-lazy-loaded lossless WebP images. HIT and Cambricon retain high-density display resolution;
-the compact ICT icon retains its supplied source resolution. Full-size logo
+lazy-loaded lossless WebP images. HIT and Cambricon use 4× display resolution;
+the ICT icon retains its official 147×122 source resolution. Full-size logo
 sources live in `_image_sources/`, which is excluded from deployment.
 
 Regenerate logos (requires `cwebp`, available through `brew install webp`):

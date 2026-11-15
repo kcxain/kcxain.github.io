@@ -95,7 +95,7 @@ def check(destination):
         "fonts": sum(p.stat().st_size for p in (destination / "assets/fonts").rglob("*.woff2")),
         "site": sum(p.stat().st_size for p in destination.rglob("*") if p.is_file()),
     }
-    for key, limit in {"html": 40000, "css": 8000, "logos": 16000, "fonts": 40000, "site": 600000}.items():
+    for key, limit in {"html": 40000, "css": 8000, "logos": 24000, "fonts": 40000, "site": 600000}.items():
         assert sizes[key] <= limit, f"{key} exceeds {limit:,} byte budget: {sizes[key]:,}"
     print(f"Passed: {page.articles} publications, {page.tooltips} tooltips, all links/icons/assets, responsive CSS and resource budgets.")
     print(json.dumps(sizes, indent=2))

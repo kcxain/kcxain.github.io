@@ -26,7 +26,7 @@ redirect_from:
     <li>Self-Verifying and Self-Improving Agents</li>
     <li>Agent Systems for Reliably Scaling Frontier Discovery</li>
   </ul>
-  <p>Open to collaboration, academic exchange, and internship opportunities.</p>
+  <p class="collaboration-note"><strong>Open to collaboration, academic exchange, and internship opportunities.</strong></p>
 </section>
 
 <section id="news" class="content-section" aria-labelledby="news-title">

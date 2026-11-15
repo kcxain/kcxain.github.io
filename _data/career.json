@@ -5,16 +5,16 @@
       "name": "Institute of Computing Technology",
       "role": "PhD",
       "logo": "ict",
-      "width": 54,
-      "height": 42
+      "width": 147,
+      "height": 122
     },
     {
       "date": "2020.09 – 2024.06",
       "name": "Harbin Institute of Technology",
       "role": "Undergraduate",
       "logo": "hit",
-      "width": 72,
-      "height": 65
+      "width": 120,
+      "height": 109
     }
   ],
   "experience": [
@@ -23,8 +23,8 @@
       "name": "Cambricon Technology",
       "role": "AI Research Intern",
       "logo": "cambricon",
-      "width": 174,
-      "height": 60
+      "width": 232,
+      "height": 80
     }
   ]
 }

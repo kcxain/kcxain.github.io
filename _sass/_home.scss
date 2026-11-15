@@ -116,6 +116,9 @@ h1 span {
 .intro > :last-child {
   margin-bottom: 0;
 }
+.collaboration-note {
+  color: var(--accent);
+}
 .intro > ul:not(.resource-links) {
   padding-left: 1.25rem;
   margin-bottom: 0.8rem;
