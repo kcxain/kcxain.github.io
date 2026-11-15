@@ -8,6 +8,7 @@ files. An optional safety charset supports anticipated future content.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -185,6 +186,21 @@ def main() -> int:
         if not ok:
             raise SystemExit(f"Subset font {output} is missing chars: {missing}")
         print(f"{weight}: {before} -> {size_label(output)}  {output.relative_to(ROOT)}")
+
+    # Keep the above-fold name independent of the full page's CJK character set.
+    config = (ROOT / "_config.yml").read_text(encoding="utf-8")
+    name = re.search(r'^\s+name_zh:\s*["\']([^"\']+)["\']\s*$', config, re.MULTILINE)
+    if name is None:
+        raise SystemExit("Expected a quoted author.name_zh in _config.yml")
+    name_chars = ''.join(sorted({c for c in name[1] if is_cjk_char(c)}))
+    name_chars_file = chars_file.with_name(chars_file.stem + "-name.txt")
+    name_chars_file.write_text(name_chars, encoding="utf-8")
+    name_output = ROOT / "assets/fonts/noto-serif-sc/name-700.woff2"
+    subset_font(FONT_JOBS[1][1], name_output, name_chars_file)
+    ok, missing = font_has_all_chars(name_output, name_chars)
+    if not ok:
+        raise SystemExit(f"Name font is missing chars: {missing}")
+    print(f"Name: {name_output.stat().st_size:,} bytes ({len(name_chars)} characters)")
 
     return 0
 

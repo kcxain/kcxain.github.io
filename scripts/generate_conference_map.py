@@ -2,11 +2,33 @@
 """Generate a script-free SVG from the original jsVectorMap Miller basemap."""
 import json
 import math
+import re
 from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'images/conferences.svg'
+
+
+def compact_path(path):
+    """Remove redundant SVG number syntax without changing coordinates."""
+    tokens = re.findall(r'[a-zA-Z]|[-+]?(?:\d*\.\d+|\d+)', path)
+    parts = []
+    command = None
+    for token in tokens:
+        if token.isalpha():
+            # Subsequent relative line pairs implicitly repeat the l command.
+            if token == command == 'l':
+                continue
+            command = token
+        else:
+            if '.' in token:
+                token = token.rstrip('0').rstrip('.')
+            token = re.sub(r'^(-?)0\.', r'\1.', token)
+            if parts and not parts[-1][-1].isalpha() and not token.startswith('-'):
+                parts.append(' ')
+        parts.append(token)
+    return ''.join(parts)
 
 
 def project(coords, world):
@@ -26,7 +48,7 @@ def generate():
              '<title id="title">Conferences attended</title>',
              '<desc id="desc">Conference locations: ' + escape(', '.join(dict.fromkeys(c['city'] for c in conferences))) + '.</desc>',
              '<g fill="#e4e9e7" stroke="#fff" stroke-width="0.65" stroke-linejoin="round">']
-    parts.extend(f'<path d="{region["path"]}"/>' for region in world['paths'].values())
+    parts.extend(f'<path d="{compact_path(region["path"])}"/>' for region in world['paths'].values())
     parts.append('</g>')
     seen = set()
     for c in conferences:

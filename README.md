@@ -59,8 +59,10 @@ converted from its official AI artwork. Source provenance and conversion notes
 are in `_image_sources/README.md`. That source directory is excluded from deployment.
 
 Chinese fonts prefer installed serif fonts and use `font-display: swap` with a
-CJK-only Unicode range. After changing Chinese text, regenerate both weight
-subsets from the full source fonts:
+CJK-only Unicode range. The Chinese profile name consistently uses bundled
+Noto Serif SC Bold (700), with a preloaded three-character subset of about 1.8 KB.
+After changing Chinese text, regenerate the page and name subsets from the full
+source fonts:
 
 ```bash
 python3 -m pip install -r scripts/requirements-fonts.txt
@@ -71,6 +73,16 @@ The default scans actual page, data, config and include content. The optional
 `--include-safety` flag also includes `_font_sources/noto-serif-sc/safety_chars.txt`
 for anticipated content at the cost of a larger download. Full fonts and source
 images stay out of the deployed site.
+
+SVG logos and inline symbols are compressed with SVGO while preserving IDs,
+accessible labels and viewBoxes. After replacing these assets, run:
+
+```bash
+npx --yes svgo@4.0.0 --config scripts/svgo.config.mjs images/logos/*.svg _includes/icons/sprite.svg
+```
+
+The map generator removes redundant path syntax without changing coordinates.
+Its output stays reproducible when the deployment workflow regenerates it.
 
 ## Validation and deployment
 

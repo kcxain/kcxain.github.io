@@ -57,6 +57,9 @@ def check(destination):
     assert len(page.ids) == len(set(page.ids)), "Duplicate IDs"
     assert set(page.references) <= set(page.ids), "Broken icon or accessible-description reference"
     assert page.stylesheets == 1, "Expected a single stylesheet"
+    name_font = "/assets/fonts/noto-serif-sc/name-700.woff2"
+    assert f'rel="preload" href="{name_font}" as="font" type="font/woff2" crossorigin' in html, "Missing name font preload"
+    assert (destination / name_font.lstrip('/')).stat().st_size < 3000, "Name font subset exceeds 3 KB"
     stats = json.loads((ROOT / "_data/profile_stats.json").read_text())
     for source, field, label in (("google_scholar", "citations", "citations"), ("zhihu", "followers", "followers")):
         count = stats[source][field]
@@ -110,9 +113,10 @@ def check(destination):
         "css": len(css.encode()),
         "logos": sum((destination / "images/logos" / e["logo_file"]).stat().st_size for entries in json.loads((ROOT / "_data/career.json").read_text()).values() for e in entries),
         "fonts": sum(p.stat().st_size for p in (destination / "assets/fonts").rglob("*.woff2")),
+        "map": (destination / "images/conferences.svg").stat().st_size,
         "site": sum(p.stat().st_size for p in destination.rglob("*") if p.is_file()),
     }
-    for key, limit in {"html": 40000, "css": 8000, "logos": 80000, "fonts": 40000, "site": 600000}.items():
+    for key, limit in {"html": 32000, "css": 8000, "logos": 45000, "fonts": 40000, "map": 90000, "site": 450000}.items():
         assert sizes[key] <= limit, f"{key} exceeds {limit:,} byte budget: {sizes[key]:,}"
     print(f"Passed: {page.articles} publications, {page.tooltips} tooltips, all links/icons/assets, responsive CSS and resource budgets.")
     print(json.dumps(sizes, indent=2))
