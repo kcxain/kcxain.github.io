@@ -37,7 +37,7 @@ def generate():
         assert 0 <= x <= 900 and 0 <= y <= 441, c['city']
         dx, dy = c.get('labelOffset', [10, -12])
         parts.append(f'<g><title>{escape(c["city"])}</title><circle cx="{x:.2f}" cy="{y:.2f}" r="4.5" fill="#28766d" stroke="#fff" stroke-width="2"/>')
-        parts.append(f'<text x="{x+dx:.2f}" y="{y+dy:.2f}" fill="#454545" font-family="Palatino Linotype,Palatino,Georgia,serif" font-size="16" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">{escape(c["city"])}</text></g>')
+        parts.append(f'<text x="{x+dx:.2f}" y="{y+dy:.2f}" fill="#454545" font-family="Palatino Linotype,Palatino,Georgia,serif" font-size="22" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">{escape(c["city"])}</text></g>')
     parts.append('</svg>')
     OUTPUT.write_text('\n'.join(parts) + '\n')
     print(f'Generated {OUTPUT.relative_to(ROOT)} ({OUTPUT.stat().st_size:,} bytes)')

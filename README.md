@@ -52,16 +52,11 @@ once per page and reused through `_includes/icon.html`.
 
 ## Assets
 
-The avatar is a high-priority WebP with explicit dimensions. Career logos are
-lazy-loaded lossless WebP images. HIT and Cambricon use 4× display resolution;
-the ICT icon retains its official 147×122 source resolution. Full-size logo
-sources live in `_image_sources/`, which is excluded from deployment.
-
-Regenerate logos (requires `cwebp`, available through `brew install webp`):
-
-```bash
-bash scripts/optimize_logos.sh
-```
+The avatar is a high-priority WebP with explicit dimensions. All three career
+logos are lazy-loaded SVG vectors with reserved dimensions. ICT was converted
+from the supplied vector PDF, HIT uses the supplied SVG, and Cambricon was
+converted from its official AI artwork. Source provenance and conversion notes
+are in `_image_sources/README.md`. That source directory is excluded from deployment.
 
 Chinese fonts prefer installed serif fonts and use `font-display: swap` with a
 CJK-only Unicode range. After changing Chinese text, regenerate both weight

@@ -8,7 +8,7 @@
 - 论文、新闻、教育与经历：`_data/publications.json`、`news.json`、`career.json`。
 - 共享颜色与间距：`_sass/_home.scss` 顶部变量；中文字体：`_sass/_fonts.scss`。
 - 修改中文后执行：`python3 scripts/subset_cjk_fonts.py`。
-- Logo 原图保存在 `_image_sources/`，执行 `bash scripts/optimize_logos.sh` 生成网页使用的 WebP。
+- 机构 Logo 统一使用 `images/logos/` 中的 SVG；来源与转换说明位于 `_image_sources/README.md`。
 - 发布检查：`JEKYLL_ENV=production bundle exec jekyll build && python3 scripts/check_site.py _site`。
 
 完整结构、资源优化策略与部署流程见 [README](../README.md)。

@@ -81,8 +81,14 @@ def check(destination):
         if url.scheme or url.netloc:
             continue
         assert (destination / unquote(url.path).lstrip("/")).is_file(), f"Missing asset: {resource}"
-    conferences = json.loads((ROOT / "_data/conferences.json").read_text())
     import xml.etree.ElementTree as ET
+    for entries in json.loads((ROOT / "_data/career.json").read_text()).values():
+        for entry in entries:
+            assert entry["logo_file"].endswith(".svg"), "Career logos must be vectors"
+            logo = ET.parse(destination / "images/logos" / entry["logo_file"]).getroot()
+            assert any(e.tag.endswith("}path") for e in logo.iter()), "Missing vector paths"
+            assert not any(e.tag.endswith("}image") for e in logo.iter()), "Embedded raster in logo"
+    conferences = json.loads((ROOT / "_data/conferences.json").read_text())
     map_root = ET.parse(destination / "images/conferences.svg").getroot()
     ns = {"svg": "http://www.w3.org/2000/svg"}
     cities = {c["city"] for c in conferences}
@@ -102,11 +108,11 @@ def check(destination):
     sizes = {
         "html": len(html.encode()),
         "css": len(css.encode()),
-        "logos": sum(p.stat().st_size for p in (destination / "images/logos").glob("*.webp")),
+        "logos": sum((destination / "images/logos" / e["logo_file"]).stat().st_size for entries in json.loads((ROOT / "_data/career.json").read_text()).values() for e in entries),
         "fonts": sum(p.stat().st_size for p in (destination / "assets/fonts").rglob("*.woff2")),
         "site": sum(p.stat().st_size for p in destination.rglob("*") if p.is_file()),
     }
-    for key, limit in {"html": 40000, "css": 8000, "logos": 24000, "fonts": 40000, "site": 600000}.items():
+    for key, limit in {"html": 40000, "css": 8000, "logos": 80000, "fonts": 40000, "site": 600000}.items():
         assert sizes[key] <= limit, f"{key} exceeds {limit:,} byte budget: {sizes[key]:,}"
     print(f"Passed: {page.articles} publications, {page.tooltips} tooltips, all links/icons/assets, responsive CSS and resource budgets.")
     print(json.dumps(sizes, indent=2))
