@@ -46,6 +46,9 @@ jobs:
       - name: Refresh public profile counts
         run: python3 scripts/update_profile_stats.py
 
+      - name: Generate conference map
+        run: python3 scripts/generate_conference_map.py
+
       - name: Cache profile counts
         uses: actions/cache/save@v4
         with:

@@ -120,3 +120,21 @@ Run failure-recovery checks with:
 ```bash
 python3 -m unittest discover -s scripts -p 'test_profile_stats.py'
 ```
+
+## Conferences attended
+
+`_data/conferences.json` stores the original attendance records, official links,
+ISO dates and city coordinates in `[latitude, longitude]` order. The section after
+Honors displays a borderless world map above a normal text list. It uses a
+lazy-loaded static SVG with reserved dimensions and no browser-side map scripts.
+
+After changing conference locations, run:
+
+```bash
+python3 scripts/generate_conference_map.py
+```
+
+The deployment workflow regenerates the map automatically. `labelOffset` controls
+city-label offsets in SVG coordinates; nearby cities can use opposite vertical
+offsets. The original jsVectorMap basemap and its MIT license are preserved in
+`_map_sources/`, excluded from deployment.

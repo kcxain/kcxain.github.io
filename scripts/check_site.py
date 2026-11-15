@@ -81,8 +81,19 @@ def check(destination):
         if url.scheme or url.netloc:
             continue
         assert (destination / unquote(url.path).lstrip("/")).is_file(), f"Missing asset: {resource}"
+    conferences = json.loads((ROOT / "_data/conferences.json").read_text())
+    import xml.etree.ElementTree as ET
+    map_root = ET.parse(destination / "images/conferences.svg").getroot()
+    ns = {"svg": "http://www.w3.org/2000/svg"}
+    cities = {c["city"] for c in conferences}
+    assert {e.text for e in map_root.findall(".//svg:text", ns)} == cities
+    assert len(map_root.findall(".//svg:circle", ns)) == len(cities)
+    assert len(map_root.findall(".//svg:path", ns)) > 100, "Missing world basemap"
+    for conference in conferences:
+        assert conference["source_url"] in page.links, "Missing conference link"
+        assert conference["name"] in html, "Missing conference name"
     assert "{%" not in html and "{{" not in html, "Unrendered Liquid"
-    for obsolete in ("assets/js", "assets/maps", "assets/css/main.css", "CLAUDE.md", "scripts", "_image_sources", "_font_sources"):
+    for obsolete in ("assets/js", "assets/maps", "assets/css/main.css", "CLAUDE.md", "scripts", "_image_sources", "_font_sources", "_map_sources"):
         assert not (destination / obsolete).exists(), f"Obsolete/private build asset: {obsolete}"
     assert "--background:var(--background)" not in css, "Circular color token"
     assert ".publication-meta{display:flex;flex-wrap:wrap" in css, "Publication metadata must wrap"

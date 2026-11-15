@@ -15,7 +15,7 @@ redirect_from:
     <li><a href="https://github.com/{{ site.author.github }}">{% include icon.html name="github" %} GitHub</a></li>
     <li><a href="https://www.zhihu.com/people/{{ site.author.zhihu }}">{% include icon.html name="zhihu-square" %} Zhihu</a></li>
   </ul>
-  <p class="profile-stats"><span>Citations <span class="profile-count" aria-label="{{ site.data.profile_stats.google_scholar.citations }} citations" title="Citations · updated {{ site.data.profile_stats.google_scholar.updated_at | date: '%Y-%m-%d' }}">{% include stat-number.html value=site.data.profile_stats.google_scholar.citations %}</span></span><span class="stats-separator" aria-hidden="true">·</span><span>Followers <span class="profile-count" aria-label="{{ site.data.profile_stats.zhihu.followers }} followers" title="Followers · updated {{ site.data.profile_stats.zhihu.updated_at | date: '%Y-%m-%d' }}">{% include stat-number.html value=site.data.profile_stats.zhihu.followers %}</span></span></p>
+  <p class="profile-stats"><span>Citations <span class="profile-count" aria-label="{{ site.data.profile_stats.google_scholar.citations }} citations" title="Citations · updated {{ site.data.profile_stats.google_scholar.updated_at | date: '%Y.%m.%d' }}">{% include stat-number.html value=site.data.profile_stats.google_scholar.citations %}</span></span><span class="stats-separator" aria-hidden="true">·</span><span>Followers <span class="profile-count" aria-label="{{ site.data.profile_stats.zhihu.followers }} followers" title="Followers · updated {{ site.data.profile_stats.zhihu.updated_at | date: '%Y.%m.%d' }}">{% include stat-number.html value=site.data.profile_stats.zhihu.followers %}</span></span></p>
   <p>I am a third-year PhD candidate of <strong>Intelligent Processor Research Center（智能处理器研究中心）</strong>, Institute of Computing Technology, supervised by <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202111/t20211108_6246309.html'>Rui Zhang</a>, <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202502/t20250220_7530352.html'>Yuanbo Wen</a> and <a href='https://ict.cas.cn/sourcedb/cn/jssrck/202003/t20200310_5509322.html'>Xishan Zhang</a>.</p>
 
   <p>Previously, as an undergraduate student at Harbin Institute of Technology, I completed a research internship at <a href="https://ir.hit.edu.cn">SCIR</a>, working on Dialogue System, advised by <a href='https://homepage.hit.edu.cn/zhangweinan'>Wei-Nan Zhang</a>.</p>
@@ -86,6 +86,8 @@ redirect_from:
     <li><span class="date">[2025.11]</span> Excellent Prize of the President Scholarship（所长优秀奖）, ICT, CAS</li>
   </ul>
 </section>
+
+{% include conferences.html %}
 
 <section class="content-section" aria-labelledby="services-title">
   <h2 id="services-title">Services</h2>

@@ -25,6 +25,7 @@ exclude:
   - scripts
   - _font_sources
   - _image_sources
+  - _map_sources
   - vendor
   - node_modules
   - Gemfile
