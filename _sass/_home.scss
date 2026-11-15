@@ -20,6 +20,7 @@
   --link: #204b69;
   --accent: #a84736;
   --muted: #706c63;
+  --name-gradient: linear-gradient(110deg, #326c9c 0%, #6264a0 35%, #965c85 68%, #ae6658 100%);
 }
 
 * {
@@ -81,11 +82,22 @@ section {
   padding: 3rem 0 var(--section-space);
 }
 h1 {
+  width: fit-content;
+  max-width: 100%;
   font-size: 2.6rem;
   line-height: var(--leading-compact);
   font-weight: 500;
   letter-spacing: -0.035em;
   margin-bottom: 0.4rem;
+}
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .intro h1 {
+    background-image: var(--name-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 }
 h1 span {
   display: inline-block;
@@ -261,19 +273,22 @@ h3 {
 .publication-links {
   gap: 0 0.6rem;
 }
-.publication-links .site-icon--github {
+.site-icon--google-scholar {
+  color: #4285f4;
+}
+.site-icon--github {
   color: #181717;
 }
-.publication-links .site-icon--zhihu-square {
+.site-icon--zhihu-square {
   color: #0084ff;
 }
-.publication-links .site-icon--weixin {
+.site-icon--weixin {
   color: #07c160;
 }
-.publication-links .site-icon--file-alt {
+.site-icon--file-alt {
   color: #a96565;
 }
-.publication-links .site-icon--newspaper {
+.site-icon--newspaper {
   color: var(--secondary);
 }
 .publication-links li {
@@ -357,6 +372,11 @@ h3 {
 }
 
 @media print {
+  .intro h1 {
+    background: none;
+    color: black;
+    -webkit-text-fill-color: currentColor;
+  }
   :root {
     background: white;
     color: black;
@@ -377,5 +397,13 @@ h3 {
   }
   .venue-tooltip {
     display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .intro h1 {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
   }
 }

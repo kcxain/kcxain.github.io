@@ -10,8 +10,8 @@ redirect_from:
   <img class="portrait" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name | escape }}" width="350" height="350" fetchpriority="high" decoding="async">
   <h1 id="about-title">{{ site.author.name_en }} <span lang="zh">{{ site.author.name_zh }}</span></h1>
   <ul class="resource-links" aria-label="Contact and profile links">
-    <li><a href="mailto:{{ site.author.email }}">{% include icon.html name="envelope" %} {{ site.author.email }}</a></li>
-    <li><a href="{{ site.author.googlescholar }}">{% include icon.html name="graduation-cap" %} Google Scholar</a></li>
+    <li><a href="mailto:{{ site.author.email }}">{% include icon.html name="gmail" %} {{ site.author.email }}</a></li>
+    <li><a href="{{ site.author.googlescholar }}">{% include icon.html name="google-scholar" %} Google Scholar</a></li>
     <li><a href="https://github.com/{{ site.author.github }}">{% include icon.html name="github" %} GitHub</a></li>
     <li><a href="https://www.zhihu.com/people/{{ site.author.zhihu }}">{% include icon.html name="zhihu-square" %} Zhihu</a></li>
   </ul>
